@@ -3,13 +3,13 @@ const express = require("express")
 
 const router = express.Router();
 
-const userController = require("../controllers/userController")
+const authController = require("../controllers/authController")
 // const port = process.env.PORT || 3000
 // app.use(express.json())
 
 // app.use(express.urlencoded({ extended: false }))
 
-router.route('/').post(userController.signup);
+router.route('/').post(authController.signup);
 
 // app.get('/signup', (req, res) => {
 //     // res.render('signup')

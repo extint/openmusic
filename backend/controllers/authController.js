@@ -20,15 +20,16 @@ module.exports.signup = async (req, res) => {
 
     try {
         // Only check if that username already exists
-        if (checking.UserName === data.UserName) {
+        if (checking && checking.UserName === data.UserName) {
             return res.status(409).json({ message: "Error, user with that email already exists." });
         }
         else {
-            await UserCollection.insertOne(data);
+            await UserCollection.create(data);
         }
     }
-    catch {
-        return res.status(500).json({ message: "Internal Server Error" });
+    catch(e) {
+        console.log(e)
+        return res.status(500).json({ message: "Internal Server Error..." });
     }
 
     return res.status(201).json({ message: "Successfully Created New User" });
@@ -36,7 +37,23 @@ module.exports.signup = async (req, res) => {
 
 
 module.exports.login = async (req, res) => {
-    // TODO
+    const data = {
+        UserName: req.body.UserName,
+        password: req.body.password,
+    };
+
+    const user = await UserCollection.findOne({ UserName: data.UserName });
+
+    if(!user){
+        return res.status(404).json({message: "User does not exist"})
+    }
+
+    if(user.password == data.password){
+        return res.status(200).json({message: "Successfull Login"})
+    }
+    else{
+        return res.status(401).json({message: "Incorrect Password/Username"})
+    }
 };
 
 // const UserSchema=new mongoose.Schema({

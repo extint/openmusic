@@ -16,7 +16,6 @@ const UserSchema = new mongoose.Schema({
 
     ProfilePhotoFilePath: String,//not sure
 
-    //the foll aspects wont be user entered during signup...
     FriendCount: Number,
     RecentSongs: Array,
     Friends: Array,
