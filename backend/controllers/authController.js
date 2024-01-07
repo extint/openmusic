@@ -1,4 +1,4 @@
-const UserCollection = require('../models/userModel')
+const userCollection = require('../models/userModel')
 
 // mongoose.connect("mongodb://localhost:27017/openMusicDB")
 //     .then(()=>{
@@ -10,21 +10,21 @@ const UserCollection = require('../models/userModel')
 
 module.exports.signup = async (req, res) => {
     const data = {
-        UserName: req.body.UserName,
+        userName: req.body.userName,
         password: req.body.password,
-        EmailId: req.body.EmailId,
-        ProfilePhotoFilePath: req.body.filepath//not sure kya aayega
+        emailId: req.body.emailId,
+        profilePhotoFilePath: req.body.filepath//not sure kya aayega
     };
 
-    const checking = await UserCollection.findOne({ UserName: data.UserName });
+    const checking = await userCollection.findOne({ userName: data.userName });
 
     try {
         // Only check if that username already exists
-        if (checking && checking.UserName === data.UserName) {
+        if (checking && checking.userName === data.userName) {
             return res.status(409).json({ message: "Error, user with that email already exists." });
         }
         else {
-            await UserCollection.create(data);
+            await userCollection.create(data);
         }
     }
     catch(e) {
@@ -38,11 +38,11 @@ module.exports.signup = async (req, res) => {
 
 module.exports.login = async (req, res) => {
     const data = {
-        UserName: req.body.UserName,
+        userName: req.body.userName,
         password: req.body.password,
     };
 
-    const user = await UserCollection.findOne({ UserName: data.UserName });
+    const user = await userCollection.findOne({ userName: data.userName });
 
     if(!user){
         return res.status(404).json({message: "User does not exist"})

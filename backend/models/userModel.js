@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    UserName: {
+    userName: {
         type: String,
         required: true
     },
@@ -9,18 +9,19 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    EmailId: {
+    emailId: {
         type: String,
         required: true
     },
 
-    ProfilePhotoFilePath: String,//not sure
+    profilePhotoFilePath: String,//not sure
 
-    FriendCount: Number,
-    RecentSongs: Array,
-    Friends: Array,
-    Artistsfollowed: Array,//of Artist Ids(from spotify)
-    Playlist: Array, //of Playlist ids
+    friendCount: Number,
+    likedSongs: Array,
+    recentSongs: Array,
+    friends: Array,
+    artistsFollowed: Array,//of Artist Ids(from spotify)
+    playlists: Array, //of Playlist ids
 
 
 })
