@@ -1,8 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-// const loginRoute = require('./routes/login');
-// const signupRoute = require('./routes/signup');
+
 // Db connection
 const mongoose = require("mongoose")
 
