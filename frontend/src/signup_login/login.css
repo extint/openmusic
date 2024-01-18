@@ -1,0 +1,300 @@
+.desktop {
+    background-color: #000000;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+    width: 100%;
+}
+
+.desktop .div {
+    background-color: hsl(43, 93%, 84%);
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .desktop .dynamic-name{
+    width:20px;
+    height: 200px;
+    left: 500px;
+    transform: skewY(20px);
+    top:410px;
+    position: fixed;
+    background-color: #746ba8;
+} */
+
+.desktop .overlap-group {
+    height: 793px;
+    left: 16%;
+    position: absolute;
+    top: 10%;
+    width: 972px;
+    /* background-color: yellowgreen; */
+}
+
+.desktop .vinyl-cd {
+    height: 80vh;
+    left: 20%;
+    object-fit: cover;
+    position: fixed;
+    top: 10%;
+    width: auto;
+}
+
+.desktop .back-rect {
+    background-color: #171612;
+    border-radius: 15px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 660px;
+    left: 390px;
+    position: absolute;
+    top: 60px;
+    width: 560px;
+}
+.desktop .front-rect {
+    background-color: #171612;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 660px;
+    left: 378px;
+    position: absolute;
+    top: 50px;
+    width: 560px;
+}
+.desktop .edge-rect-tr {
+    border-radius: 5px;
+    background-color: #181712;
+    height: 50px;
+    left: 908px;
+    position: absolute;
+    top: 53px;
+    transform: rotate(40.73deg);
+    width: 30px;
+}
+.desktop .edge-rect-bl {
+    border-radius: 5px;
+    background-color: #181712;
+    height: 50px;
+    left: 389px;
+    position: absolute;
+    top: 668px;
+    transform: rotate(40.73deg);
+    width: 30px;
+}
+ .desktop .lightbox{
+    width:98.4%;
+    height:50px;
+    background-color: #fdfdf963;
+    position:absolute;
+    top:170px;
+    left:-1px;
+}
+.desktop .lightbox-1{
+    width:105%;
+    height:50px;
+    background-color:rgba(253, 232, 177, 0.19);
+    position:absolute;
+    top:650px;
+    left:1px;
+}
+.desktop .lightbox-2{
+    z-index: 1000;
+    height:98.4%;
+    width:50px;
+    background-color:rgba(253, 232, 177, 0.19);
+    position:absolute;
+    left:550px;
+    top:1px;
+}
+.desktop .button {
+    background-color: #fdb21b;
+    border-radius: 50px;
+    height: 53px;
+    /* left: 557px; */
+    margin:30px 50px;
+    position: absolute;
+    /* top: 577px; */
+    width: 221px;
+    border:none;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.desktop .button:hover{
+    background-color: #e79f0e
+}
+
+.desktop .name {
+    background-color: #fce7b1e4;
+    box-shadow: 2px 4px 4px #f5b53940;
+    display: block;
+    height: 50px;
+    position: relative;
+    width: 300px;
+    margin:3px;
+    border-radius: 10px;
+    font-size: 20px;
+    /* text-align: center; */
+    padding-left: 10px;
+    color:#30302c
+}
+
+.desktop .email-id {
+    height: 53px;
+    position: relative;
+    width: 271px;
+}
+
+.desktop .password {
+    background-color: #fce7b1;
+    height: 53px;
+    position: relative;
+    width: 271px;
+}
+
+.desktop .confirm-password {
+    background-color: #fce7b1;
+    height: 54px;
+    position: relative;
+    width: 271px;
+}
+
+.desktop .clickme {
+    color: #000000;
+    font-family: "Yeseva One-Regular", Helvetica;
+    font-size: 33px;
+    font-weight: 400;
+    left: 566px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 579px;
+    transform: rotate(-0.22deg);
+    width: 212px;
+}
+
+.desktop .shadow-horiz {
+    height: 32px;
+    left: 371px;
+    position: absolute;
+    top: 711px;
+    width: 594px;
+}
+
+.desktop .signup {
+    color: #feaa01;
+    font-family: "YesevaOne-Regular";
+    font-size: 70px;
+    font-weight: 400;
+    left: 533px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 3px 2px 2px #e3cea440;
+    top: 170px;
+    white-space: nowrap;
+    width: 288px;
+
+}
+
+.desktop .shadow-vertical {
+    height: 690px;
+    left: 933px;
+    position: absolute;
+    top: 21px;
+    width: 39px;
+}
+
+.desktop .screw {
+    background-color: #d9d9d9;
+    border-radius: 12.5px;
+    height: 25px;
+    left: 403px;
+    position: absolute;
+    top: 663px;
+    width: 25px;
+}
+
+.desktop .screw-2 {
+    background-color: #d9d9d9;
+    border-radius: 12.5px;
+    height: 25px;
+    left: 403px;
+    position: absolute;
+    top: 63px;
+    width: 25px;
+}
+
+.desktop .screw-3 {
+    background-color: #d9d9d9;
+    border-radius: 12.5px;
+    height: 25px;
+    left: 889px;
+    position: absolute;
+    top: 63px;
+    width: 25px;
+}
+
+.desktop .screw-4 {
+    background-color: #d9d9d9;
+    border-radius: 12.5px;
+    height: 25px;
+    left: 889px;
+    position: absolute;
+    top: 663px;
+    width: 25px;
+}
+
+.desktop .overlap {
+    /* height: 113px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px; */
+    height: 65px;
+    top:0;
+    width: 100vw;
+    background-color: rgb(255, 146, 3) ;
+    /* top:0px; */
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .desktop .navbar {
+    height: 101px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+} */
+
+.desktop .myusik {
+
+    color: #100e00;
+    position: relative;
+    /* text-align: center; */
+    font-family: "Lalezar-Regular", sans-serif;  
+    font-size: 45px;
+    top: 25px;
+    /* transform: translateX(-50%); */
+    line-height: normal;
+    white-space: nowrap;
+}
+
+@font-face{
+    font-family: "Lalezar-Regular";
+    src: url(/public/FONTS/Lalezar/Lalezar-Regular.ttf);
+}
