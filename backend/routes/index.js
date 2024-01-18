@@ -8,6 +8,7 @@ const userRoutes = require('./user');
 router.use('/login', loginRoutes);
 /* Comments route */
 router.use('/signup', signupRoutes);
+/* User route*/
 router.use('/user', userRoutes);
 
 module.exports = router;
