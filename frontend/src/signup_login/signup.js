@@ -1,21 +1,39 @@
 import React  from "react";
 import "./style.css";
 import vinylcd from './vinyl-cd.png'
-// import screw from './screw.svg'
+import { Link } from "react-router-dom";
 import navbar from './navbar.png'
 import { useState } from "react";
 
 export const Desktop = () => {
-    const handleSubmit=(e)=>{
-        console.log(e)
-        console.log('hi')
-        // preventDefault() 
-    }
-    const[name,nameHandler]=useState('')
-    const handleName=(e)=>{
-        nameHandler(e.target.value)
-        console.log(name)
-    }
+    const [formData, setFormData] = useState({
+        name:'',
+        email: '',
+        password: '',
+        conf_password: ''   
+          });
+      
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value
+        });
+      };
+      const handleSubmit=(e)=>{
+        e.preventDefault()
+        console.log(formData.name)
+        console.log(formData.email)
+        console.log(formData.password)
+        console.log(formData.conf_password)
+        // try:
+            //api call
+            // .then render homepage
+        // catch:
+            //error
+
+      }
+      
     return (
         <div className="desktop">
             <div className="div">
@@ -29,12 +47,24 @@ export const Desktop = () => {
                         <div className="lightbox"></div>
                         <div className="lightbox-1"></div>
                         <div className="lightbox-2"></div>
-                        <form type='submit' onSubmit={(event)=>event.preventDefault}>
-                        <input className="name" name='name' value={name} onChange={handleName }></input>
-                        <input type="email" className="name"></input>
-                        <input type="password" className="name"></input>
-                        <input type="password" className="name"></input>
-                        <button className="button" onClick={handleSubmit}>  CLICK ME !  </button>
+                        <form type='submit' onSubmit={handleSubmit}>
+                        <input className="name" name='name' value={formData.value} onChange={handleInputChange} placeholder="UserName"></input>
+                        <input type="email" className="name" name="email" value={formData.value} onChange={handleInputChange}placeholder="Email Id"></input>
+                        <input type="password" className="name" name="password" value={formData.value} onChange={handleInputChange}placeholder="Password"></input>
+                        <input type="password" className="name" name="conf_password" value={formData.value} onChange={handleInputChange}placeholder="Confirm Password"></input>
+                        <Link to="/login"style={{
+                                                      textDecoration: 'none',
+                                                      color: '#f39c12',  // Yellow color
+                                                      fontWeight: 'bold',
+                                                      fontSize: '18px',
+                                                      transition: 'color 0.3s',
+                                                      cursor: 'pointer',
+                                                      display: 'inline-block',
+                                                      marginRight: '10px',  
+                                                }}
+                                                onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                                                onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>Log In</Link>
+                        <button className="sbutton" onClick={handleSubmit}>  CLICK ME !  </button>
                         {/* <img className="email-id" alt="Email id" src="email-id.svg" /> */}
                         {/* <div className="password" /> */}
                         {/* <div className="confirm-password" /> */}

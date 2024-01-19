@@ -83,7 +83,7 @@
  .song {
     background-color: #88a9ad;
     height: 27px;
-
+    border-color: none;
     /* left: 22px; */
     position: absolute;
     top: 130px;
