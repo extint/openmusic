@@ -39,7 +39,7 @@ function App() {
           <Route path="/login" element={<Desktop1/>}/>
           <Route path="/signup" element={<Desktop/>}/>
           {/* <Route path={`/home/${user}`} element={<Homepage/>}/> */}
-          <Route path="/home" element={<Homepage/>}/>
+          <Route path="/home/:userName" element={<Homepage/>}/>
 
         </Routes>
       </Router>

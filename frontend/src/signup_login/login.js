@@ -3,10 +3,11 @@ import "./login.css";
 import vinylcd from './vinyl-cd.png'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from 'axios';
 
 export const Desktop1 = () => {
     const [formData, setFormData] = useState({
-        email: '',
+        userName: '',
         password: ''
       });
       
@@ -20,23 +21,25 @@ export const Desktop1 = () => {
       const navigate=useNavigate()
       const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate('/home')
-        // try {
-        //   // Make API call to backend for login validation
-        //   const response = await axios.post('/api/login', formData);
-    
-        //   // Assuming the backend responds with a success message
-        //   if (response.data.success) {
-        //     // Redirect to the "/home" route
-        //     navigate('/home');
-        //   } else {
-        //     // Handle unsuccessful login (e.g., show an error message)
-        //     console.log('Login failed');
-        //   }
-        // } catch (error) {
-        //   // Handle API call error
-        //   console.error('Error during login:', error);
-        // }
+        // navigate('/home')
+        let response;
+        try {
+          // Make API call to backend for login validation
+          const response = await axios.post('http://localhost:8000/login', formData);
+          console.log(response);
+          // Assuming the backend responds with a success message
+          if (response.status == 200) {
+            // Redirect to the "/home" route
+            navigate(`/home/${formData.userName}`);
+          } else {
+            // Handle unsuccessful login (e.g., show an error message)
+            console.log('Login failed');
+
+          }
+        } catch (error) {
+          // Handle API call error
+          console.error('Error during login:', error, response);
+        }
       };
 
       
@@ -56,7 +59,7 @@ export const Desktop1 = () => {
                         <div className="lightbox-2"></div>
                         <form type='submit' onSubmit={handleSubmit}>
                         {/* <input className="name" name='name' value={name} onChange={handleName }></input> */}
-                        <input type="email" className="name" name="email" value={formData.value} onChange={handleInputChange}></input>
+                        <input type="text" className="name" name="userName" value={formData.value} onChange={handleInputChange}></input>
                         <input type="password" className="name" name="password" value={formData.value} onChange={handleInputChange}></input>
                         {/* <input type="password" className="name"></input> */}
 

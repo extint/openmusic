@@ -5,8 +5,10 @@ const app = express();
 const mongoose = require("mongoose")
 const password = encodeURIComponent("semicolonizer");
 const dbURI = `mongodb+srv://opium:${password}@nodet.qugbjpj.mongodb.net/nodet?retryWrites=true&w=majority`;
+const cors = require('cors');
+app.use(cors({origin: 'http://localhost:3000'}));
 
-mongoose.connect(dbURI,{useNewUrlParser:true,usefieldTopology:true,useCreateIndex:true})
+mongoose.connect(dbURI,{useNewUrlParser:true})
     .then(() => {
         console.log('Mongoose connected successfully!');
     })
@@ -26,6 +28,6 @@ app.listen(8000, (err) => {
     if (err) {
         console.log(err);
     }
-    console.log("Server listening on port 3000");
+    console.log("Server listening on port 8000");
 });
 

@@ -12,8 +12,7 @@ module.exports.signup = async (req, res) => {
     const data = {
         userName: req.body.userName,
         password: req.body.password,
-        emailId: req.body.emailId,
-        profilePhotoFilePath: req.body.filepath//not sure kya aayega
+        emailId: req.body.emailId
     };
 
     const checking = await userCollection.findOne({ userName: data.userName });

@@ -1,9 +1,10 @@
 import React  from "react";
 import "./style.css";
 import vinylcd from './vinyl-cd.png'
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import navbar from './navbar.png'
 import { useState } from "react";
+import axios from 'axios';
 
 export const Desktop = () => {
     const [formData, setFormData] = useState({
@@ -20,19 +21,36 @@ export const Desktop = () => {
           [name]: value
         });
       };
-      const handleSubmit=(e)=>{
+      const navigate = useNavigate();
+      const handleSubmit= async (e)=>{
         e.preventDefault()
+        let response;
         console.log(formData.name)
         console.log(formData.email)
         console.log(formData.password)
         console.log(formData.conf_password)
-        // try:
-            //api call
-            // .then render homepage
-        // catch:
-            //error
-
-      }
+        if(formData.password != formData.conf_password){
+            console.error("passwords do not match");
+            return;
+        }
+        const form = {
+            userName: formData.name,
+            password: formData.password,
+            emailId: formData.email
+        }
+        try{
+            const response  = await axios.post('http://localhost:8000/signup', form);
+            if(response.status == 201){
+                navigate(`home/${formData.userName}`);
+            }
+            else{
+                console.log('Signup failed');
+            }
+        }
+        catch (error){
+            console.error('Error during login', error, response);
+        }
+      };
       
     return (
         <div className="desktop">

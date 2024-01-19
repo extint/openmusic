@@ -27,8 +27,9 @@ module.exports.getLikedSongs = async (req, res) => {
     const user = {
         userName: req.body.userName
     }
+    console.log("user", user);
     const check = await userCollection.findOne({ userName: user.userName });
-
+    console.log(check);
     if (!check) {
         return res.status(404).json({ message: "User does not exist" });
     }
