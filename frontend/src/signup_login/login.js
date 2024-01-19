@@ -5,47 +5,68 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const Desktop1 = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
+  const [formData, setFormData] = useState({
+    userName: '',
+    password: ''
+  });
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+  const navigate=useNavigate()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // navigate('/home')
+    let response;
+    try {
+      // Make API call to backend for login validation
+      const response = await axios.post('http://localhost:8000/login', formData);
+      console.log(response);
+      // Assuming the backend responds with a success message
+      if (response.status == 200) {
+        // Redirect to the "/home" route
+        navigate(`/home/${formData.userName}`);
+      } else {
+        // Handle unsuccessful login (e.g., show an error message)
+        console.log('Login failed');
+
+      }
+    } catch (error) {
+      // Handle API call error
+      console.error('Error during login:', error, response);
+    }
+  };
+      document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+      
+        const anchor = document.querySelector('.vinylcd');
+      
+        if (anchor) {
+          const centerX = (anchor.getBoundingClientRect().left+anchor.getBoundingClientRect().right)/2;
+          const centerY = (anchor.getBoundingClientRect().left+anchor.getBoundingClientRect().right)/2;
+          const base = x - centerX;
+          const height = centerY - y;
+          const theta = -Math.atan2(height, base) * (180 / Math.PI);
+      
+          const rotatingcd = document.querySelector('.vinylcd');
+          rotatingcd.style.transform = `rotate(${theta+20}deg)`;      
+          console.log(theta);
+        }
+      
+        document.removeEventListener('mousemove', handleSubmit);
       });
       
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value
-        });
-      };
-      const navigate=useNavigate()
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        navigate('/home')
-        // try {
-        //   // Make API call to backend for login validation
-        //   const response = await axios.post('/api/login', formData);
-    
-        //   // Assuming the backend responds with a success message
-        //   if (response.data.success) {
-        //     // Redirect to the "/home" route
-        //     navigate('/home');
-        //   } else {
-        //     // Handle unsuccessful login (e.g., show an error message)
-        //     console.log('Login failed');
-        //   }
-        // } catch (error) {
-        //   // Handle API call error
-        //   console.error('Error during login:', error);
-        // }
-      };
-
       
-
     return (
         <div className="desktop">
             <div className="div">
                 <div className="overlap-group">
-                    <img className="vinyl-cd" alt="Vinyl cd" src={vinylcd}/>
+                    <img className="vinylcd" alt="Vinyl cd" src={vinylcd}/>
                     {/* <div className="dynamic-name"></div> */}
                     {/* ("#dynamic-name").circleType({radius: 800}); */}
                     <div className="back-rect" />

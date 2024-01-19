@@ -30,12 +30,12 @@
     width: 972px;
 }
 
-.desktop .vinyl-cd {
-    height: 80vh;
-    left: 300px;
+.desktop .vinylcd {
+    height: 85vh;
+    left: 18%;
     object-fit: cover;
     position: fixed;
-    top: 150px;
+    top: 10%;
     width: auto;
 }
 
@@ -260,7 +260,7 @@
     height: 65px;
     width: 100vw;
     background-color: rgb(255, 146, 3) ;
-    top:0px;
+    top:-10px;
     position: fixed;
     display:flex;
     justify-content: center;

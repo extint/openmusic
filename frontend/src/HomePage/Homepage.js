@@ -51,16 +51,16 @@ const exampleArtists = {
 };
 const exampleRecent = {
   container: [
-    { songName: 'Recent Song 1' },
-    { songName: 'Recent Song 2' },
-    { songName: 'Recent Song 3' },
-    { songName: 'Recent Song 4' },
-    { songName: 'Recent Song 5' },
-    { songName: 'Recent Song 6' },
-    { songName: 'Recent Song 7' },
-    { songName: 'Recent Song 8' },
-    // Add more items as needed
+  { name: "Daily Mix 2" },
+  { name: "Daily Mix 6" },
+  { name: "Daily Mix 7" },
+  { name: "Daily Mix 2" },
+  { name: "Daily Mix 6" },
+  { name: "Daily Mix 7" },
+  { name: "Daily Mix 6" },
+  { name: "Daily Mix 7" },
   ],
+  // Add more items as needed
 };
 
 
@@ -69,7 +69,7 @@ const exampleRecent = {
       <Recent{...exampleRecent} />
       <MainHome{...exampleArtists}/>
       <Player/>
-      <Navbar />
+      {/* <Navbar /> */}
       <Sidebar />
     </div>
     // <div className="desktop">

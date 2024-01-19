@@ -2,7 +2,6 @@
     height: 80px;
     width: 1934px;
 }
-
 .box .player-bar {
     background-color: hsla(103, 27%, 15%, 0.762);
     height: 60px;
@@ -12,20 +11,6 @@
     top: 93.5%;
     width: 100vw;
 }
-
-/* .box .overlap-group {
-    background-color: rgb(9, 24, 24);
-    height: 60px;
-    left: 14px;
-    top: 906px;
-    width: 1750px;
-    margin-left: 60px;
-    position: fixed;
-    overflow-y: hidden;
-    border-radius: 10px;
-    box-shadow: 5 cyan;
-} */
-
 .box .overlap {
     height: 42px;
     left: 874px;
@@ -33,8 +18,6 @@
     top: 24px;
     width: 44px;
     display: flex;
-    /* align-items: center; */
-    /* justify-content:center ; */
 }
 
 .box .play-buttton {
@@ -63,7 +46,6 @@
 .box .fast-forward {
     height: 40px;
     left: 52%;
-    /* object-fit: cover; */
     position: absolute;
     top: 5px;
     width: 40px;
@@ -72,7 +54,6 @@
 .box .img {
     height: 40px;
     left: 40%;
-    /* object-fit: cover; */
     position: absolute;
     top: 5px;
     width: 40px;
