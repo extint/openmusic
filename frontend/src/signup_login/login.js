@@ -1,21 +1,46 @@
 import React  from "react";
 import "./login.css";
 import vinylcd from './vinyl-cd.png'
-// import screw from './screw.svg'
-import navbar from './navbar.png'
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const Desktop1 = () => {
-    const handleSubmit=(e)=>{
-        console.log(e)
-        console.log('hi')
-        // preventDefault() 
-    }
-    const[name,nameHandler]=useState('')
-    const handleName=(e)=>{
-        nameHandler(e.target.value)
-        console.log(name)
-    }
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+      });
+      
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value
+        });
+      };
+      const navigate=useNavigate()
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        navigate('/home')
+        // try {
+        //   // Make API call to backend for login validation
+        //   const response = await axios.post('/api/login', formData);
+    
+        //   // Assuming the backend responds with a success message
+        //   if (response.data.success) {
+        //     // Redirect to the "/home" route
+        //     navigate('/home');
+        //   } else {
+        //     // Handle unsuccessful login (e.g., show an error message)
+        //     console.log('Login failed');
+        //   }
+        // } catch (error) {
+        //   // Handle API call error
+        //   console.error('Error during login:', error);
+        // }
+      };
+
+      
+
     return (
         <div className="desktop">
             <div className="div">
@@ -29,15 +54,26 @@ export const Desktop1 = () => {
                         <div className="lightbox"></div>
                         <div className="lightbox-1"></div>
                         <div className="lightbox-2"></div>
-                        <form type='submit' onSubmit={(event)=>event.preventDefault}>
+                        <form type='submit' onSubmit={handleSubmit}>
                         {/* <input className="name" name='name' value={name} onChange={handleName }></input> */}
-                        <input type="email" className="name"></input>
-                        <input type="password" className="name"></input>
+                        <input type="email" className="name" name="email" value={formData.value} onChange={handleInputChange}></input>
+                        <input type="password" className="name" name="password" value={formData.value} onChange={handleInputChange}></input>
                         {/* <input type="password" className="name"></input> */}
-                        <button className="button" onClick={handleSubmit}>  CLICK ME !  </button>
-                        {/* <img className="email-id" alt="Email id" src="email-id.svg" /> */}
-                        {/* <div className="password" /> */}
-                        {/* <div className="confirm-password" /> */}
+
+                        <Link to="/signup"style={{
+                                                      textDecoration: 'none',
+                                                      color: '#f39c12',  // Yellow color
+                                                      fontWeight: 'bold',
+                                                      fontSize: '18px',
+                                                      transition: 'color 0.3s',
+                                                      cursor: 'pointer',
+                                                      display: 'inline-block',
+                                                      marginRight: '10px',  
+                                                }}
+                                                onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                                                onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>New User?</Link>
+
+                          <button className="button">  CLICK ME !  </button>
                         </form>
                     </div>
                     <div className="edge-rect-tr" />

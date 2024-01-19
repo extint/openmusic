@@ -5,36 +5,69 @@ import { MainHome } from "./MainHome/mainplaylists";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Player } from "./Player/player";
-// const PlayPause = () => {
-//   return(
-//     <div className="overlap-13">
-//     <div className="overlap-14">
-//       <img className="play-buttton" alt="Play button" src="play-buttton-1.png" />
-//       <img className="pause" alt="Pause" src="pause-1.png" />
-//     </div>
-//     <img className="fast-forward" alt="Fast forward" src="fast-forward-1.png" />
-//     <img className="fast-forward-2" alt="Fast forward" src="fast-forward-2.png" />
-//   </div>);
-//   };
+import { useEffect,useState } from "react";
 
-// export const Playlist = () => {
-//   return (
-//     <div className="box">
-//       <div className="playlist-board">
-//         <img className="model" alt="Model" src="model-1-10.png" />
-//         <div className="song" />
-//         <div className="song" />
-//       </div>
-//     </div>
-//   );
-// };
-
-
+// const parameter = { name: 'John', age: 25 };
 export const Homepage = () => {
+  const [userData, setUserData] = useState(null);
+useEffect(() => {
+  // Fetch user data from your Node.js backend
+  const fetchData = async () => {
+    try {
+      // const response = await axios.get('/api/user'); // Replace with your actual api endpoint
+      // setUserData(response.data);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
+const exampleArtists = {
+  name: 'Vedant',
+  container: [
+    { artistName: 'Artist 1', songName: 'Song 1' },
+    { artistName: 'Artist 2', songName: 'Song 2' },
+    { artistName: 'Artist 3', songName: 'Song 3' },
+    { artistName: 'Artist 4', songName: 'Song 2' },
+    { artistName: 'Artist 5', songName: 'Song 3' },
+    { artistName: 'Artist 6', songName: 'Song 2' },
+    { artistName: 'Artist 7', songName: 'Song 3' },
+    { artistName: 'Artist 8', songName: 'Song 2' },
+    { artistName: 'Artist 9', songName: 'Song 3' },
+    { artistName: 'Artist 10', songName: 'Song 2' },
+    { artistName: 'Artist 11', songName: 'Song 3' },
+    { artistName: 'Artist 12', songName: 'Song 2' },
+    { artistName: 'Artist 13', songName: 'Song 3' },
+    { artistName: 'Artist 14', songName: 'Song 2' },
+    { artistName: 'Artist 15', songName: 'Song 3' },
+    { artistName: 'Artist 16', songName: 'Song 2' },
+    { artistName: 'Artist 16', songName: 'Song 3' },
+    { artistName: 'Artist 17', songName: 'Song 2' },
+    
+    // Add more items as needed
+  ],
+};
+const exampleRecent = {
+  container: [
+    { songName: 'Recent Song 1' },
+    { songName: 'Recent Song 2' },
+    { songName: 'Recent Song 3' },
+    { songName: 'Recent Song 4' },
+    { songName: 'Recent Song 5' },
+    { songName: 'Recent Song 6' },
+    { songName: 'Recent Song 7' },
+    { songName: 'Recent Song 8' },
+    // Add more items as needed
+  ],
+};
+
+
   return (
     <div className="homepage-container">
-      <Recent />
-      <MainHome />
+      <Recent{...exampleRecent} />
+      <MainHome{...exampleArtists}/>
       <Player/>
       <Navbar />
       <Sidebar />

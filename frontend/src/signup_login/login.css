@@ -122,7 +122,7 @@
     border-radius: 50px;
     height: 53px;
     /* left: 557px; */
-    margin:30px 50px;
+    margin:40px -170px;
     position: absolute;
     /* top: 577px; */
     width: 221px;
@@ -196,7 +196,7 @@
     font-family: "YesevaOne-Regular";
     font-size: 70px;
     font-weight: 400;
-    left: 533px;
+    left: 510px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
