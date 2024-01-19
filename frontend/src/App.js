@@ -54,7 +54,6 @@ function App() {
             <Route path='/song:songName' element={<Song/>}></Route> 
             <Route path='/playlist:playlistName' element={<Playlist/>}></Route> 
             <Route path='/artist:artistName' element={<Artist/>}></Route> 
-            
         </Routes>
       </div>
     </Router>

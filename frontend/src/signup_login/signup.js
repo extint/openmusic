@@ -1,9 +1,10 @@
 import React from "react";
 import "./style.css";
 import vinylcd from './vinyl-cd.png'
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import navbar from './navbar.png'
 import { useState } from "react";
+import axios from 'axios';
 
 export const Desktop = () => {
     const [formData, setFormData] = useState({
@@ -19,16 +20,18 @@ export const Desktop = () => {
             ...formData,
             [name]: value
         });
+
     };
-    const navigate = useNavigate();
-    const handleSubmit = async (e) => {
+      const navigate = useNavigate();
+      const handleSubmit= async (e)=>{
         e.preventDefault()
         let response;
         console.log(formData.name)
         console.log(formData.email)
         console.log(formData.password)
         console.log(formData.conf_password)
-        if (formData.password != formData.conf_password) {
+
+        if(formData.password != formData.conf_password){
             console.error("passwords do not match");
             return;
         }

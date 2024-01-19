@@ -6,19 +6,29 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Player } from "./Player/player";
 import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
 // const parameter = { name: 'John', age: 25 };
 export const Homepage = () => {
-  const [userData, setUserData] = useState(null);
-useEffect(() => {
-  // Fetch user data from your Node.js backend
-  const fetchData = async () => {
+  const [userName, setUserName] = useState({
+    userName:''
+  })
+  
+  const params = useParams();
+  console.log("params", params);
+  useEffect(() => {
+    // Fetch user data from your Node.js backend
+    const fetchData = async () => {
     try {
-      // const response = await axios.get('/api/user'); // Replace with your actual api endpoint
-      // setUserData(response.data);
+      setUserName({ userName: params.userName});
+      console.log("payload", userName);
+      const response = await axios.get('http://localhost:8000/user/liked/get', userName);
+      console.log("res",response);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
+    
   };
 
   fetchData();

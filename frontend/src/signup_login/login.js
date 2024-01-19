@@ -3,6 +3,7 @@ import "./login.css";
 import vinylcd from './vinyl-cd.png'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from 'axios';
 
 export const Desktop1 = () => {
   const [formData, setFormData] = useState({
@@ -61,6 +62,7 @@ export const Desktop1 = () => {
         document.removeEventListener('mousemove', handleSubmit);
       });
       
+
       
     return (
         <div className="desktop">
@@ -77,7 +79,7 @@ export const Desktop1 = () => {
                         <div className="lightbox-2"></div>
                         <form type='submit' onSubmit={handleSubmit}>
                         {/* <input className="name" name='name' value={name} onChange={handleName }></input> */}
-                        <input type="email" className="name" name="email" value={formData.value} onChange={handleInputChange}></input>
+                        <input type="text" className="name" name="userName" value={formData.value} onChange={handleInputChange}></input>
                         <input type="password" className="name" name="password" value={formData.value} onChange={handleInputChange}></input>
                         {/* <input type="password" className="name"></input> */}
 
