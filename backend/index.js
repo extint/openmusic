@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 const password = encodeURIComponent("semicolonizer");
 const dbURI = `mongodb+srv://opium:${password}@nodet.qugbjpj.mongodb.net/nodet?retryWrites=true&w=majority`;
 
-mongoose.connect(dbURI)
+mongoose.connect(dbURI,{useNewUrlParser:true,usefieldTopology:true,useCreateIndex:true})
     .then(() => {
         console.log('Mongoose connected successfully!');
     })
