@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(require('./routes'))
 
-app.listen(3000, (err) => {
+app.listen(8000, (err) => {
     if (err) {
         console.log(err);
     }

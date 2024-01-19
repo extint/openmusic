@@ -1,0 +1,219 @@
+ /* {
+    height: 268px;
+    width: 1852px;
+    position: relative;
+  } */
+  
+.recent-tab {
+    background-color: rgb(9, 24, 24) ;
+    height: 268px;
+    left: 69px;
+    position: relative;
+    top: 43px;
+    width: 1760px;
+    border-radius:7px;
+  }
+    
+  .inner-recent-box {
+    height: 216px;
+    left: 60px;
+    position: relative;
+    top: 30px;
+    width: 1687px;
+  }
+  
+  .div {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    height: 86px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 329px;
+  }
+  
+  .text-wrapper {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    width: 301px;
+  }
+  
+  .overlap6 {
+    height: 96px;
+    left: 440px;
+    position: absolute;
+    top: 120px;
+    width: 329px;
+  }
+  
+  .laaabh-yatharth {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 32px;
+    width: 302px;
+  }
+  
+  
+  .text-wrapper-2 {
+    color: hsl(0, 74%, 5%);
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 2px;
+    width: 302px;
+  }
+  
+  .overlap-group-2 {
+    height: 86px;
+    left: 881px;
+    position: absolute;
+    top: 120px;
+    width: 397px;
+  }
+  
+  .recent-song {
+    height: 86px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 329px;
+  }
+  
+  .text-wrapper-3 {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 95px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0px;
+    width: 302px;
+  }
+  
+  .div-wrapper {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    height: 86px;
+    left: 0;
+    position: absolute;
+    top: 120px;
+    width: 329px;
+  }
+  
+  .text-wrapper-4 {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 23px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 302px;
+  }
+  
+  .overlap2 {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    height: 86px;
+    left: 440px;
+    position: absolute;
+    top: 0px;
+    width: 329px;
+  }
+  .overlap-6 {
+    background-color: rgb(0, 255, 255);
+    border-radius: 10px;
+    height: 86px;
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 329px;
+  }
+  
+  .text-wrapper-5 {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 1px;
+    width: 302px;
+  }
+  
+  .overlap-3 {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    height: 86px;
+    left: 1335px;
+    position: absolute;
+    top: 0;
+    width: 329px;
+  }
+  .overlap-5 {
+    background-color: rgb(0, 255, 255);
+    border-radius: 10px;
+    height: 86px;
+    left: 1335px;
+    position: absolute;
+    top: 120px;
+    width: 329px;
+  }
+  
+  .text-wrapper-6 {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 5px;
+    width: 302px;
+  }
+  
+  .overlap-4 {
+    height: 86px;
+    left: 881px;
+    position: absolute;
+    top: 0;
+    width: 332px;
+  }
+  
+  .text-wrapper-7 {
+    color: #000000;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 29px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 5px;
+    width: 302px;
+  }
+  

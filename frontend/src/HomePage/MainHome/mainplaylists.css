@@ -1,0 +1,102 @@
+.main-home {
+    background-color: #052b22;
+    height: 100vh;
+    position: relative;
+    top: 40px;
+    left:69px;
+    width: 1760px;
+    border:20px;
+}
+/* .div {   
+    background-color: #05102b;
+    height: 675px;
+    position: relative;
+    top: 100px;
+    left:-50px;
+    width: 1800px;
+} */
+ .text-wrapper {
+    color: #ffffff;
+    /* position: absolute; */
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 0px;
+    white-space: nowrap;
+    width: auto;
+}
+ .text-wrapper-2 {
+    color: #d9d9d9;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+    /* position: absolute; */
+    top: 300px;
+    white-space: nowrap;
+    width: 514px;
+}
+ .playlist-boards {
+    height: 481px;
+    left: 40px;
+    position: relative;
+    top: 50px;
+    width: 1700px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: space-between;
+    flex-wrap: wrap;
+}
+.playlist-boards::-webkit-scrollbar {
+    display: none;
+}
+ .playlist-board {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    height: 193px;
+    /* left: 547px; */
+    /* position: absolute; */
+    /* top: 4px; */
+    position: relative;
+    margin:40px;
+    width: 194px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+ .model {
+    height: 64px;
+    left: 68px;
+    object-fit: cover;
+    position: absolute;
+    top: 24px;
+    width: 64px;
+}
+ .song {
+    background-color: #88a9ad;
+    height: 27px;
+
+    /* left: 22px; */
+    position: absolute;
+    top: 130px;
+    width: 150px;
+    /* margin: 3px; */
+}
+ .song-2 {
+    background-color: #6e898d;
+    height: 27px;
+    /* left: 22px; */
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    /* margin:3px */
+}
+ 
