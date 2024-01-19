@@ -126,9 +126,3 @@ module.exports.removeFriend = async (req, res) => {
     }
 }
 
-module.exports.addToPlaylist = async (req, res) => {
-    const playlistName = req.body.playlistName;
-    const userName = req.body.userName;
-    const songId = req.body.songId;
-    // To do
-}
