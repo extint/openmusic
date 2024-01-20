@@ -25,10 +25,6 @@ export const Desktop = () => {
       const handleSubmit= async (e)=>{
         e.preventDefault()
         let response;
-        console.log(formData.name)
-        console.log(formData.email)
-        console.log(formData.password)
-        console.log(formData.conf_password)
         if(formData.password != formData.conf_password){
             console.error("passwords do not match");
             return;
@@ -39,9 +35,10 @@ export const Desktop = () => {
             emailId: formData.email
         }
         try{
-            const response  = await axios.post('http://localhost:8000/signup', form);
-            if(response.status == 201){
-                navigate(`home/${formData.userName}`);
+            const response  = await axios.post('http://localhost:8000/signup', form, {withCredentials: true});
+            console.log(response);
+            if(response.data.success){
+                navigate(`/home/${formData.name}`);
             }
             else{
                 console.log('Signup failed');

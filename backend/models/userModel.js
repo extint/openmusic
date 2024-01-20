@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 const UserSchema = new mongoose.Schema({
     userName: {
         type: String,
@@ -14,9 +14,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
-    profilePhotoFilePath: String,//not sure
-
     friendCount: Number,
     likedSongs: Array,
     recentSongs: Array,
@@ -26,6 +23,11 @@ const UserSchema = new mongoose.Schema({
 
 
 })
+
+
+UserSchema.pre("save", async function () {
+    this.password = await bcrypt.hash(this.password, 12);
+});
 
 const UserCollection = mongoose.model('user', UserSchema)
 

@@ -25,10 +25,10 @@ export const Desktop1 = () => {
         let response;
         try {
           // Make API call to backend for login validation
-          const response = await axios.post('http://localhost:8000/login', formData);
+          const response = await axios.post('http://localhost:8000/login', formData, {withCredentials: true});
           console.log(response);
           // Assuming the backend responds with a success message
-          if (response.status == 200) {
+          if (response.data.success) {
             // Redirect to the "/home" route
             navigate(`/home/${formData.userName}`);
           } else {

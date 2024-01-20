@@ -6,11 +6,14 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
 import { Player } from "./Player/player";
 import { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
+import { useCookies } from 'react-cookie';
+import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 
 // const parameter = { name: 'John', age: 25 };
 export const Homepage = () => {
+  const navigate = useNavigate();
+  const [cookies, removeCookie] = useCookies([]);
   const [userName, setUserName] = useState({
     userName:''
   })
@@ -21,10 +24,20 @@ export const Homepage = () => {
     // Fetch user data from your Node.js backend
     const fetchData = async () => {
     try {
-      setUserName({ userName: params.userName});
-      console.log("payload", userName);
-      const response = await axios.get('http://localhost:8000/user/liked/get', userName);
-      console.log("res",response);
+      if (!cookies.token) {
+        navigate("/login");
+      }
+      const { data } = await axios.post(
+        "http://localhost:8000/user/verify",
+        {},
+        { withCredentials: true }
+      );
+      const { success, user } = data;
+      if(!success){
+        navigate('/login');
+      }
+      setUserName(user);
+      console.log("user",user);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
