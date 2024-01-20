@@ -102,7 +102,7 @@ module.exports.login = async (req, res) => {
             user.password=undefined
 
             //send token to user cookie
-            const option ={
+            const options ={
                 expires:new Date(Date.now()+ 3*24*60*60*1000),
                 httpOnly:true,
             };
