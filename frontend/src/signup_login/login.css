@@ -15,7 +15,8 @@
     justify-content: center;
     align-items: center;
 }
-/* .desktop .dynamic-name{
+
+.desktop .dynamic-name{
     width:20px;
     height: 200px;
     left: 500px;
@@ -23,7 +24,7 @@
     top:410px;
     position: fixed;
     background-color: #746ba8;
-} */
+}
 
 .desktop .overlap-group {
     height: 793px;
@@ -31,18 +32,29 @@
     position: absolute;
     top: 10%;
     width: 972px;
-    /* background-color: yellowgreen; */
 }
 
 .desktop .vinylcd {
-    height: 85vh;
-    left: 18%;
+    height: 60vh;
+    left: 23%;
     object-fit: cover;
     position: fixed;
-    top: 10%;
-    width: auto;
-    
+    top: 20%;
+    width: 60vh;
+    animation: defaultRotate 1s infinite 
+
 }
+@keyframes defaultRotate {
+    0% {transform: rotate('0deg');}
+    100% {transform: rotate('360deg');}
+}
+/* .transitioned {
+    background-color: #000000;
+    animation: switchingPage 5s ;
+    transform: translateX(-51%);
+    z-index: 1;
+} */
+
 
 .desktop .back-rect {
     background-color: #171612;
@@ -72,6 +84,8 @@
     position: absolute;
     top: 50px;
     width: 560px;
+    box-shadow: -3px 0px 10px 1px rgba(26, 26, 26, 0.318)
+
 }
 .desktop .edge-rect-tr {
     border-radius: 5px;
@@ -130,6 +144,7 @@
     border:none;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
 }
 .desktop .button:hover{
     background-color: #e79f0e
@@ -182,6 +197,7 @@
     top: 579px;
     transform: rotate(-0.22deg);
     width: 212px;
+    cursor: pointer;
 }
 
 .desktop .shadow-horiz {
@@ -299,3 +315,19 @@
     font-family: "Lalezar-Regular";
     src: url(/public/FONTS/Lalezar/Lalezar-Regular.ttf);
 }
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+
+/* #circular-text {
+    background-color: #000;
+  position: relative;
+  background: #895151;
+  color: #000;
+  border-radius: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+#circular-text span {
+  position: absolute;
+  transform-origin: top left;
+} */

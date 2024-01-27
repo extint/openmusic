@@ -24,7 +24,7 @@
 
 .desktop .overlap-group {
     height: 793px;
-    left: 121px;
+    left: 80%;
     position: absolute;
     top: 158px;
     width: 972px;
@@ -35,7 +35,7 @@
     left: 18%;
     object-fit: cover;
     position: fixed;
-    top: 10%;
+    top: 7%;
     width: auto;
 }
 
@@ -267,7 +267,13 @@
     align-items: center;
     text-align: center;
 }
-
+.desktop .signup-overlap-group {
+    height: 793px;
+    left: 16%;
+    position: absolute;
+    top: 10%;
+    width: 972px;
+}
 /* .desktop .navbar {
     height: 101px;
     left: 0;

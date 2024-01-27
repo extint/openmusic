@@ -30,7 +30,7 @@ export const Desktop = () => {
         console.log(formData.email)
         console.log(formData.password)
         console.log(formData.conf_password)
-        if(formData.password != formData.conf_password){
+        if(formData.password !== formData.conf_password){
             console.error("passwords do not match");
             return;
         }
@@ -43,7 +43,12 @@ export const Desktop = () => {
             const response  = await axios.post('http://localhost:8000/signup', form, {withCredentials: true});
             console.log(response);
             if(response.data.success){
-                navigate(`/home/${formData.name}`);
+                const cd = document.querySelector('.vinylcd');
+                cd.style.transform = 'translateX(+47%)';
+                cd.style.transition = 'transform 900ms '
+                setTimeout(()=>{
+                navigate(`/home/${formData.name}`); 
+                },1300)
             }
             else {
                 console.log('Signup failed');
@@ -74,14 +79,29 @@ export const Desktop = () => {
             console.log(theta);
         }
     });
+    const switchPage = () => {
+        const cd = document.querySelector('.vinylcd');
+        const blackBox = document.querySelector('.overlap-group')
+        if (cd) {
+            cd.style.transform = 'translateX(-55%)';
+            cd.style.transition = 'transform 500ms '
+            cd.classList.add('transitioned');
+            setTimeout(() => {
+                cd.style.transform = 'translateX(0%)';
+                cd.style.transition = 'transform 500ms';
+            }, 800)
+            setTimeout(() => {
+                navigate('/login')
+            }, 1200);
+            cd.onclick = null;
+        }
+    };
 
     return (
         <div className="desktop">
             <div className="div">
-                <div className="overlap-group">
+                <div className="signup-overlap-group">
                     <img className="vinylcd" alt="Vinyl cd" src={vinylcd} />
-                    {/* <div className="dynamic-name"></div> */}
-                    {/* ("#dynamic-name").circleType({radius: 800}); */}
                     <div className="back-rect" />
                     <div className="edge-rect-bl" />
                     <div className="front-rect">
@@ -93,9 +113,9 @@ export const Desktop = () => {
                             <input type="email" className="name" name="email" value={formData.value} onChange={handleInputChange} placeholder="Email Id"></input>
                             <input type="password" className="name" name="password" value={formData.value} onChange={handleInputChange} placeholder="Password"></input>
                             <input type="password" className="name" name="conf_password" value={formData.value} onChange={handleInputChange} placeholder="Confirm Password"></input>
-                            <Link to="/login" style={{
+                            <div style={{
                                 textDecoration: 'none',
-                                color: '#f39c12',  // Yellow color
+                                color: '#f39c12',
                                 fontWeight: 'bold',
                                 fontSize: '18px',
                                 transition: 'color 0.3s',
@@ -104,26 +124,19 @@ export const Desktop = () => {
                                 marginRight: '10px',
                             }}
                                 onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
-                                onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>Log In</Link>
-                            <button className="sbutton" onClick={handleSubmit}>  CLICK ME !  </button>
-                            {/* <img className="email-id" alt="Email id" src="email-id.svg" /> */}
-                            {/* <div className="password" /> */}
-                            {/* <div className="confirm-password" /> */}
+                                onMouseLeave={(e) => e.target.style.textDecoration = 'none'} onClick={switchPage}>Log In</div>
+                            <button className="sbutton">  CLICK ME !  </button>
                         </form>
                     </div>
                     <div className="edge-rect-tr" />
-                    {/* <div className="button" /> */}
-                    {/* <div className="clickme"> </div> */}
-                    {/* <img className="shadow-horiz" alt="Shadow horiz" src="shadow-horiz.svg" /> */}
+
                     <div className="signup">Sign Up</div>
-                    {/* <img className="shadow-vertical" alt="Shadow vertical" src="shadow-vertical.svg" /> */}
                     <div className="screw" />
                     <div className="screw-2" />
                     <div className="screw-3" />
                     <div className="screw-4" />
                 </div>
                 <div className="overlap">
-                    {/* <img className="navbar" alt="Navbar" src={navbar} /> */}
                     <p className="myusik">MYUSIK</p>
                 </div>
             </div>
