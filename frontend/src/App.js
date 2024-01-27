@@ -43,7 +43,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Desktop1 />} />
           <Route path="/signup" element={<Desktop />} />
-          <Route path="/home:userName" element={
+          <Route path="/home" element={
             <div className="Main">
               <Homepage />
               <Navbar />

@@ -10,9 +10,26 @@
   justify-content: center;
   align-items: center;
 }
+.blur{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 550px;
+  border-radius: 100%;
+  background-image: linear-gradient(rgb(22, 42, 9)0%, #1a3313);
+  filter: blur(150px);
+  transition: all 450ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  /* z-index: -1; */
+}
 
 .inner-recent-box {
-  background-color:  #091818;
+  background-color:  #09181800;
   height: 216px;
   /* left: 60px; */
   position: relative;
@@ -26,7 +43,7 @@
 }
 
 .overlap {
-  background-color: #d9d9d9;
+  background-color:rgba(115, 202, 202, 0.443);
   border-radius: 10px;
   height: 86px;
   width: 329px;
@@ -36,6 +53,21 @@
   align-items: center;
   overflow-wrap: break-word; 
   text-decoration: none;
+  text-decoration: none;
+  transition: ease-out 2000ms;
+}
+.overlap:hover{
+  /* background-color:  rgba(222, 227, 195, 0.326); */
+  /* transition:1500ms; */
+  /* box-shadow: #1f201e; */
+  animation: glow 2s ;
+  transition: ease-out 2000ms;
+}
+@keyframes glow{
+  0%{}
+  100%{
+  background-color:  rgba(223, 226, 205, 0.326);
+  }
 }
 
 .recent-text-wrapper {
