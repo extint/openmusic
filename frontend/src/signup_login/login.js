@@ -35,20 +35,40 @@ export const Desktop1 = () => {
             // Handle unsuccessful login (e.g., show an error message)
             console.log('Login failed');
 
-          }
-        } catch (error) {
-          // Handle API call error
-          console.error('Error during login:', error, response);
+      }
+    } catch (error) {
+      // Handle API call error
+      console.error('Error during login:', error, response);
+    }
+  };
+      document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+      
+        const anchor = document.querySelector('.vinylcd');
+      
+        if (anchor) {
+          const centerX = (anchor.getBoundingClientRect().left+anchor.getBoundingClientRect().right)/2;
+          const centerY = (anchor.getBoundingClientRect().left+anchor.getBoundingClientRect().right)/2;
+          const base = x - centerX;
+          const height = centerY - y;
+          const theta = -Math.atan2(height, base) * (180 / Math.PI);
+      
+          const rotatingcd = document.querySelector('.vinylcd');
+          rotatingcd.style.transform = `rotate(${theta+20}deg)`;      
+          console.log(theta);
         }
-      };
-
+      
+        document.removeEventListener('mousemove', handleSubmit);
+      });
       
 
+      
     return (
         <div className="desktop">
             <div className="div">
                 <div className="overlap-group">
-                    <img className="vinyl-cd" alt="Vinyl cd" src={vinylcd}/>
+                    <img className="vinylcd" alt="Vinyl cd" src={vinylcd}/>
                     {/* <div className="dynamic-name"></div> */}
                     {/* ("#dynamic-name").circleType({radius: 800}); */}
                     <div className="back-rect" />
