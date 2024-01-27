@@ -30,7 +30,6 @@ export const Desktop = () => {
         console.log(formData.email)
         console.log(formData.password)
         console.log(formData.conf_password)
-
         if(formData.password != formData.conf_password){
             console.error("passwords do not match");
             return;
@@ -40,10 +39,11 @@ export const Desktop = () => {
             password: formData.password,
             emailId: formData.email
         }
-        try {
-            const response = await axios.post('http://localhost:8000/signup', form);
-            if (response.status == 201) {
-                navigate(`home/${formData.userName}`);
+        try{
+            const response  = await axios.post('http://localhost:8000/signup', form, {withCredentials: true});
+            console.log(response);
+            if(response.data.success){
+                navigate(`/home/${formData.name}`);
             }
             else {
                 console.log('Signup failed');

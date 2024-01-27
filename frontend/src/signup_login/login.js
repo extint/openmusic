@@ -6,34 +6,34 @@ import { useState } from "react";
 import axios from 'axios';
 
 export const Desktop1 = () => {
-  const [formData, setFormData] = useState({
-    userName: '',
-    password: ''
-  });
-  
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-  const navigate=useNavigate()
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // navigate('/home')
-    let response;
-    try {
-      // Make API call to backend for login validation
-      const response = await axios.post('http://localhost:8000/login', formData);
-      console.log(response);
-      // Assuming the backend responds with a success message
-      if (response.status == 200) {
-        // Redirect to the "/home" route
-        navigate(`/home/${formData.userName}`);
-      } else {
-        // Handle unsuccessful login (e.g., show an error message)
-        console.log('Login failed');
+    const [formData, setFormData] = useState({
+        userName: '',
+        password: ''
+      });
+      
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value
+        });
+      };
+      const navigate=useNavigate()
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        // navigate('/home')
+        let response;
+        try {
+          // Make API call to backend for login validation
+          const response = await axios.post('http://localhost:8000/login', formData, {withCredentials: true});
+          console.log(response);
+          // Assuming the backend responds with a success message
+          if (response.data.success) {
+            // Redirect to the "/home" route
+            navigate(`/home/${formData.userName}`);
+          } else {
+            // Handle unsuccessful login (e.g., show an error message)
+            console.log('Login failed');
 
       }
     } catch (error) {

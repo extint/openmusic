@@ -4,6 +4,8 @@ const router = express.Router();
 
 const userController = require('../controllers/userController');
 
+const authController = require('../controllers/authController');
+
 router.route('/friend/add').post(userController.addFriend);
 
 // router.route('/friend/get').get(userController.getFriendsList); // To do
@@ -11,6 +13,8 @@ router.route('/friend/add').post(userController.addFriend);
 router.route('/friend/delete').delete(userController.removeFriend); 
 
 // router.route('/').get(userController.getUserDetails); // To do
+
+router.route('/verify').post(authController.verifytoken);
 
 router.route('/liked/add').post(userController.addLikedSong);
 
