@@ -7,7 +7,7 @@ export const Navbar = () => {
       <div className="navbox">
         <div className="text-wrapper">MYUSIK</div>
         <Link to="/user">
-          <img className="acc-img" src="/frontend/public/user.png" alt="Account" />
+          <img className="acc-img" src="./user.png" alt="Account" />
         </Link>
       </div>
     );

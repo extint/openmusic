@@ -3,12 +3,12 @@
     width: 1934px;
 }
 .box .player-bar {
-    background-color: hsla(103, 27%, 15%, 0.762);
-    height: 60px;
+    background-color: #23424296;
+    height: 65px;
     margin-left: 68px;
     margin-bottom: 10px;
     position: fixed;
-    top: 93.5%;
+    top: 94.5%;
     width: 100vw;
 }
 .box .overlap {

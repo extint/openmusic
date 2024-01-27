@@ -28,7 +28,7 @@
   
 .libraryandsearch{
     /* position: absolute; */
-    background-color: rgb(84, 102, 100);
+    background-color: rgba(138, 181, 176, 0.381);
     height:149px;
     width:65px;
     border-radius: 10px;
@@ -51,12 +51,12 @@
     align-items: center;
 } */
 .side-artist-box {
-    height: 700px;
+    height: 730px;
     /* left: -100px; */
     position: relative;
     overflow:scroll;
     width: 65px;
-    background-color: rgb(106, 130, 130);
+    background-color: rgba(138, 181, 176, 0.381);
     justify-content: center;
     align-items: center;
     display: flex;
@@ -77,7 +77,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    background-color: rgba(106, 130, 130, 0);
 }
 
 /* .graybox1:hover{
@@ -122,7 +122,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    background-color: rgba(106, 130, 130, 0);
 }
 .graybox3{
     position: absolute;
@@ -132,7 +132,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox4{
     position: absolute;
@@ -142,7 +142,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox5{
     position: absolute;
@@ -152,7 +152,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox6{
     position: absolute;
@@ -162,7 +162,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox7{
     position: absolute;
@@ -173,7 +173,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox8{
     position: absolute;
@@ -183,7 +183,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox9{
     position: absolute;
@@ -193,7 +193,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox10{
     position: absolute;
@@ -203,7 +203,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox11{
     position: absolute;
@@ -213,7 +213,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox12{
     position: absolute;
@@ -223,7 +223,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .graybox13{
     position: absolute;
@@ -233,7 +233,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(106, 130, 130);
+    /* background-color: rgb(106, 130, 130); */
 }
 .model1{
     left:5px;

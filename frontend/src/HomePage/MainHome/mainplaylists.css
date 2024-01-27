@@ -85,9 +85,9 @@
     animation: scrolling 10s infinite
 }
 @keyframes scrolling{
-    0%{translate:0%}
-    50%{translate: 100%;}
-    100%{left: 0%;}
+    0%{translate:-10%}
+    50%{translate: 10%;}
+    100%{translate: -10%;}
 }
 .song-board:hover {
     transform: scale(1.05);
@@ -98,7 +98,7 @@
 }
 
 .playlist-board {
-    background-color: #d9d9d9;
+    background-color: rgba(58, 106, 88, 0.632);
     border-radius: 5px;
     height: 193px;
     margin: 40px;

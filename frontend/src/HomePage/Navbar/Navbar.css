@@ -33,10 +33,12 @@
 } */
 .acc-img {
     position: relative;
-    top: 5px; 
-    left: 10px; 
-    width: 30px; 
-    height: 30px; 
+    top: 3px; 
+    left: 3000%; 
+    width: 27px; 
+    height: 27px; 
+    background-color: rgba(0, 255, 255, 0.241);
+    border-radius: 50%;
   }
   
 @font-face{

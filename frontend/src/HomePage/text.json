@@ -287,42 +287,6 @@
                 "type": "single",
                 "albumId": "6NcI39WPu4kY6Tul11nhSv"
             }
-        },
-        {
-            "name": "Daylight",
-            "songId": "1odExI7RdWc4BT515LTAwj",
-            "duration_ms": 212953,
-            "images": [
-                {
-                    "url": "https://i.scdn.co/image/ab67616d0000b27395ca6a9b4083a86c149934ae",
-                    "height": 640,
-                    "width": 640,
-                    "_id": "65b3e31d0f255c5a3857e8fc"
-                },
-                {
-                    "url": "https://i.scdn.co/image/ab67616d00001e0295ca6a9b4083a86c149934ae",
-                    "height": 300,
-                    "width": 300,
-                    "_id": "65b3e31d0f255c5a3857e8fd"
-                },
-                {
-                    "url": "https://i.scdn.co/image/ab67616d0000485195ca6a9b4083a86c149934ae",
-                    "height": 64,
-                    "width": 64,
-                    "_id": "65b3e31d0f255c5a3857e8fe"
-                }
-            ],
-            "artists": [
-                {
-                    "name": "David Kushner",
-                    "artistId": "33NVpKoXjItPwUJTMZIOiY",
-                    "_id": "65b3e31d0f255c5a3857e8ff"
-                }
-            ],
-            "album": {
-                "type": "single",
-                "albumId": "6NcI39WPu4kY6Tul11nhSv"
-            }
         }
     ],
     "suggestedSongs": [
