@@ -1,13 +1,16 @@
 import React from "react";
 import "./Navbar.css";
+import {Link} from "react-router-dom";
 
 export const Navbar = () => {
     return (
-        <div className="navbox" >
-            {/* <img className="Navbar" alt="Navbar" src="navbar.png" /> */}
-            {/* <div className="topbar" /> */}
-            <div className="text-wrapper" >MYUSIK</div>
-        </div>
-    );  
-};
+      <div className="navbox">
+        <div className="text-wrapper">MYUSIK</div>
+        <Link to="/user">
+          <img className="acc-img" src="./user.png" alt="Account" />
+        </Link>
+      </div>
+    );
+  };
+  
 
