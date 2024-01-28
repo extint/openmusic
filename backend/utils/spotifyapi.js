@@ -36,7 +36,7 @@ function setEnvValue(key, value) {
     fs.writeFileSync(".env", ENV_VARS.join(os.EOL));
 }
 
-module.exports.refreshToken = () => {
+module.exports.refreshToken = async () => {
     console.log("Token refreshing...");
     const timeOfGenerationSeconds = Math.floor(Date.now() / 1000);
     axios.post('https://accounts.spotify.com/api/token', {
@@ -65,7 +65,7 @@ module.exports.getTracks = async (ids) => {
     if(!Array.isArray(ids) || !ids.length) return [];
     let currTime = Math.floor(Date.now() / 1000);
     if ((currTime - genTime) >= 3600) {
-        this.refreshToken();
+        await this.refreshToken();
     }
     let nonexistent_ids = [];
     console.log("ids are ", ids);
