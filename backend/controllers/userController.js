@@ -64,12 +64,12 @@ module.exports.unlikeSong = async (req, res) => {
 module.exports.getUserDetails = async (req, res) => {
     const userName = req.body.userName;
 
-    const check = await userCollection.findOne({userName : userName});
+    const check = await userCollection.findOne({ userName: userName });
 
-    if(!check){
-        return res.status(404).json({message: "User does not exist"});
+    if (!check) {
+        return res.status(404).json({ message: "User does not exist" });
     }
-    else{
+    else {
         const user = {
             userName: check.userName,
             emailId: check.emailId,
@@ -77,27 +77,27 @@ module.exports.getUserDetails = async (req, res) => {
             //to complete
         }
 
-        return res.status(200).json({user: user});
+        return res.status(200).json({ user: user });
     }
 }
 
-module.exports.addFriend = async (req,res) => {
+module.exports.addFriend = async (req, res) => {
     const user = req.body.userName;
     const friend = req.body.friendName;
 
-    const check1 = await userCollection.findOne({userName: user});
-    const check2 = await userCollection.findOne({userName: friend});
+    const check1 = await userCollection.findOne({ userName: user });
+    const check2 = await userCollection.findOne({ userName: friend });
 
-    if(!check1 || !check2){
-        return res.status(404).json({message: "User does not exist"});
+    if (!check1 || !check2) {
+        return res.status(404).json({ message: "User does not exist" });
     }
-    else{
-        userCollection.updateOne({userName: user}, {$push: {friends: friend}})
-        .then(()=> { return res.status(200).json({message: "Successfully added friend"})})
-        .catch((err)=>{ 
-            console.log(err); 
-            return res.status(500).json({message: "Internal Server Error"})
-        });
+    else {
+        userCollection.updateOne({ userName: user }, { $push: { friends: friend } })
+            .then(() => { return res.status(200).json({ message: "Successfully added friend" }) })
+            .catch((err) => {
+                console.log(err);
+                return res.status(500).json({ message: "Internal Server Error" })
+            });
     }
 }
 
@@ -105,25 +105,117 @@ module.exports.removeFriend = async (req, res) => {
     const user = req.body.userName;
     const friend = req.body.friendName;
 
-    const check1 = await userCollection.findOne({userName: user});
-    const check2 = await userCollection.findOne({userName: friend});
+    const check1 = await userCollection.findOne({ userName: user });
+    const check2 = await userCollection.findOne({ userName: friend });
 
-    if(!check1 || !check2){
-        return res.status(404).json({message: "User does not exist"});
+    if (!check1 || !check2) {
+        return res.status(404).json({ message: "User does not exist" });
     }
-    else{
-        if(check1.friends.includes(friend)){
-            userCollection.updateOne({userName: user}, {$pullAll: {friends: [friend]}})
-            .then(()=> { return res.status(200).json({message: "Successfully removed friend"})})
-            .catch((err)=>{ 
-                console.log(err); 
-                return res.status(500).json({message: "Internal Server Error"})
-            });
+    else {
+        if (check1.friends.includes(friend)) {
+            userCollection.updateOne({ userName: user }, { $pullAll: { friends: [friend] } })
+                .then(() => { return res.status(200).json({ message: "Successfully removed friend" }) })
+                .catch((err) => {
+                    console.log(err);
+                    return res.status(500).json({ message: "Internal Server Error" })
+                });
 
         }
-        else{
-            return res.status(404).json({message: "Given users are not friends"});
+        else {
+            return res.status(404).json({ message: "Given users are not friends" });
         }
     }
 }
 
+module.exports.followArtist = async (req, res) => {
+    const user = req.body.userName;
+    const artistId = req.body.artistId;
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "No such user" });
+    }
+    else {
+        if (check1.artistsFollowed.includes(artistId)) {
+            return res.status(400).json({ message: "Already following artist" });
+        }
+        else {
+            await userCollection.updateOne({ userName: user }, { $push: { artistsFollowed: artistId } });
+            return res.status(200).json({ message: "Successfully followed artist" });
+        }
+    }
+}
+
+module.exports.unfollowArtist = async (req, res) => {
+    const user = req.body.userName;
+    const artistId = req.body.artistId;
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "No such user" });
+    }
+    else {
+        if (check1.artistsFollowed.includes(artistId)) {
+            await userCollection.updateOne({ userName: user }, { $pullAll: { artistsFollowed: [artistId] } });
+            return res.status(200).json({ message: "Successfully unfollowed artist" });
+        }
+        else {
+            return res.status(400).json({ message: "Not following artist" })
+        }
+    }
+}
+
+module.exports.addRecentSong = async (req, res) => {
+    const user = req.body.userName;
+    const songId = req.body.songId;
+
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    for (const song of check1.recentSongs) {
+        if (song.songId == songId) {
+            return res.status(400).json({ message: "Song is already recent" });
+        }
+    }
+    let popper = {
+        songId: "",
+        timeAdded: Infinity
+    }
+    let pusher = {
+        songId: songId,
+        timeAdded: Math.floor(Date.now() / 1000)
+    }
+    if (check1.recentSongs.length == 5) {
+        for(const song of check1.recentSongs){
+            if(song.timeAdded < popper.timeAdded){
+                popper = song;
+            }
+        }
+        const res1 = await userCollection.updateOne({userName: user}, {$pullAll :{recentSongs: [popper]}});
+        console.log("first delete", res1);
+        pusher.timeAdded = Math.floor(Date.now() / 1000);
+        const res2 = await userCollection.updateOne({userName: user}, {$push: {recentSongs: pusher}});
+        console.log("pushed", res2);
+        return res.status(200).json({message: "Succesfully added recent song"});
+    }
+    else {
+        const newrecent = {
+            songId: songId,
+            timeAdded: Math.floor(Date.now() / 1000)
+        }
+        await userCollection.updateOne({ userName: user }, { $push: { recentSongs:  newrecent}});
+        return res.status(200).json({message: "Successfully added recent song"});
+    }
+
+}
+
+module.exports.clearRecentSongs = async (req, res) => {
+    const user = req.body.userName;
+    const check1 = await userCollection.findOne({userName: user});
+    if(!check1){
+        return res.status(404).json({message: "No such user"});
+    }
+    else{
+        await userCollection.updateOne({userName: user}, {$set: {recentSongs: []}});
+        return res.status(200).json({message: "Successfully cleared recent songs"});
+    }
+}

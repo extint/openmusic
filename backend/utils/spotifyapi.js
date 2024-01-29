@@ -3,6 +3,7 @@ const axios = require('axios');
 const fs = require("fs");
 const os = require("os");
 const songCollection = require('../models/songModel');
+const artistCollection = require("../models/artistModel");
 const spotify_token = process.env.SPOTIFY_TOKEN;
 const client = process.env.SPOTIFY_CLIENT;
 const secret = process.env.SPOTIFY_SECRET;
@@ -84,7 +85,7 @@ module.exports.getTracks = async (ids) => {
                 artists:check.artists,
                 album: check.album
             }
-            console.log(song);
+            // console.log(song);
             out.push(song);
         }
     }
@@ -93,7 +94,7 @@ module.exports.getTracks = async (ids) => {
     }
     commaseparatedids = nonexistent_ids.join(',');
     // console.log(commaseparatedids);
-    console.log(spotify_token, "token2");
+    // console.log(spotify_token, "token2");
     res = await axios.get("https://api.spotify.com/v1/tracks", {
         params: { ids: commaseparatedids },
         headers: {
@@ -102,10 +103,11 @@ module.exports.getTracks = async (ids) => {
         }
     }
     )
+    console.log(res);
     // console.log(res.data.tracks);
     const data = res.data.tracks;
     for (const track of data) {
-        // console.log(track);
+        console.log(track);
         const _artists = [];
         // console.log("Artists",track.artists);
         for (const artist of track.artists) {
@@ -141,4 +143,69 @@ module.exports.getTracks = async (ids) => {
     }
     return out;
 
+}
+
+module.exports.getArtists = async (ids) => {
+    if(!Array.isArray(ids) || !ids.length) return [];
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - genTime) >= 3600) {
+        await this.refreshToken();
+    }
+    let nonexistent_ids = [];
+    console.log("ids are ", ids);
+    let out = [];
+    for (const id of ids) {
+        const check = await artistCollection.findOne({ artistId: id });
+        if (!check) {
+            nonexistent_ids.push(id);
+        }
+        else {
+            const artist = {
+                name: check.name,
+                artistId: check.artistId,
+                followerCount: check.followerCount,
+                images: check.images,
+                genres:check.genres,
+            }
+            console.log(artist);
+            out.push(artist);
+        }
+    }
+    if(!Array.isArray(nonexistent_ids) || !nonexistent_ids.length){
+        return out;
+    }
+    commaseparatedids = nonexistent_ids.join(',');
+    console.log(commaseparatedids);
+    console.log(spotify_token, "token2");
+    res = await axios.get("https://api.spotify.com/v1/artists", {
+        params: { ids: commaseparatedids },
+        headers: {
+            Authorization: `Bearer ${spotify_token}`,
+            'Content-Type': "application/json"
+        }
+    }
+    )
+    console.log(res);
+    const data = res.data.artists;
+    for (const artist of data) {
+        // console.log(track);
+        // console.log("Artists",track.artists);
+        const info = {
+            name: artist.name,
+            artistId: artist.id,
+            followerCount: artist.followers.total,
+            genres: artist.genres,
+            images: artist.images
+        }
+        try {
+            const res = await artistCollection.create(info);
+            console.log(res, "success");
+            out.push(res);
+        }
+        catch (err) {
+            console.log(err);
+            return;
+        }
+        
+    }
 }

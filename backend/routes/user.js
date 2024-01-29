@@ -22,4 +22,12 @@ router.route('/liked/get').get(userController.getLikedSongs);
 
 router.route('/liked/delete').delete(userController.unlikeSong);
 
+router.route('/followed/add').post(userController.followArtist);
+
+router.route('/followed/remove').delete(userController.unfollowArtist);
+
+router.route('/recent/add').post(userController.addRecentSong);
+
+router.route('/recent/clear').delete(userController.clearRecentSongs);
+
 module.exports = router;
