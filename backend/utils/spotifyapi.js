@@ -4,6 +4,8 @@ const fs = require("fs");
 const os = require("os");
 const songCollection = require('../models/songModel');
 const artistCollection = require("../models/artistModel");
+const userCollection = require('../models/userModel');
+const { shuffleArray, saveTracks } = require("./utils");
 const spotify_token = process.env.SPOTIFY_TOKEN;
 const client = process.env.SPOTIFY_CLIENT;
 const secret = process.env.SPOTIFY_SECRET;
@@ -208,4 +210,33 @@ module.exports.getArtists = async (ids) => {
         }
         
     }
+}
+
+module.exports.getRecommendedSongs = async (uname) => {
+    const user = await userCollection.findOne({userName: uname});
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - genTime) >= 3600) {
+        await this.refreshToken();
+    }
+    if(!user){
+        console.log("No such user");
+        return []
+    }
+    // let bestSongs = user.likedSongs.concat(user.recentSongs);
+    let seed = user.likedSongs.concat(user.artistsFollowed);
+    shuffleArray(seed);
+    seed = seed.slice(0,4).join(',');
+
+    res = await axios.get("https://api.spotify.com/v1/recommendations", {
+        params: {
+            limit: 7,
+            seed_tracks: seed
+        },
+        headers:{
+            Authorization: `Bearer ${spotify_token}`,
+            'Content-Type': "application/json"
+        }
+    })
+    // console.log(res.data.tracks);
+    return await saveTracks(res.data.tracks);
 }

@@ -1,10 +1,11 @@
-const { getTracks, getArtists } = require('../utils/spotifyapi');
+const { getTracks, getArtists, getRecommendedSongs } = require('../utils/spotifyapi');
 const userCollection = require('../models/userModel');
 module.exports.getcontent = async (req, res)=>{
     const uname = req.body.userName;
     let likedSongs = [];
     let recentSongs = [];
-    let artistsFollowed = []
+    let artistsFollowed = [];
+    let recommendedSongs = [];
     const user = await userCollection.findOne({userName: uname});
     if(!user){
         return res.status(404).json({ message: "No such user"});
@@ -26,9 +27,12 @@ module.exports.getcontent = async (req, res)=>{
         console.log("artistsfollowed", user.artistsFollowed);
         artistsFollowed = await getArtists(user.artistsFollowed);
     }
+    recommendedSongs = await getRecommendedSongs(uname);
+    // console.log("HERRRRRRRRRRR", recommendedSongs);
     return res.status(200).json({
         likedSongs: likedSongs,
         recentSongs: recentSongs,
-        artistsFollowed: artistsFollowed
+        artistsFollowed: artistsFollowed,
+        recommendedSongs: recommendedSongs
     })
 }

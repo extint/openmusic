@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 const password = encodeURIComponent("semicolonizer");
 const dbURI = `mongodb+srv://opium:${password}@nodet.qugbjpj.mongodb.net/nodet?retryWrites=true&w=majority`;
 const cors = require('cors');
-const {getArtists} = require('./utils/spotifyapi');
+const {getArtists, getRecommendedSongs} = require('./utils/spotifyapi');
 const { getTracks } = require("./utils/spotifyapi");
 app.use(cors({origin: 'http://localhost:3000', credentials:true}));
 
@@ -32,6 +32,5 @@ app.listen(8000, (err) => {
         console.log(err);
     }
     console.log("Server listening on port 8000");
-
 });
 
