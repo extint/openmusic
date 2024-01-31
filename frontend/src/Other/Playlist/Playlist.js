@@ -15,15 +15,15 @@ function Playlist(props) {
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [current_track, setTrack] = useState(track);
-    const myToken = 'BQBrKWyUv0AhiHuVuGfm1qKPsDCOfcdiCbqi5V_5Gl1EqD1zvoQ2_rSxjPs53PNOLSw7tMKn-QzfPkjFgYn0I17DQXIBUgpdYboBCw2rVzYr1wZ6xqCD3qA15N4Dn1bshMzoJWbQjO2zK8v8CvqTUVF-Sq1VejosNYvbgivbi2oeyqu2lKvoZjtzalj2JUJpUWjUw1LtjxpjZfUAhYH5meYauHQo'
+    const myToken = 'BQAVaFCYya9gkAhC1OSFhkqJWo0fKfIWVkrD6NxmQIBf9WBaWoAoEOMSTsJQ0MTydxk3XJcOfaI9RdypSq0kQcTqMzIzA6byRv4QDmhxeHsZ9dF1Rmn2_Q2uLj9FoK23wBZAVB6bctJDqiWPINhXPmSF9B5G4SCAj9CI8zqtO5AyjgZ3Wi5H14Ap8Cwyits4yRHeufBdcTep2hye5S3HUEBdpel9'
 
     useEffect(() => {
 
-        // const script = document.createElement("script");
-        // script.src = "https://sdk.scdn.co/spotify-player.js";
-        // script.async = true;
+        const script = document.createElement("script");
+        script.src = "https://sdk.scdn.co/spotify-player.js";
+        script.async = true;
 
-        // document.body.appendChild(script);
+        document.body.appendChild(script);
 
         window.onSpotifyWebPlaybackSDKReady = () => {
 

@@ -33,8 +33,8 @@ import { Desktop1 } from './signup_login/login';
 import { Homepage } from './HomePage/Homepage';
 import { User } from './Other/User/User';
 import { Artist } from './Other/Artist/Artist';
-import { Playlist } from './Other/Playlist/Playlist';
 import { Song } from './Other/Song/Song';
+import Playlist from './Other/Playlist/Playlist';
 
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
             <Route path='/song:songName' element={<Song/>}></Route> 
             <Route path='/user:userName' element={<User/>}></Route> 
             <Route path='/song:songName' element={<Song/>}></Route> 
-            <Route path='/playlist:playlistName' element={<Playlist/>}></Route> 
+            <Route path='/playlist' element={<Playlist/>}></Route> 
             <Route path='/artist:artistName' element={<Artist/>}></Route> 
         </Routes>
       </div>
