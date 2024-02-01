@@ -24,7 +24,7 @@ export const Recent = (props) => {
     <div className="recent-tab">
       <div className="blur"/>
       <div className="inner-recent-box">
-        {props.container.map((item, index) => (
+        {props.recentSongs.map((item, index) => (
           <Link to="/song" key={index}>
             <div className="overlap">
               <div className="recent-text-wrapper">{item.name}</div>

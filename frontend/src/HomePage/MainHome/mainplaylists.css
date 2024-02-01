@@ -8,7 +8,9 @@
     border: 20px;
     overflow: hidden;
 }
-
+a{
+    /* text-decoration: none; */
+}
 .text-wrapper,
 .text-wrapper-2 {
     color: #ffffff;
@@ -62,8 +64,9 @@
     left:2%;
     position: relative;
     width: 95%;
+    height:239px;
     display: flex;
-    /* overflow-y: auto; */
+    overflow-y: hidden;
     overflow-x: scroll;
     justify-content: space-evenly;
 }
@@ -81,7 +84,8 @@
     align-items: space-evenly;
     transition: transform 0.2s ease-in-out;
     margin-left:20px;
-    /* position: relative; */
+    top:10%;
+    position: relative;
     animation: scrolling 10s infinite
 }
 @keyframes scrolling{
@@ -117,13 +121,14 @@
     height: 110px;
     object-fit: cover;
     position: absolute;
-    top: 16px;
-    width: 125px;
+    top: 6px;
+    width: 172px;
+    left: 11px;
     transition: filter 0.3s ease-in-out;
 }
-.model:hover {
+/* .model:hover {
     filter: brightness(1.2);
-}
+} */
 
 /* .song,
 .song-2 {
@@ -141,7 +146,7 @@
     /* background-color: #139eae; */
     font-size: larger;
     font-family: 'Times New Roman', Times, serif;
-    position: absolute;
+    position: relative;
     top: 65%;
     text-decoration: #c6cfcd;
     /* width:90%; */
@@ -150,7 +155,7 @@
 .song-2 {
     /* background-color: #6e898d00; */
     top: 80%;
-    position: absolute;
+    position: relative;
 }
 .cloud-effect {
     background: black;

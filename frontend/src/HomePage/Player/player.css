@@ -2,6 +2,47 @@
     height: 80px;
     width: 1934px;
 }
+
+.box .player-bar {
+    background-color: #23424296;
+    height: 65px;
+    margin-left: 68px;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 94.5%;
+    width: 100vw;
+}
+
+.box .now-playing__side {
+    padding-left: 20px; /* Adjust this value according to your preference */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Ensures that overflowing text is hidden */
+}
+
+.box .now-playing__name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    position: absolute;
+    /* text-align: left; */
+    left:100px;
+}
+.box .now-playing__cover {
+    object-fit: cover;
+    width: 50px;
+}
+
+.box .now-playing__artist {
+    left: 100px;
+    color: white;
+    font-size: 14px;
+    /* text-align: left; */
+    position: absolute;
+    top: 50%;
+}
 .box .player-bar {
     background-color: #23424296;
     height: 65px;
@@ -20,15 +61,15 @@
     display: flex;
 }
 
-.box .play-buttton {
+.box .play {
     height: 40px;
     /* position: relative; */
-    left: 48%;
+    left: 46%;
     /* object-fit: cover; */
     position: absolute;
     top: 5px;
     width: 40px;
-    display:none;
+    /* display:none; */
 }
 
 .box .pause {

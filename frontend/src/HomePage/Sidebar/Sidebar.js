@@ -28,7 +28,7 @@ export const Sidebar = () => {
                         <div className="graybox7">
                             <img className="model7" src="model.png"></img>
                         </div>
-                         <div className="graybox8">
+                        <div className="graybox8">
                             <img className="model8" src="model.png"></img>
                         </div>
                         <div className="graybox9">
@@ -36,23 +36,23 @@ export const Sidebar = () => {
                         </div>
                         <div className="graybox10">
                             <img className="model10" src="model.png"></img>
-                        </div>  
+                        </div>
                         <div className="graybox11">
                             <img className="model11" src="model.png"></img>
-                        </div> 
+                        </div>
                         <div className="graybox12">
                             <img className="model12" src="model.png"></img>
-                        </div> 
+                        </div>
                         <div className="graybox13">
                             <img className="model13" src="model.png"></img>
-                        </div> 
+                        </div>
 
                     </div>
                 </div>
-                    <div className="libraryandsearch">
-                        <img className="search" alt="Search" src="search.png" />
-                        <img className="playlist" alt="Playlist" src="playlists.png" />
-                    </div>
+                <div className="libraryandsearch">
+                    <img className="search" alt="Search" src="search.png" />
+                    <img className="playlist" alt="Playlist" src="playlists.png" />
+                </div>
             </div>
         </>
     );

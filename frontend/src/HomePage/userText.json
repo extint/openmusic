@@ -1,0 +1,1307 @@
+{
+    "vedant": {
+        "likedSongs": [
+            {
+                "name": "I KNOW ?",
+                "songId": "6wsqVwoiVH2kde4k4KKAFU",
+                "duration_ms": 211582,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273881d8d8378cd01099babcd44",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3d53d4d34038286b898a6"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02881d8d8378cd01099babcd44",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3d53d4d34038286b898a7"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851881d8d8378cd01099babcd44",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3d53d4d34038286b898a8"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY",
+                        "_id": "65b3d53d4d34038286b898a9"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "18NOKLkZETa4sWwLMIm0UZ"
+                }
+            },
+            {
+                "name": "Daylight",
+                "songId": "1odExI7RdWc4BT515LTAwj",
+                "duration_ms": 212953,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27395ca6a9b4083a86c149934ae",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3e31d0f255c5a3857e8fc"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e0295ca6a9b4083a86c149934ae",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3e31d0f255c5a3857e8fd"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000485195ca6a9b4083a86c149934ae",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3e31d0f255c5a3857e8fe"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "David Kushner",
+                        "artistId": "33NVpKoXjItPwUJTMZIOiY",
+                        "_id": "65b3e31d0f255c5a3857e8ff"
+                    }
+                ],
+                "album": {
+                    "type": "single",
+                    "albumId": "6NcI39WPu4kY6Tul11nhSv"
+                }
+            },
+            {
+                "name": "Counting Stars",
+                "songId": "2tpWsVSb9UEmDRxAl1zhX1",
+                "duration_ms": 257265,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739e2f95ae77cf436017ada9cb",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3e751efb434196ef1d75a"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e029e2f95ae77cf436017ada9cb",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3e751efb434196ef1d75b"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d000048519e2f95ae77cf436017ada9cb",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3e751efb434196ef1d75c"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "OneRepublic",
+                        "artistId": "5Pwc4xIPtQLFEnJriah9YJ",
+                        "_id": "65b3e751efb434196ef1d75d"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "20lOt6G8MHv8ZO7ViOmiP7"
+                }
+            }
+        ],
+        "recentSongs": [
+            {
+                "name": "Demons",
+                "songId": "5qaEfEh1AtSdrdrByCP7qR",
+                "duration_ms": 177506,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273407bd04707c463bbb3410737",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0ddc"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02407bd04707c463bbb3410737",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0ddd"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851407bd04707c463bbb3410737",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0dde"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Imagine Dragons",
+                        "artistId": "53XhwfbYqKCa1cC15pYq2q",
+                        "_id": "65b818e0569a68e3720f0ddf"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "6nxDQi0FeEwccEPJeNySoS"
+                }
+            },
+            {
+                "name": "Sunflower - Spider-Man: Into the Spider-Verse",
+                "songId": "0RiRZpuVRbi7oqRdSMwhQY",
+                "duration_ms": 157560,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0de2"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0de3"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d000048519478c87599550dd73bfa7e02",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0de4"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Post Malone",
+                        "artistId": "246dkjvS1zLTtiykXe5h60",
+                        "_id": "65b818e0569a68e3720f0de5"
+                    },
+                    {
+                        "name": "Swae Lee",
+                        "artistId": "1zNqQNIdeOUZHb8zbZRFMX",
+                        "_id": "65b818e0569a68e3720f0de6"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "4g1ZRSobMefqF6nelkgibi"
+                }
+            },
+            {
+                "name": "Maps",
+                "songId": "7oUHzZKNKUTrlU7DYxhQ7v",
+                "duration_ms": 189960,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27337677af5b4f23fe9dc8a3c04",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0de9"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e0237677af5b4f23fe9dc8a3c04",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0dea"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000485137677af5b4f23fe9dc8a3c04",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0deb"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Maroon 5",
+                        "artistId": "04gDigrS5kc9YWfZHwBETP",
+                        "_id": "65b818e0569a68e3720f0dec"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "6LtzdMGhOCh9s6sssWrpuD"
+                }
+            },
+            {
+                "name": "Heat Waves",
+                "songId": "3USxtqRwSYz57Ewm6wWRMp",
+                "duration_ms": 238805,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273712701c5e263efc8726b1464",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0def"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02712701c5e263efc8726b1464",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0df0"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0df1"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Glass Animals",
+                        "artistId": "4yvcSjfu4PC0CYQyLy4wSq",
+                        "_id": "65b818e0569a68e3720f0df2"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "5bfpRtBW7RNRdsm3tRyl3R"
+                }
+            },
+            {
+                "name": "Zero - From the Original Motion Picture \"Ralph Breaks The Internet\"",
+                "songId": "2bzitsPcImYC6DZWvvLCQi",
+                "duration_ms": 210933,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273da6f73a25f4c79d0e6b4a8bd",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0df5"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02da6f73a25f4c79d0e6b4a8bd",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0df6"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851da6f73a25f4c79d0e6b4a8bd",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0df7"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Imagine Dragons",
+                        "artistId": "53XhwfbYqKCa1cC15pYq2q",
+                        "_id": "65b818e0569a68e3720f0df8"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "3JfSxDfmwS5OeHPwLSkrfr"
+                }
+            }
+        ],
+        "artistsFollowed": [
+            {
+                "name": "Miley Cyrus",
+                "artistId": "5YGY8feqx7naU7z4HrwZM6",
+                "followerCount": 23078802,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebb5af3b38f053486ab0784dee",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0dfe"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616100005174b5af3b38f053486ab0784dee",
+                        "height": 320,
+                        "width": 320,
+                        "_id": "65b818e0569a68e3720f0dff"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000f178b5af3b38f053486ab0784dee",
+                        "height": 160,
+                        "width": 160,
+                        "_id": "65b818e0569a68e3720f0e00"
+                    }
+                ],
+                "genres": [
+                    "pop"
+                ]
+            },
+            {
+                "name": "Avicii",
+                "artistId": "1vCWHaC5f2uS3yhpwWbIA6",
+                "followerCount": 22911130,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebae07171f989fb39736674113",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b80db8fd3d369d8a7c3235"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616100005174ae07171f989fb39736674113",
+                        "height": 320,
+                        "width": 320,
+                        "_id": "65b80db8fd3d369d8a7c3236"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000f178ae07171f989fb39736674113",
+                        "height": 160,
+                        "width": 160,
+                        "_id": "65b80db8fd3d369d8a7c3237"
+                    }
+                ],
+                "genres": [
+                    "dance pop",
+                    "edm",
+                    "pop",
+                    "pop dance"
+                ]
+            },
+            {
+                "name": "Ratatat",
+                "artistId": "57dN52uHvrHOxijzpIgu3E",
+                "followerCount": 589469,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/2f0c6c465a83cd196e651e3d4e7625ba799a6f60",
+                        "height": 693,
+                        "width": 1000,
+                        "_id": "65b80db8fd3d369d8a7c322f"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/4e3e13c8b993bde9898e49509fb9ae121636e05f",
+                        "height": 444,
+                        "width": 640,
+                        "_id": "65b80db8fd3d369d8a7c3230"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/dc68dd24b45b74ecce9d4ed486423673d683ced3",
+                        "height": 139,
+                        "width": 200,
+                        "_id": "65b80db8fd3d369d8a7c3231"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/4e55ca05d4f336a2fa0e3062a7ec9778a201e8bc",
+                        "height": 44,
+                        "width": 63,
+                        "_id": "65b80db8fd3d369d8a7c3232"
+                    }
+                ],
+                "genres": [
+                    "indietronica"
+                ]
+            }
+        ],
+        "recommendedSongs": [
+            {
+                "name": "DELRESTO (ECHOES) (feat. Beyoncé)",
+                "songId": "6EpZVG2zXeXGUitW8979U8",
+                "duration_ms": 274137,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739162764a6017634fb155498d",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e029162764a6017634fb155498d",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d000048519162764a6017634fb155498d",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY"
+                    },
+                    {
+                        "name": "Beyoncé",
+                        "artistId": "6vWDO969PvNqNYHIOW5v0m"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "6mpTzL80F11TaeU79loRyJ"
+                }
+            },
+            {
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "1Sf8GsXG32t0jNrX11xqWx"
+                },
+                "_id": "65b96ca5e838fda6993529be",
+                "name": "GATTI",
+                "songId": "40mjsnRjCpycdUw3xhS20g",
+                "duration_ms": 181144,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273dfc2f59568272de50a257f2f",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b96ca5e838fda6993529bf"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02dfc2f59568272de50a257f2f",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b96ca5e838fda6993529c0"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851dfc2f59568272de50a257f2f",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b96ca5e838fda6993529c1"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "JACKBOYS",
+                        "artistId": "7A8S43ryYdbWpJKeHRZRcq",
+                        "_id": "65b96ca5e838fda6993529c2"
+                    },
+                    {
+                        "name": "Pop Smoke",
+                        "artistId": "0eDvMgVFoNV3TpwtrVCoTj",
+                        "_id": "65b96ca5e838fda6993529c3"
+                    },
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY",
+                        "_id": "65b96ca5e838fda6993529c4"
+                    }
+                ],
+                "__v": 0
+            },
+            {
+                "name": "One Call Away",
+                "songId": "6vSforRhuzsA0D0SO9fG1S",
+                "duration_ms": 194453,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273c0e28105f0533c52717c46c2",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02c0e28105f0533c52717c46c2",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851c0e28105f0533c52717c46c2",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Charlie Puth",
+                        "artistId": "6VuMaDnrHyPL1p4EHjYLi7"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "6E0p38TjcK490itZ1Ns7bD"
+                }
+            },
+            {
+                "name": "Drowning (feat. Kodak Black)",
+                "songId": "1f5cbQtDrykjarZVrShaDI",
+                "duration_ms": 209269,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273cdba7ee22968991250725ce1",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02cdba7ee22968991250725ce1",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851cdba7ee22968991250725ce1",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "A Boogie Wit da Hoodie",
+                        "artistId": "31W5EY0aAly4Qieq6OFu6I"
+                    },
+                    {
+                        "name": "Kodak Black",
+                        "artistId": "46SHBwWsqBkxI7EeeBEQG7"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "3HHp5I6Q6SEyU5bkvoCtnV"
+                }
+            },
+            {
+                "name": "Apologize",
+                "songId": "1NrJYpdAi7uosDRPmSYrsG",
+                "duration_ms": 208106,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b27334ef81d1ff3b4682a4e97f70",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e0234ef81d1ff3b4682a4e97f70",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d0000485134ef81d1ff3b4682a4e97f70",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "OneRepublic",
+                        "artistId": "5Pwc4xIPtQLFEnJriah9YJ"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "2KSpGeDoNjqCKg6HL8LAyI"
+                }
+            },
+            {
+                "name": "AT THE PARTY (feat. Pharrell Williams & Travis Scott)",
+                "songId": "0kUQWMs1bRlwFNKA4Dce3f",
+                "duration_ms": 238026,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273820f2a56e4a57cc9a94672a8",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02820f2a56e4a57cc9a94672a8",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851820f2a56e4a57cc9a94672a8",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Kid Cudi",
+                        "artistId": "0fA0VVWsXO9YnASrzqfmYu"
+                    },
+                    {
+                        "name": "Pharrell Williams",
+                        "artistId": "2RdwBSPQiwcmiDo9kixcl8"
+                    },
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "0tpIUAzCeUkoV4u2r5NrQr"
+                }
+            },
+            {
+                "name": "I Knew You Were Trouble.",
+                "songId": "6FB3v4YcR57y4tXFcdxI1E",
+                "duration_ms": 219720,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b2731c248e90c3e569f90aef9dec",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e021c248e90c3e569f90aef9dec",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d000048511c248e90c3e569f90aef9dec",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Taylor Swift",
+                        "artistId": "06HL4z0CvFAxyc27GXpf02"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "4jTYApZPMapg56gRycOn0D"
+                }
+            }
+        ]
+    },
+    "warren": {
+        "likedSongs": [
+            {
+                "name": "I KNOW warren?",
+                "songId": "6wsqVwoiVH2kde4k4KKAFU",
+                "duration_ms": 211582,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273881d8d8378cd01099babcd44",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3d53d4d34038286b898a6"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02881d8d8378cd01099babcd44",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3d53d4d34038286b898a7"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851881d8d8378cd01099babcd44",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3d53d4d34038286b898a8"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY",
+                        "_id": "65b3d53d4d34038286b898a9"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "18NOKLkZETa4sWwLMIm0UZ"
+                }
+            },
+            {
+                "name": "Daylight",
+                "songId": "1odExI7RdWc4BT515LTAwj",
+                "duration_ms": 212953,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27395ca6a9b4083a86c149934ae",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3e31d0f255c5a3857e8fc"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e0295ca6a9b4083a86c149934ae",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3e31d0f255c5a3857e8fd"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000485195ca6a9b4083a86c149934ae",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3e31d0f255c5a3857e8fe"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "David Kushner",
+                        "artistId": "33NVpKoXjItPwUJTMZIOiY",
+                        "_id": "65b3e31d0f255c5a3857e8ff"
+                    }
+                ],
+                "album": {
+                    "type": "single",
+                    "albumId": "6NcI39WPu4kY6Tul11nhSv"
+                }
+            },
+            {
+                "name": "Counting Stars",
+                "songId": "2tpWsVSb9UEmDRxAl1zhX1",
+                "duration_ms": 257265,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739e2f95ae77cf436017ada9cb",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b3e751efb434196ef1d75a"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e029e2f95ae77cf436017ada9cb",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b3e751efb434196ef1d75b"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d000048519e2f95ae77cf436017ada9cb",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b3e751efb434196ef1d75c"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "OneRepublic",
+                        "artistId": "5Pwc4xIPtQLFEnJriah9YJ",
+                        "_id": "65b3e751efb434196ef1d75d"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "20lOt6G8MHv8ZO7ViOmiP7"
+                }
+            }
+        ],
+        "recentSongs": [
+            {
+                "name": "Demons",
+                "songId": "5qaEfEh1AtSdrdrByCP7qR",
+                "duration_ms": 177506,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273407bd04707c463bbb3410737",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0ddc"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02407bd04707c463bbb3410737",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0ddd"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851407bd04707c463bbb3410737",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0dde"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Imagine Dragons",
+                        "artistId": "53XhwfbYqKCa1cC15pYq2q",
+                        "_id": "65b818e0569a68e3720f0ddf"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "6nxDQi0FeEwccEPJeNySoS"
+                }
+            },
+            {
+                "name": "Sunflower - Spider-Man: Into the Spider-Verse",
+                "songId": "0RiRZpuVRbi7oqRdSMwhQY",
+                "duration_ms": 157560,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0de2"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0de3"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d000048519478c87599550dd73bfa7e02",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0de4"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Post Malone",
+                        "artistId": "246dkjvS1zLTtiykXe5h60",
+                        "_id": "65b818e0569a68e3720f0de5"
+                    },
+                    {
+                        "name": "Swae Lee",
+                        "artistId": "1zNqQNIdeOUZHb8zbZRFMX",
+                        "_id": "65b818e0569a68e3720f0de6"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "4g1ZRSobMefqF6nelkgibi"
+                }
+            },
+            {
+                "name": "Maps",
+                "songId": "7oUHzZKNKUTrlU7DYxhQ7v",
+                "duration_ms": 189960,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b27337677af5b4f23fe9dc8a3c04",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0de9"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e0237677af5b4f23fe9dc8a3c04",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0dea"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000485137677af5b4f23fe9dc8a3c04",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0deb"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Maroon 5",
+                        "artistId": "04gDigrS5kc9YWfZHwBETP",
+                        "_id": "65b818e0569a68e3720f0dec"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "6LtzdMGhOCh9s6sssWrpuD"
+                }
+            },
+            {
+                "name": "Heat Waves",
+                "songId": "3USxtqRwSYz57Ewm6wWRMp",
+                "duration_ms": 238805,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273712701c5e263efc8726b1464",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0def"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02712701c5e263efc8726b1464",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0df0"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0df1"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Glass Animals",
+                        "artistId": "4yvcSjfu4PC0CYQyLy4wSq",
+                        "_id": "65b818e0569a68e3720f0df2"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "5bfpRtBW7RNRdsm3tRyl3R"
+                }
+            },
+            {
+                "name": "Zero - From the Original Motion Picture \"Ralph Breaks The Internet\"",
+                "songId": "2bzitsPcImYC6DZWvvLCQi",
+                "duration_ms": 210933,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273da6f73a25f4c79d0e6b4a8bd",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0df5"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02da6f73a25f4c79d0e6b4a8bd",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b818e0569a68e3720f0df6"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851da6f73a25f4c79d0e6b4a8bd",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b818e0569a68e3720f0df7"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Imagine Dragons",
+                        "artistId": "53XhwfbYqKCa1cC15pYq2q",
+                        "_id": "65b818e0569a68e3720f0df8"
+                    }
+                ],
+                "album": {
+                    "type": "album",
+                    "albumId": "3JfSxDfmwS5OeHPwLSkrfr"
+                }
+            }
+        ],
+        "artistsFollowed": [
+            {
+                "name": "Miley Cyrus",
+                "artistId": "5YGY8feqx7naU7z4HrwZM6",
+                "followerCount": 23078802,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebb5af3b38f053486ab0784dee",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b818e0569a68e3720f0dfe"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616100005174b5af3b38f053486ab0784dee",
+                        "height": 320,
+                        "width": 320,
+                        "_id": "65b818e0569a68e3720f0dff"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000f178b5af3b38f053486ab0784dee",
+                        "height": 160,
+                        "width": 160,
+                        "_id": "65b818e0569a68e3720f0e00"
+                    }
+                ],
+                "genres": [
+                    "pop"
+                ]
+            },
+            {
+                "name": "Avicii",
+                "artistId": "1vCWHaC5f2uS3yhpwWbIA6",
+                "followerCount": 22911130,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebae07171f989fb39736674113",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b80db8fd3d369d8a7c3235"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616100005174ae07171f989fb39736674113",
+                        "height": 320,
+                        "width": 320,
+                        "_id": "65b80db8fd3d369d8a7c3236"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab6761610000f178ae07171f989fb39736674113",
+                        "height": 160,
+                        "width": 160,
+                        "_id": "65b80db8fd3d369d8a7c3237"
+                    }
+                ],
+                "genres": [
+                    "dance pop",
+                    "edm",
+                    "pop",
+                    "pop dance"
+                ]
+            },
+            {
+                "name": "Ratatat",
+                "artistId": "57dN52uHvrHOxijzpIgu3E",
+                "followerCount": 589469,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/2f0c6c465a83cd196e651e3d4e7625ba799a6f60",
+                        "height": 693,
+                        "width": 1000,
+                        "_id": "65b80db8fd3d369d8a7c322f"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/4e3e13c8b993bde9898e49509fb9ae121636e05f",
+                        "height": 444,
+                        "width": 640,
+                        "_id": "65b80db8fd3d369d8a7c3230"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/dc68dd24b45b74ecce9d4ed486423673d683ced3",
+                        "height": 139,
+                        "width": 200,
+                        "_id": "65b80db8fd3d369d8a7c3231"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/4e55ca05d4f336a2fa0e3062a7ec9778a201e8bc",
+                        "height": 44,
+                        "width": 63,
+                        "_id": "65b80db8fd3d369d8a7c3232"
+                    }
+                ],
+                "genres": [
+                    "indietronica"
+                ]
+            }
+        ],
+        "recommendedSongs": [
+            {
+                "name": "DELRESTO (ECHOES) (feat. Beyoncé)",
+                "songId": "6EpZVG2zXeXGUitW8979U8",
+                "duration_ms": 274137,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b2739162764a6017634fb155498d",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e029162764a6017634fb155498d",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d000048519162764a6017634fb155498d",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY"
+                    },
+                    {
+                        "name": "Beyoncé",
+                        "artistId": "6vWDO969PvNqNYHIOW5v0m"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "6mpTzL80F11TaeU79loRyJ"
+                }
+            },
+            {
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "1Sf8GsXG32t0jNrX11xqWx"
+                },
+                "_id": "65b96ca5e838fda6993529be",
+                "name": "GATTI",
+                "songId": "40mjsnRjCpycdUw3xhS20g",
+                "duration_ms": 181144,
+                "images": [
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d0000b273dfc2f59568272de50a257f2f",
+                        "height": 640,
+                        "width": 640,
+                        "_id": "65b96ca5e838fda6993529bf"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00001e02dfc2f59568272de50a257f2f",
+                        "height": 300,
+                        "width": 300,
+                        "_id": "65b96ca5e838fda6993529c0"
+                    },
+                    {
+                        "url": "https://i.scdn.co/image/ab67616d00004851dfc2f59568272de50a257f2f",
+                        "height": 64,
+                        "width": 64,
+                        "_id": "65b96ca5e838fda6993529c1"
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "JACKBOYS",
+                        "artistId": "7A8S43ryYdbWpJKeHRZRcq",
+                        "_id": "65b96ca5e838fda6993529c2"
+                    },
+                    {
+                        "name": "Pop Smoke",
+                        "artistId": "0eDvMgVFoNV3TpwtrVCoTj",
+                        "_id": "65b96ca5e838fda6993529c3"
+                    },
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY",
+                        "_id": "65b96ca5e838fda6993529c4"
+                    }
+                ],
+                "__v": 0
+            },
+            {
+                "name": "One Call Away",
+                "songId": "6vSforRhuzsA0D0SO9fG1S",
+                "duration_ms": 194453,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273c0e28105f0533c52717c46c2",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02c0e28105f0533c52717c46c2",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851c0e28105f0533c52717c46c2",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Charlie Puth",
+                        "artistId": "6VuMaDnrHyPL1p4EHjYLi7"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "6E0p38TjcK490itZ1Ns7bD"
+                }
+            },
+            {
+                "name": "Drowning (feat. Kodak Black)",
+                "songId": "1f5cbQtDrykjarZVrShaDI",
+                "duration_ms": 209269,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273cdba7ee22968991250725ce1",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02cdba7ee22968991250725ce1",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851cdba7ee22968991250725ce1",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "A Boogie Wit da Hoodie",
+                        "artistId": "31W5EY0aAly4Qieq6OFu6I"
+                    },
+                    {
+                        "name": "Kodak Black",
+                        "artistId": "46SHBwWsqBkxI7EeeBEQG7"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "3HHp5I6Q6SEyU5bkvoCtnV"
+                }
+            },
+            {
+                "name": "Apologize",
+                "songId": "1NrJYpdAi7uosDRPmSYrsG",
+                "duration_ms": 208106,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b27334ef81d1ff3b4682a4e97f70",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e0234ef81d1ff3b4682a4e97f70",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d0000485134ef81d1ff3b4682a4e97f70",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "OneRepublic",
+                        "artistId": "5Pwc4xIPtQLFEnJriah9YJ"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "2KSpGeDoNjqCKg6HL8LAyI"
+                }
+            },
+            {
+                "name": "AT THE PARTY (feat. Pharrell Williams & Travis Scott)",
+                "songId": "0kUQWMs1bRlwFNKA4Dce3f",
+                "duration_ms": 238026,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273820f2a56e4a57cc9a94672a8",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02820f2a56e4a57cc9a94672a8",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851820f2a56e4a57cc9a94672a8",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Kid Cudi",
+                        "artistId": "0fA0VVWsXO9YnASrzqfmYu"
+                    },
+                    {
+                        "name": "Pharrell Williams",
+                        "artistId": "2RdwBSPQiwcmiDo9kixcl8"
+                    },
+                    {
+                        "name": "Travis Scott",
+                        "artistId": "0Y5tJX1MQlPlqiwlOH1tJY"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "0tpIUAzCeUkoV4u2r5NrQr"
+                }
+            },
+            {
+                "name": "I Knew You Were Trouble.",
+                "songId": "6FB3v4YcR57y4tXFcdxI1E",
+                "duration_ms": 219720,
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b2731c248e90c3e569f90aef9dec",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e021c248e90c3e569f90aef9dec",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d000048511c248e90c3e569f90aef9dec",
+                        "width": 64
+                    }
+                ],
+                "artists": [
+                    {
+                        "name": "Taylor Swift",
+                        "artistId": "06HL4z0CvFAxyc27GXpf02"
+                    }
+                ],
+                "album": {
+                    "type": "ALBUM",
+                    "albumId": "4jTYApZPMapg56gRycOn0D"
+                }
+            }
+        ]
+    }
+    
+}
