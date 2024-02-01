@@ -39,7 +39,7 @@ export const User = (props) => {
             {/* <div className="user-home"> */}
         <div className="Atop-artists-this-month">Top artists this month:
         <div className="Atop-artists">
-          {props.topArtists.map((item, index) => (
+          {props.followedArtists.map((item, index) => (
             <Link to='/artist'>
             <div
               className="Aartist-board"

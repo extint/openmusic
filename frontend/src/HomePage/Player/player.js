@@ -17,7 +17,7 @@ export const Player = () => {
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [current_track, setTrack] = useState(track);
-    const myToken = 'BQBmBqRSura4LisLH_SwEUCyygXHO6Uuksbtuf8CTxjsyU5KPzBfyYKWrPxOsEA7d44xpppL9BUb_CMWlji-jPy1PjvXPVV1ASUIjuDGEmrR2uNf0biZRluAG0236xQ16wsvIhkuWJk8vbE6LJqAI3gX5zGtaeXjruo8Zvr2lQD6Wp37g95NGRlMA1i47gLFcc_1S_VxAHuJlB6npWmqJYG6ZZFh'
+    const myToken = 'BQDTZVSCdHRB9MIE-Av17bz30Nhb_uOY8D8PA_qWTW2sJSzYdO4xPikvGAcJqlFlxNEaZX31jz8gfCnHweAYARBrmW6gT7UE3uiKvAddV8g2VrktqQ3_I7AMeGlmYMpWPxpU_Hi_f3bg7GrBrkv4Fl_3rCbJOKLkglS0wzzDY5mKNBYmQi-nwNUISxKpatv2sF5KgHYVRWRnKD7vfT_AgkInGx91'
 
     useEffect(() => {
 

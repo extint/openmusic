@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ override: true});
 const axios = require('axios');
 const fs = require("fs");
 const os = require("os");
@@ -6,10 +6,6 @@ const songCollection = require('../models/songModel');
 const artistCollection = require("../models/artistModel");
 const userCollection = require('../models/userModel');
 const { shuffleArray, saveTracks } = require("./utils");
-const spotify_token = process.env.SPOTIFY_TOKEN;
-const client = process.env.SPOTIFY_CLIENT;
-const secret = process.env.SPOTIFY_SECRET;
-const genTime = process.env.SPOTIFY_TOKEN_TIME;
 
 function setEnvValue(key, value) {
     // read file from ssd & split if from a linebreak to a array
@@ -40,12 +36,17 @@ function setEnvValue(key, value) {
 }
 
 module.exports.refreshToken = async () => {
+    require("dotenv").config({override: true});
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) < 3600) {
+        return;
+    }
     console.log("Token refreshing...");
     const timeOfGenerationSeconds = Math.floor(Date.now() / 1000);
     axios.post('https://accounts.spotify.com/api/token', {
         grant_type: "client_credentials",
-        client_id: client,
-        client_secret: secret
+        client_id: process.env.SPOTIFY_CLIENT,
+        client_secret: process.env.SPOTIFY_SECRET
     },
         {
             headers: {
@@ -62,14 +63,16 @@ module.exports.refreshToken = async () => {
         console.log(err);
 
     })
+    require("dotenv").config({ override: true});
 }
 
 module.exports.getTracks = async (ids) => {
     if(!Array.isArray(ids) || !ids.length) return [];
-    let currTime = Math.floor(Date.now() / 1000);
-    if ((currTime - genTime) >= 3600) {
-        await this.refreshToken();
-    }
+    require("dotenv").config({override: true});
+    // let currTime = Math.floor(Date.now() / 1000);
+    // if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
+    //     await this.refreshToken();
+    // }
     let nonexistent_ids = [];
     console.log("ids are ", ids);
     let out = [];
@@ -96,11 +99,11 @@ module.exports.getTracks = async (ids) => {
     }
     commaseparatedids = nonexistent_ids.join(',');
     // console.log(commaseparatedids);
-    // console.log(spotify_token, "token2");
+    // console.log(process.env.SPOTIFY_TOKEN, "token2");
     res = await axios.get("https://api.spotify.com/v1/tracks", {
         params: { ids: commaseparatedids },
         headers: {
-            Authorization: `Bearer ${spotify_token}`,
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
             'Content-Type': "application/json"
         }
     }
@@ -149,10 +152,11 @@ module.exports.getTracks = async (ids) => {
 
 module.exports.getArtists = async (ids) => {
     if(!Array.isArray(ids) || !ids.length) return [];
-    let currTime = Math.floor(Date.now() / 1000);
-    if ((currTime - genTime) >= 3600) {
-        await this.refreshToken();
-    }
+    require("dotenv").config({ override: true});
+    // let currTime = Math.floor(Date.now() / 1000);
+    // if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
+    //     await this.refreshToken();
+    // }
     let nonexistent_ids = [];
     console.log("ids are ", ids);
     let out = [];
@@ -178,11 +182,11 @@ module.exports.getArtists = async (ids) => {
     }
     commaseparatedids = nonexistent_ids.join(',');
     console.log(commaseparatedids);
-    console.log(spotify_token, "token2");
+    console.log(process.env.SPOTIFY_TOKEN, "token2");
     res = await axios.get("https://api.spotify.com/v1/artists", {
         params: { ids: commaseparatedids },
         headers: {
-            Authorization: `Bearer ${spotify_token}`,
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
             'Content-Type': "application/json"
         }
     }
@@ -215,7 +219,7 @@ module.exports.getArtists = async (ids) => {
 module.exports.getRecommendedSongs = async (uname) => {
     const user = await userCollection.findOne({userName: uname});
     let currTime = Math.floor(Date.now() / 1000);
-    if ((currTime - genTime) >= 3600) {
+    if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
         await this.refreshToken();
     }
     if(!user){
@@ -233,7 +237,7 @@ module.exports.getRecommendedSongs = async (uname) => {
             seed_tracks: seed
         },
         headers:{
-            Authorization: `Bearer ${spotify_token}`,
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
             'Content-Type': "application/json"
         }
     })

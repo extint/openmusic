@@ -52,6 +52,7 @@ module.exports.login = async (req, res, next) => {
             userName: req.body.userName,
             password: req.body.password
         };
+        console.log(data);
 
         //check user in db
         const user = await userCollection.findOne({ userName: data.userName });
