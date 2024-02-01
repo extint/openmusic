@@ -1,2 +1,2 @@
 # openmusic
-A more interactive version of spotify.
+A more interactive version of spotify .
