@@ -11,11 +11,11 @@ const track = {
     ]
 }
 function Playlist(props) {
-    const [player, setPlayer] = useState(undefined);
+    const [player, setPlayer] = useState({});
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [current_track, setTrack] = useState(track);
-    const myToken = 'BQAVaFCYya9gkAhC1OSFhkqJWo0fKfIWVkrD6NxmQIBf9WBaWoAoEOMSTsJQ0MTydxk3XJcOfaI9RdypSq0kQcTqMzIzA6byRv4QDmhxeHsZ9dF1Rmn2_Q2uLj9FoK23wBZAVB6bctJDqiWPINhXPmSF9B5G4SCAj9CI8zqtO5AyjgZ3Wi5H14Ap8Cwyits4yRHeufBdcTep2hye5S3HUEBdpel9'
+    const myToken = 'BQDFpHfFY7TTe4aUvOXzWmX8jaK6vHOVwqmbuiVcoUbki6tPStzEpvO5FWm_EDFgGnTovWy2QKlsetyYjqgpvOHal6vYnUvtjQpcw_4obfDUUOYFUk8OaV-rLdqSb69FEf3XID4_8ieT6tom0DooJLUAgrGxHKjSy30az01G9XxTc58vETWoITVgz8-SA6Zh7lpdgnHS8mrLQYQC_yuDZVgKLVfv'
 
     useEffect(() => {
 
@@ -30,10 +30,11 @@ function Playlist(props) {
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK',
                 getOAuthToken: cb => { cb(myToken); },
-                volume: 0.5
+                volume: 1.0
             });
 
             setPlayer(player);
+            console.log(player)
 
             player.addListener('ready', ({ device_id }) => {
                 console.log('Ready with Device ID', device_id);
@@ -50,19 +51,17 @@ function Playlist(props) {
 
                 setTrack(state.track_window.current_track);
                 setPaused(state.paused);
-
-                async function logPlayerState(e) {
-                    try{const currentState = await player.getCurrentState();
-                    console.log(currentState, 'hi heloo');}
-                    catch{console.log(e)}
-                }
-                logPlayerState();
+                 console.log(state.paused);
+                // async function logPlayerState() {
+                //     try{const currentState = await player.getCurrentState();
+                //     console.log(currentState, 'hi heloo');}
+                //     catch{console.log('error')}
+                // }
+                // logPlayerState();
                 // player.getCurrentState().then( state => { 
                 //     (!state)? setActive(false) : setActive(true) 
                 // });
             }));
-
-
             player.connect();
 
         };
