@@ -1,5 +1,3 @@
-// ReactComponent.js
-
 import React, { useState, useEffect } from 'react';
 
 const ReactComponent = () => {
@@ -8,7 +6,7 @@ const ReactComponent = () => {
   useEffect(() => {
     const fetchVideoFeed = async () => {
       try {
-        const response = await fetch('http://localhost:8000/video_feed');
+        const response = await fetch('http://localhost:8001/video_feed');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

@@ -1,0 +1,15 @@
+.Ml{
+    position: absolute;
+    top:0px;
+    right: 250px;
+}
+
+.Copy{
+    position: absolute;
+    top: 280px;
+    right:-210px;
+    color: red;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

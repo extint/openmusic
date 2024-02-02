@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>gaze control and volume </title>
+  </head>
+  <body style="background-color: cadetblue;">
+    
+    <div style="text-align: center;">
+      <h1>gaze control and volume </h1>
+
+      <img src="{{ url_for('video_feed') }}">
+      
+    </div>
+    
+    <!-- jinja2のテンプレートの書き方です。/video_feedを呼び出しています。 -->
+  </body>
+</html> 
+
+
+<!-- templates/index.html -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+<body>
+    <h1>Random Number: <span id="random-number"></span></h1>
+
+    <script>
+        const randomNumberElement = document.getElementById('random-number');
+        const socket = new WebSocket('ws://localhost:8011/ws');
+
+        socket.onmessage = (event) => {
+            const random_number = event.data;
+            // Update the random number on the page
+            randomNumberElement.innerText = random_number;
+        };
+        // open camera in js
+        socket.onclose = (event) => {
+            console.error('WebSocket closed:', event);
+        };
+    </script>
+</body>
+</html> -->
