@@ -19,7 +19,7 @@ export const Player = () => {
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [current_track, setTrack] = useState(track);
-    const myToken = 'BQDTZVSCdHRB9MIE-Av17bz30Nhb_uOY8D8PA_qWTW2sJSzYdO4xPikvGAcJqlFlxNEaZX31jz8gfCnHweAYARBrmW6gT7UE3uiKvAddV8g2VrktqQ3_I7AMeGlmYMpWPxpU_Hi_f3bg7GrBrkv4Fl_3rCbJOKLkglS0wzzDY5mKNBYmQi-nwNUISxKpatv2sF5KgHYVRWRnKD7vfT_AgkInGx91'
+    const myToken = 'BQClwiPvzHTQE0RdnQfOxteveNKaI4jhjI0GsBSNG2smV2fLvS7K_7eE3cQu3MRjxdLtghy268BX3YsUweZXLUkKrh-OUdevebqE9s8tZ8fjlhDkgJigHmyNaeeUxBIiJP04ytY5OXVfYvvwUu1Agp4H6twysfuOrbpwR-ZWl2UMGOENUPW9_c-lW2Wc2Iu_vB-wMjP3TcZex1HKQR407Kyy_xUb'
 
     useEffect(() => {
 
@@ -60,7 +60,6 @@ export const Player = () => {
                 });
             }));
             player.connect();
-
         };
     }, []);
     return (

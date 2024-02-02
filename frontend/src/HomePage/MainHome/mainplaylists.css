@@ -58,6 +58,55 @@ a{
     display: flex;
     flex-wrap: wrap;
 }
+.song-board {
+    position: relative; /* Ensure the play button is positioned relative to this container */
+    display: inline-block; /* Ensure the container doesn't expand unnecessarily */
+    
+}
+
+.song-board:hover .songPlay {
+    opacity: 1; /* Make the play button visible when hovering over the song-board */
+    position: absolute;
+    left:90%;
+    transition: 500ms;
+}
+.playlist-board:hover .songPlay {
+    opacity: 1; /* Make the play button visible when hovering over the song-board */
+    position: absolute;
+    left:90%;
+    transition: 500ms;
+}
+
+.songPlay {
+    position: absolute; /* Position the play button absolutely within the song-board */
+    top: 50%; /* Adjust the positioning as needed */
+    left: 50%; /* Adjust the positioning as needed */
+    transform: translate(-50%, -50%); /* Center the play button */
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid rgb(48, 47, 47);
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border-right: none;
+    opacity: 0; /* Initially hide the play button */
+    z-index: 1; /* Ensure the play button is above other content */
+    top:60%
+}
+
+.songPlay:hover {
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    /* border-left: 35px solid rgb(48, 47, 47); */
+    border-left: 35px solid #bab4b4;
+    box-shadow: #9d9d9d;
+    transition: 100ms;
+}
+
+
 .suggested-boards{
     /* background-color:#88a9ad ; */
     top:6%;
