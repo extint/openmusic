@@ -1,0 +1,79 @@
+#playlisttitle {
+    background-color: #544557;
+    position: fixed;
+    top: 40px;
+
+    left: calc(68px + 6px);
+    /* Start after the sidebar */
+    width: 100%;
+    /* Subtract the width of the sidebar */
+    height: 360px;
+    overflow: hidden;
+}
+
+.play-button1 {
+    position: relative;
+    left:30px;
+    top: 600px;
+    /* float: left; */
+}
+
+.name {
+    position: relative;
+    left: 550px;
+    /* Adjust as needed */
+}
+
+.desc {
+    position: relative;
+    left: 570px;
+    /* Adjust as needed */
+}
+
+.songlist-container {
+    border: 2px solid rgb(13, 13, 13);
+    /* Specify border width and style */
+
+    position: fixed;
+    /* Change from relative to fixed */
+    top: 400px;
+    /* Adjust as needed */
+    left: calc(68px + 6px);
+    /* Start after the sidebar */
+    width: calc(100% - 74px);
+    /* Subtract the width of the sidebar */
+    background-color: #6E576B;
+    height: calc(100vh - 400px);
+    /* Adjust based on the remaining height */
+    overflow: hidden;
+
+}
+.songlist {
+overflow-y: scroll; /* This will add a vertical scrollbar when needed */
+/* Adjust the max height as per your requirement */
+height: calc(100vh - 450px);
+background-color: #482d44;
+
+}
+
+
+.listm {
+    border: 2px solid rgb(32, 29, 35);
+    height: 50px;
+    /* Specify border width and style */
+
+
+}
+
+.attributes-container {
+    height: 50px;
+    display: flex;
+    gap: 390px;
+    /* Spacing between attributes */
+}
+
+.attribute {
+    background-color: #a58fa2;
+    padding: 10px;
+    border-radius: 5px;
+}
