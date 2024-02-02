@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import "./player.css";
-import MLInt from "./MLInt";
+
 
 const track = {
     name: "",
@@ -14,6 +14,7 @@ const track = {
         { name: "" }
     ]
 }
+const volume=MLInt.volume
 export const Player = () => {
     const [player, setPlayer] = useState({});
     const [is_paused, setPaused] = useState(false);
@@ -34,7 +35,7 @@ export const Player = () => {
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK',
                 getOAuthToken: cb => { cb(myToken); },
-                volume: MLInt.volume
+                volume: 1.0
             });
 
             setPlayer(player);
