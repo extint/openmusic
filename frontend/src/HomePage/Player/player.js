@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import "./player.css";
-import MLInt from "./MLInt";
+// import  from "./MLInt";
+import {Fvolume} from './MLInt'
+import { accessToken } from "../../accessToken";
+// import lst_vol from '../../ML/main_help.py'
 
 const track = {
     name: "",
@@ -19,8 +22,8 @@ export const Player = () => {
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [current_track, setTrack] = useState(track);
-    const myToken = 'BQClwiPvzHTQE0RdnQfOxteveNKaI4jhjI0GsBSNG2smV2fLvS7K_7eE3cQu3MRjxdLtghy268BX3YsUweZXLUkKrh-OUdevebqE9s8tZ8fjlhDkgJigHmyNaeeUxBIiJP04ytY5OXVfYvvwUu1Agp4H6twysfuOrbpwR-ZWl2UMGOENUPW9_c-lW2Wc2Iu_vB-wMjP3TcZex1HKQR407Kyy_xUb'
-
+    const myToken = accessToken
+    console.log(Fvolume,"hiiiiiiiii");
     useEffect(() => {
 
         const script = document.createElement("script");
@@ -30,15 +33,15 @@ export const Player = () => {
         document.body.appendChild(script);
 
         window.onSpotifyWebPlaybackSDKReady = () => {
-
+            // console.log(volume)
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK',
                 getOAuthToken: cb => { cb(myToken); },
-                volume: MLInt.volume
+                volume: Fvolume
             });
 
             setPlayer(player);
-            console.log(player)
+            // console.log(player)
 
             player.addListener('ready', ({ device_id }) => {
                 console.log('Ready with Device ID', device_id);

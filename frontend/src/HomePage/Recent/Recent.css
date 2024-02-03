@@ -69,6 +69,13 @@
   background-color:  rgba(223, 226, 205, 0.326);
   }
 }
+.recentModel{
+  position: relative;
+  object-fit: cover;
+  height: 50px;
+  padding: 15px;
+  margin-left:10px;
+}
 
 .recent-text-wrapper {
   text-decoration:none;
@@ -84,15 +91,39 @@
   justify-content: center;
   align-items: center;
 }
+.overlap:hover .Play {
+  opacity: 1; /* Make the play button visible when hovering over the song-board */
+  position: absolute;
+  transition: 500ms;
+}
 
+.Play {
+  position: absolute; /* Position the play button absolutely within the song-board */
+  /* top: 50%; */
+  /* left: 50%; */
+  transform: translate(450%, 0%);
+  background-color: aliceblue;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid rgb(95, 84, 84);
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border-right: none;
+  opacity: 0; /* Initially hide the play button */
+  z-index: 1; /* Ensure the play button is above other content */
+  /* top:60% */
+}
 
-/* .div {
-  background-color: #d1d0d0;
-  border-radius: 10px;
-  height: 86px;
-  left: 0;
-  position: relative;
-  top: 0;
-  width: 329px;
-  margin:3px
-} */
+.Play:hover {
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  /* border-left: 35px solid rgb(48, 47, 47); */
+  border-left: 30px solid #bab4b4;
+  box-shadow: #9d9d9d;
+  scale: (1.02);
+  transition: 100ms;
+}

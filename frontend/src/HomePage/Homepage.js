@@ -10,6 +10,8 @@ import { useCookies } from 'react-cookie';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import text from './userText.json'
+import { MLInt } from "./Player/MLInt";
+// import MLInt from "./Player/MLInt";
 // const parameter = { name: 'John', age: 25 };
 export const Homepage = () => {
   const navigate = useNavigate();
@@ -77,6 +79,7 @@ export const Homepage = () => {
   return (
     <>
       <div className="homepage-container">
+        {/* <MLInt/> */}
         <Recent{...data} />
         <MainHome{...data} />
         <Player />
