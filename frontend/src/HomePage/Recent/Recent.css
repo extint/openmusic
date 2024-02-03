@@ -14,8 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 550px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   border-radius: 100%;
   background-image: linear-gradient(rgb(22, 42, 9)0%, #1a3313);
   filter: blur(150px);
@@ -29,6 +29,7 @@
 }
 
 .inner-recent-box {
+  padding:40px;
   background-color:  #09181800;
   height: 216px;
   /* left: 60px; */
@@ -43,15 +44,20 @@
 }
 
 .overlap {
-  background-color:rgba(115, 202, 202, 0.443);
+  background-color: rgba(115, 202, 202, 0.443);
   border-radius: 10px;
-  height: 86px;
-  width: 329px;
-  margin: 10px;
+  height: 269px;
+  height: 259px;
+  /* padding: 15px; */
+  position: relative;
+  overflow: hidden;
+  top: -22px;
+  /* margin-left: 10px; */
+  width: 227px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
   text-decoration: none;
   text-decoration: none;
   transition: ease-out 2000ms;
@@ -61,7 +67,8 @@
   /* transition:1500ms; */
   /* box-shadow: #1f201e; */
   animation: glow 2s ;
-  transition: ease-out 2000ms;
+  transition: ease-out 1000ms;
+  transform: scale(1.05);
 }
 @keyframes glow{
   0%{}
@@ -69,12 +76,15 @@
   background-color:  rgba(223, 226, 205, 0.326);
   }
 }
-.recentModel{
+.recentModel {
   position: relative;
   object-fit: cover;
-  height: 50px;
-  padding: 15px;
-  margin-left:10px;
+  height: 262px;
+  /* padding: 15px; */
+  /* top: -22px; */
+  margin-left: 67px;
+  width: 249px;
+  /* display: none; */
 }
 
 .recent-text-wrapper {
@@ -96,34 +106,35 @@
   position: absolute;
   transition: 500ms;
 }
-
 .Play {
-  position: absolute; /* Position the play button absolutely within the song-board */
+  position: absolute;
   /* top: 50%; */
   /* left: 50%; */
-  transform: translate(450%, 0%);
+  transform: translate(280%, 200%);
   background-color: aliceblue;
   width: 0;
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-left: 30px solid rgb(95, 84, 84);
+  border-left: 30px solid rgb(145, 29, 29);
   cursor: pointer;
   background-color: transparent;
   margin: 0;
   padding: 0;
   border-right: none;
-  opacity: 0; /* Initially hide the play button */
-  z-index: 1; /* Ensure the play button is above other content */
-  /* top:60% */
+  opacity: 0;
+  z-index: 1;
+  /* top: 60%; */
 }
 
 .Play:hover {
-  border-top: 21px solid transparent;
-  border-bottom: 21px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
   /* border-left: 35px solid rgb(48, 47, 47); */
   border-left: 30px solid #bab4b4;
   box-shadow: #9d9d9d;
-  scale: (1.02);
+  /* scale: (1.02); */
+  /* transform: scale(1.03); */
+  /* animation: glow 1s infinite; */
   transition: 100ms;
 }

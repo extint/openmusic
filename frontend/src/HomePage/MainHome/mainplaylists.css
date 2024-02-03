@@ -20,29 +20,26 @@ a{
     left: 50px;
     letter-spacing: 0;
     line-height: normal;
-    top: 0px;
+    top: 10px;
     white-space: nowrap;
     width: auto;
     position: absolute;
     transition: transform 0.3s ease-in-out;
 }
 .selected{
-    background-color: rgba(225, 236, 170, 0.188);
-    /* opacity: 0.5; */
+    background-color: rgb(195 157 211);
     border-radius: 5px;
-    height: 193px;
+    height: 243px;
     /* margin: 40px; */
-    width: 194px;
+    width: 390px;
     display: flex;
     justify-content: center;
     align-items: space-evenly;
     transition: transform 0.2s ease-in-out;
-    margin-left:20px;
-    top:9%;
+    margin-left: 16px;
+    top: 10%;
     position: relative;
     animation: scrolling 10s infinite;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.01);
-    z-index: 1;
     &::after {
         position: absolute;
         content: "";
@@ -53,18 +50,18 @@ a{
         height: 5%;
         width: 100%;
         transform: scale(0.9) translateZ(0);
-        filter: blur(15px);
+        filter: blur(5px);
         background: linear-gradient(
-          to left,
-          #8c9a8d,
-          rgb(131, 185, 123),
-          #87c57f,
-          #20421b,
-          #2a5f22,
-          #567f56,
-          #688a68,
-          #213921,
-          #4f7350
+            to left,
+            rgb(135, 3, 118),
+            rgb(151, 11, 186),
+            #c42da8,
+            #9e16c3,
+            #6501de,
+            #9e16c3,
+            #c42da8,
+            #4245e4,
+            rgb(147, 15, 230)
         );
         background-size: 200% 200%;
         animation: animateGlow 2.25s linear infinite;
@@ -87,7 +84,7 @@ a{
     left: 50px;
     letter-spacing: 0;
     line-height: normal;
-    top: 270px;
+    top: 50%;
     white-space: nowrap;
     width: auto;
     position: absolute;
@@ -110,11 +107,25 @@ a{
     display: flex;
     flex-wrap: wrap;
 }
-.song-board {
+/* .song-board {
     position: relative; /* Ensure the play button is positioned relative to this container */
-    display: inline-block; /* Ensure the container doesn't expand unnecessarily */
-    
-}
+    /* display: inline-block; */
+   div.song-board {
+        background-color: rgb(195 157 211);
+        border-radius: 5px;
+        height: 243px;
+        /* margin: 40px; */
+        width: 390px;
+        display: flex;
+        justify-content: center;
+        align-items: space-evenly;
+        transition: transform 0.2s ease-in-out;
+        margin-left: 16px;
+        top: 10%;
+        position: relative;
+        animation: scrolling 10s infinite;
+    }
+/* } */
 
 .song-board:hover .songPlay {
     opacity: 1; /* Make the play button visible when hovering over the song-board */
@@ -165,7 +176,7 @@ a{
     left:2%;
     position: relative;
     width: 95%;
-    height:239px;
+    height:292px;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
