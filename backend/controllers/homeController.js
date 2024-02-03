@@ -2,6 +2,7 @@ const { getTracks, getArtists, getRecommendedSongs } = require('../utils/spotify
 const userCollection = require('../models/userModel');
 module.exports.getcontent = async (req, res)=>{
     const uname = req.query.userName;
+    console.log("uname", uname)
     let likedSongs = [];
     let recentSongs = [];
     let artistsFollowed = [];

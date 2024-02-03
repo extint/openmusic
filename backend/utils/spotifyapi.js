@@ -218,6 +218,7 @@ module.exports.getArtists = async (ids) => {
 
 module.exports.getRecommendedSongs = async (uname) => {
     const user = await userCollection.findOne({userName: uname});
+    require("dotenv").config({ override: true});
     let currTime = Math.floor(Date.now() / 1000);
     if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
         await this.refreshToken();
