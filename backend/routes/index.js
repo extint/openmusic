@@ -4,6 +4,7 @@ const loginRoutes = require('./login');
 const signupRoutes = require('./signup');
 const userRoutes = require('./user');
 const homeRoutes = require('./home');
+const playlistRoutes = require('./playlist');
 
 /* Posts route */
 router.use('/login', loginRoutes);
@@ -13,5 +14,7 @@ router.use('/signup', signupRoutes);
 router.use('/user', userRoutes);
 
 router.use('/home', homeRoutes);
+
+router.use('/playlist', playlistRoutes);
 
 module.exports = router;

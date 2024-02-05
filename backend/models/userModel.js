@@ -28,7 +28,7 @@ const UserSchema = new mongoose.Schema({
     }],
     friends: Array,
     artistsFollowed: Array,//of Artist Ids(from spotify)
-    playlists: Array, //of Playlist ids
+    playlists: Array, //of Playlist names
 
 
 })
