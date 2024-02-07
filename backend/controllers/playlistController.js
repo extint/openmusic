@@ -92,8 +92,9 @@ module.exports.getPlaylist = async (req, res) => {
 }
 
 module.exports.createBlend = async (req, res) => {
+try {
     const userName = req.body.userName;
-    const playlistName = req.body.playlistName; // Corrected variable name
+    const playlistName = req.body.playlistname; // new playlist name
     const playlistName1 = req.body.playlistName1;
     const playlistName2 = req.body.playlistName2;
     const userName2 = req.body.userName2;
@@ -111,34 +112,135 @@ module.exports.createBlend = async (req, res) => {
 
     if (playlist) {
         return res.status(400).json({ message: "Playlist already exists" });
-    }
-    else {
-
+    } else {
         if (!playlist1) {
-            return res.status(400).json({ message: "You dont have any such playlist" });
-        }
-        else {
+            return res.status(400).json({ message: "You don't have any such playlist" });
+        } else {
             if (!playlist2) {
-                return res.status(400).json({ message: " playlist does not exist " });
-            }
-            else {
-
+                return res.status(400).json({ message: "Playlist does not exist" });
+            } else {
                 // Create blend
                 const newBPlaylist = await playlistCollection.create({
-                    userName: userName,
+                    userName,
                     userId: user._id,
-                    playlistName: playlistName,
-                    songIds: playlist1.songIds.concat(playlist2.songIds) ,
+                    playlistName,
+                        songIds: [...playlist1.songIds, ...playlist2.songIds]
+                    });
 
-                });
+                    // Update the user document with the new playlist _id
+                    await userCollection.updateOne({ userName }, { $push: { playlists: newBPlaylist._id } });
+
+                    
+
+                        const commonSongIds = playlist1.songIds.filter(songId => playlist2.songIds.includes(songId)).length;
+                
+                        const totalUniqueSongIds = new Set([...playlist1.songIds, ...playlist2.songIds]).size;
+                
+                        const similarityPercentage = (commonSongIds / totalUniqueSongIds) * 100;
+                
+                        console.log('  ${similarityPercentage}');
+                    
+
+                        return res.status(200).json({ message: `Successfully added playlist. similarity : ${similarityPercentage}` });
+
+                    
             }
         }
     }
+} catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+};
 
-    // Update the user document with the new playlist _id
-    userCollection.updateOne({ userName: userName }, { $push: { playlists: newBPlaylist._id } })
 
-        .then(() => { return res.status(200).json({ message: "Successfully added playlist." }) })
-        .catch((err) => { console.log(err) });
 
-}
+
+// module.exports.similarity = async (req, res) => {
+//     try {
+//         const userName = req.body.userName;
+//         const playlistName = req.body.playlistname; // Should be "playlistName" instead of "playlistname"
+//         const playlistName1 = req.body.playlistName1;
+//         const playlistName2 = req.body.playlistName2;
+//         const userName2 = req.body.userName2;
+
+//         // Check if the user exists
+//         const user = await userCollection.findOne({ userName: userName2 });
+//         if (!user) {
+//             return res.status(404).json({ message: "User does not exist" });
+//         }
+
+//         // Check if the playlist already exists
+//         const playlist = await playlistCollection.findOne({ userName: userName, playlistName: playlistName });
+//         const playlist1 = await playlistCollection.findOne({ userName: userName, playlistName: playlistName1 });
+//         const playlist2 = await playlistCollection.findOne({ userName: userName2, playlistName: playlistName2 });
+
+//         if (playlist) {
+//             return res.status(400).json({ message: "Playlist already exists" });
+//         } else {
+//             if (!playlist1) {
+//                 return res.status(400).json({ message: "You don't have any such playlist" });
+//             } else {
+//                 if (!playlist2) {
+//                     return res.status(400).json({ message: "Playlist does not exist" });
+//                 } else {
+
+                   
+//                 }
+//             }
+//         }
+//     } catch (err) {
+//         console.error(err);
+//         return res.status(500).json({ message: "Internal Server Error" });
+//     }
+// };
+
+//  try {
+
+//         const commonSongIds = playlist1.songIds.filter(songId => playlist2.songIds.includes(songId)).length;
+
+//         const totalUniqueSongIds = new Set([...playlist1.songIds, ...playlist2.songIds]).size;
+
+//         const similarityPercentage = (commonSongIds / totalUniqueSongIds) * 100;
+
+//         return similarityPercentage.toFixed(2);
+//     } catch (error) {
+//         console.error("Error calculating playlist similarity:", error);
+//         throw error;
+//     }
+
+
+
+
+// // const calculatePlaylistSimilarity = async (playlist1, playlist2) => {
+// //     try {
+
+// //         const commonSongIds = playlist1.songIds.filter(songId => playlist2.songIds.includes(songId)).length;
+
+// //         const totalUniqueSongIds = new Set([...playlist1.songIds, ...playlist2.songIds]).size;
+
+// //         const similarityPercentage = (commonSongIds / totalUniqueSongIds) * 100;
+
+// //         return similarityPercentage.toFixed(2);
+// //     } catch (error) {
+// //         console.error("Error calculating playlist similarity:", error);
+// //         throw error;
+// //     }
+// // };
+
+
+// // // Define an async function to wrap the code
+// // const calculateAndLogSimilarity = async (playlist1, playlist2) => {
+// //     try {
+// //         const similarityPercentage = await calculatePlaylistSimilarity(playlist1, playlist2);
+// //         console.log(`Percentage similarity between the playlists: ${similarityPercentage}%`);
+// //     } catch (error) {
+// //         console.error("Error calculating playlist similarity:", error);
+// //     }
+// // };
+
+// // // Call the async function
+// // calculateAndLogSimilarity(playlist1, playlist2);
+
+
+
