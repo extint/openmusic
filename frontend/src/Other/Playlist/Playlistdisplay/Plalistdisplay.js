@@ -2,7 +2,7 @@ import React from "react";
 import "./Playlistdisplay.css"
 import { Navbar } from "../../../HomePage/Navbar/Navbar";
 import { Sidebar } from "../../../HomePage/Sidebar/Sidebar";
-import { Player } from "../../../HomePage/Player/player";
+import Player  from "../../../HomePage/Player/player";
 export const Playlistdisplay = () => {
     
     return (

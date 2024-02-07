@@ -1,12 +1,18 @@
 import React from "react";
 import "./Sidebar.css";
-export const Sidebar = () => {
+export const Sidebar = (props) => {
     return (
         <>
             <div className="sidebar">
                 <div className="overlap-group">
                     <div className="side-artist-box">
-                        <div className="graybox1">
+                        {props.artistsFollowed.map((item, index) => (
+                            <div className="graybox">
+                            <img className="Rmodel" src={item.images[0].url}></img>
+                            <div className="sideinfo">item.name</div>
+                        </div>
+                        ))}
+                        {/* <div className="graybox1">
                             <img className="model1" src="model.png"></img>
                             <div className="sideinfo">BARF KA GOLA </div>
                         </div>
@@ -45,7 +51,7 @@ export const Sidebar = () => {
                         </div>
                         <div className="graybox13">
                             <img className="model13" src="model.png"></img>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

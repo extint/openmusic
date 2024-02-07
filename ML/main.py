@@ -37,9 +37,7 @@ async def get_gesture(ws: WebSocket):
     )
     iris_detector = helper.IrisLandmark()
 
-    count=0
     flag=0
-    print(count)
     curr_volume=0
     song_command=""
 
@@ -52,7 +50,7 @@ async def get_gesture(ws: WebSocket):
         while True:
             data = await ws.receive()
             print("data received")
-            count+=1
+            # count+=1
             if data['text'] != 'null':
                 face_bytes = bytes(str(data['text']), 'utf-8')
                 face_bytes = face_bytes[face_bytes.find(b'/9'):]
@@ -66,12 +64,12 @@ async def get_gesture(ws: WebSocket):
                 face_results = face_mesh(image)
                 if(len(face_results)==0):
                     flag=1
-                    count=0
+                    # count=0
 
                 for face_result in face_results:
                     # Calculate bounding box around eyes
-                    count+=1
-                    print(count)  
+                    # count+=1
+                    # print(count)  
                     # if(flag==1 and len(face_result)==468 and count==12):
                     if(len(face_result)==468):
                         
@@ -114,22 +112,10 @@ async def get_gesture(ws: WebSocket):
             else:
                 continue
 
-            # if curr_volume !=0:    
-
-            # obj = {'curr_volume': str(curr_volume), 'song_command': str(song_command)}
-            # print("SSS", obj)
-
-            # await ws.send_json(obj)
-            if curr_volume==main_help.lst_vol:
-                obj = {'curr_volume': str(curr_volume), 'song_command': str(song_command)}
-                # print(obj)
-                await ws.send_json(obj)
-                print("HI")            
-            else:   
-                obj = {'curr_volume': str(curr_volume), 'song_command': str(song_command)}
-                await ws.send_json(obj)
+            
+            obj = {'curr_volume': str(curr_volume), 'song_command': str(song_command)}
+            await ws.send_json(obj)
             
             # ws.close()
 
 # @app.on_event('shutdown')
-            

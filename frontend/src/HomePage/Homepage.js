@@ -4,15 +4,14 @@ import { Recent } from "./Recent/Recent";
 import { MainHome } from "./MainHome/mainplaylists";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Navbar } from "./Navbar/Navbar";
-import { Player } from "./Player/player";
+// import { Player } from "./Player/player";
+import Player from "./Player/player";
 import { useEffect, useState } from "react";
 import { useCookies } from 'react-cookie';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
-import text from './userText.json'
-import { MLInt } from "./Player/MLInt";
-// import MLInt from "./Player/MLInt";
-// const parameter = { name: 'John', age: 25 };
+// import text from './userText.json'
+
 export const Homepage = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
@@ -39,20 +38,20 @@ export const Homepage = () => {
     }
 
     try {
-      // Verify token
-      const res = await axios.post(
-        "http://localhost:8000/user/verify",
-        {},
-        { withCredentials: true }
-      );
+      // Verify token VERYFYING
+      // const res = await axios.post(
+      //   "http://localhost:8000/user/verify",
+      //   {},
+      //   { withCredentials: true }
+      // );
 
-      const { message, success } = res.data;
+      // const { message, success } = res.data;
 
-      if (!success) {
-        console.log("Why wrong token?");
-        navigate("/login");
-        return;
-      }
+      // if (!success) {
+      //   console.log("Why wrong token?");
+      //   navigate("/login");
+      //   return;
+      // }
 
       // Fetch home data
       const homedata = await axios.get("http://localhost:8000/home", {
