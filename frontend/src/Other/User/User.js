@@ -5,7 +5,7 @@ import { Recent } from "../../HomePage/Recent/Recent";
 import { MainHome } from "../../HomePage/MainHome/mainplaylists";
 import { Sidebar } from "../../HomePage/Sidebar/Sidebar";
 import { Navbar } from "../../HomePage/Navbar/Navbar";
-import { Player } from "../../HomePage/Player/player";
+import  Player  from "../../HomePage/Player/player";
 // import { Profile } from "./Profile/Profile";
 import { useEffect,useState } from "react";
 import text from "../../HomePage/text.json"
