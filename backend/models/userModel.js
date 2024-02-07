@@ -28,6 +28,16 @@ const UserSchema = new mongoose.Schema({
     }],
     friends: Array,
     artistsFollowed: Array,//of Artist Ids(from spotify)
+    recentArtists: [{
+        artistId: {
+            type: String,
+            required: true
+        },
+        timeAdded: {
+            type: Number,
+            required: true
+        }
+    }],
     playlists: Array, //of Playlist names
 
 

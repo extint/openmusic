@@ -38,6 +38,5 @@ app.listen(8000, (err) => {
     }, 3500000);
     refreshToken();
     console.log("Server listening on port 8000");
-    // search("John");
 });
 

@@ -219,3 +219,66 @@ module.exports.clearRecentSongs = async (req, res) => {
         return res.status(200).json({message: "Successfully cleared recent songs"});
     }
 }
+
+module.exports.unfollowArtist = async (req, res) => {
+    const user = req.body.userName;
+    const artistId = req.body.artistId;
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "No such user" });
+    }
+    else {
+        if (check1.artistsFollowed.includes(artistId)) {
+            await userCollection.updateOne({ userName: user }, { $pullAll: { artistsFollowed: [artistId] } });
+            return res.status(200).json({ message: "Successfully unfollowed artist" });
+        }
+        else {
+            return res.status(400).json({ message: "Not following artist" })
+        }
+    }
+}
+
+module.exports.addRecentArtist = async (req, res) => {
+    const user = req.body.userName;
+    const artistId = req.body.artistId;
+
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    for (const artist of check1.recentArtists) {
+        if (artist.artistId == artistId) {
+            return res.status(200).json({ message: "Artist is already recent" });
+        }
+    }
+    let popper = {
+        artistId: "",
+        timeAdded: Infinity
+    }
+    let pusher = {
+        artistId: artistId,
+        timeAdded: Math.floor(Date.now() / 1000)
+    }
+    if (check1.recentArtists.length == 5) {
+        for(const artist of check1.recentArtists){
+            if(artist.timeAdded < popper.timeAdded){
+                popper = artist;
+            }
+        }
+        const res1 = await userCollection.updateOne({userName: user}, {$pullAll :{recentArtists: [popper]}});
+        console.log("first delete", res1);
+        pusher.timeAdded = Math.floor(Date.now() / 1000);
+        const res2 = await userCollection.updateOne({userName: user}, {$push: {recentArtists: pusher}});
+        console.log("pushed", res2);
+        return res.status(200).json({message: "Succesfully added recent song"});
+    }
+    else {
+        const newrecent = {
+            songId: songId,
+            timeAdded: Math.floor(Date.now() / 1000)
+        }
+        await userCollection.updateOne({ userName: user }, { $push: { recentSongs:  newrecent}});
+        return res.status(200).json({message: "Successfully added recent song"});
+    }
+
+}

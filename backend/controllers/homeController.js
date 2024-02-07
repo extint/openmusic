@@ -1,5 +1,6 @@
 const { getTracks, getArtists, getRecommendedSongs } = require('../utils/spotifyapi');
 const userCollection = require('../models/userModel');
+
 module.exports.getcontent = async (req, res)=>{
     const uname = req.query.userName;
     console.log("uname", uname)
@@ -14,18 +15,25 @@ module.exports.getcontent = async (req, res)=>{
     if(user.likedSongs){
         console.log("Lkd songs", user.likedSongs);
         likedSongs = await getTracks(user.likedSongs);
-        console.log(likedSongs), "before return";
+        // console.log(likedSongs);
     }
     if(user.recentSongs){
         songids = []
         for(const song of user.recentSongs){
             songids.push(song.songId);
         }
-        console.log("rcsongs", songids);
         recentSongs = await getTracks(songids);
+        for(song of recentSongs){
+            if(user.likedSongs.includes(song.songId)){
+                song.likedflag = true;
+            }
+            else{
+                song.likedflag = false;
+            }
+        }
     }
     if(user.artistsFollowed){
-        console.log("artistsfollowed", user.artistsFollowed);
+        // console.log("artistsfollowed", user.artistsFollowed);
         artistsFollowed = await getArtists(user.artistsFollowed);
     }
     recommendedSongs = await getRecommendedSongs(uname);
