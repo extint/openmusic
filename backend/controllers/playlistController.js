@@ -93,11 +93,10 @@ module.exports.getPlaylist = async (req, res) => {
 
 module.exports.createBlend = async (req, res) => {
     const userName = req.body.userName;
-    const playlistName = req.body.playlistname;//newplaylistname
-    const playlistName1 = req.body.playlistName1;//name of users playlist 
-
-    const playlistName2 = req.body.playlistName2;//usernmae of other users playlist
-    const userName2 = req.body.userName2;//name of other users playlist to be blended
+    const playlistName = req.body.playlistName; // Corrected variable name
+    const playlistName1 = req.body.playlistName1;
+    const playlistName2 = req.body.playlistName2;
+    const userName2 = req.body.userName2;
 
     // Check if the user exists
     const user = await userCollection.findOne({ userName: userName2 });
