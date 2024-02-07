@@ -16,6 +16,9 @@ module.exports.getcontent = async (req, res)=>{
         console.log("Lkd songs", user.likedSongs);
         likedSongs = await getTracks(user.likedSongs);
         // console.log(likedSongs);
+        for(let song of likedSongs){
+            song.likedflag = true;
+        }
     }
     if(user.recentSongs){
         songids = []
@@ -37,6 +40,15 @@ module.exports.getcontent = async (req, res)=>{
         artistsFollowed = await getArtists(user.artistsFollowed);
     }
     recommendedSongs = await getRecommendedSongs(uname);
+    for(let song of recommendedSongs){
+        if(user.likedSongs.includes(song.songId)){
+            song.likedflag = true;
+        }
+        else{
+            song.likedflag = false;
+        }
+    }
+
     // console.log("HERRRRRRRRRRR", recommendedSongs);
     return res.status(200).json({
         likedSongs: likedSongs,

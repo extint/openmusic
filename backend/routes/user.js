@@ -8,11 +8,7 @@ const authController = require('../controllers/authController');
 
 router.route('/friend/add').post(userController.addFriend);
 
-// router.route('/friend/get').get(userController.getFriendsList); // To do
-
 router.route('/friend/delete').delete(userController.removeFriend); 
-
-// router.route('/').get(userController.getUserDetails); // To do
 
 router.route('/verify').post(authController.verifytoken);
 
@@ -29,5 +25,9 @@ router.route('/followed/remove').delete(userController.unfollowArtist);
 router.route('/recent/add').post(userController.addRecentSong);
 
 router.route('/recent/clear').delete(userController.clearRecentSongs);
+
+router.route('/recent/artist/add').post(userController.addRecentArtist);
+
+router.route('/play').post(userController.play);
 
 module.exports = router;

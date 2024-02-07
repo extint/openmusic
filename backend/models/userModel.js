@@ -39,7 +39,21 @@ const UserSchema = new mongoose.Schema({
         }
     }],
     playlists: Array, //of Playlist names
-
+    songsPlayed:[{
+        songId: {
+            type: String,
+            required: true
+        },
+        lastPlayed:{
+            type: Number,
+            required: true
+        },
+        playCount:{
+            type:Number,
+            required: true,
+            default: 0
+        }
+    }]
 
 })
 

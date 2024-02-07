@@ -185,38 +185,38 @@ module.exports.addRecentSong = async (req, res) => {
         timeAdded: Math.floor(Date.now() / 1000)
     }
     if (check1.recentSongs.length == 5) {
-        for(const song of check1.recentSongs){
-            if(song.timeAdded < popper.timeAdded){
+        for (const song of check1.recentSongs) {
+            if (song.timeAdded < popper.timeAdded) {
                 popper = song;
             }
         }
-        const res1 = await userCollection.updateOne({userName: user}, {$pullAll :{recentSongs: [popper]}});
+        const res1 = await userCollection.updateOne({ userName: user }, { $pullAll: { recentSongs: [popper] } });
         console.log("first delete", res1);
         pusher.timeAdded = Math.floor(Date.now() / 1000);
-        const res2 = await userCollection.updateOne({userName: user}, {$push: {recentSongs: pusher}});
+        const res2 = await userCollection.updateOne({ userName: user }, { $push: { recentSongs: pusher } });
         console.log("pushed", res2);
-        return res.status(200).json({message: "Succesfully added recent song"});
+        return res.status(200).json({ message: "Succesfully added recent song" });
     }
     else {
         const newrecent = {
             songId: songId,
             timeAdded: Math.floor(Date.now() / 1000)
         }
-        await userCollection.updateOne({ userName: user }, { $push: { recentSongs:  newrecent}});
-        return res.status(200).json({message: "Successfully added recent song"});
+        await userCollection.updateOne({ userName: user }, { $push: { recentSongs: newrecent } });
+        return res.status(200).json({ message: "Successfully added recent song" });
     }
 
 }
 
 module.exports.clearRecentSongs = async (req, res) => {
     const user = req.body.userName;
-    const check1 = await userCollection.findOne({userName: user});
-    if(!check1){
-        return res.status(404).json({message: "No such user"});
+    const check1 = await userCollection.findOne({ userName: user });
+    if (!check1) {
+        return res.status(404).json({ message: "No such user" });
     }
-    else{
-        await userCollection.updateOne({userName: user}, {$set: {recentSongs: []}});
-        return res.status(200).json({message: "Successfully cleared recent songs"});
+    else {
+        await userCollection.updateOne({ userName: user }, { $set: { recentSongs: [] } });
+        return res.status(200).json({ message: "Successfully cleared recent songs" });
     }
 }
 
@@ -260,25 +260,101 @@ module.exports.addRecentArtist = async (req, res) => {
         timeAdded: Math.floor(Date.now() / 1000)
     }
     if (check1.recentArtists.length == 5) {
-        for(const artist of check1.recentArtists){
-            if(artist.timeAdded < popper.timeAdded){
+        for (const artist of check1.recentArtists) {
+            if (artist.timeAdded < popper.timeAdded) {
                 popper = artist;
             }
         }
-        const res1 = await userCollection.updateOne({userName: user}, {$pullAll :{recentArtists: [popper]}});
+        const res1 = await userCollection.updateOne({ userName: user }, { $pullAll: { recentArtists: [popper] } });
         console.log("first delete", res1);
         pusher.timeAdded = Math.floor(Date.now() / 1000);
-        const res2 = await userCollection.updateOne({userName: user}, {$push: {recentArtists: pusher}});
+        const res2 = await userCollection.updateOne({ userName: user }, { $push: { recentArtists: pusher } });
         console.log("pushed", res2);
-        return res.status(200).json({message: "Succesfully added recent song"});
+        return res.status(200).json({ message: "Succesfully added recent artist" });
+    }
+    else {
+        const newrecent = {
+            artistId: artistId,
+            timeAdded: Math.floor(Date.now() / 1000)
+        }
+        await userCollection.updateOne({ userName: user }, { $push: { recentArtists: newrecent } });
+        return res.status(200).json({ message: "Successfully added recent artist" });
+    }
+
+}
+
+module.exports.play = async (req, res) => {
+    const uname = req.query.userName;
+    const songId = req.query.songId;
+
+    const user = await userCollection.findOne({ userName: uname });
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    let skip = false;
+    let check = false;
+    if (user.songsPlayed.length > 0) {
+        for (const song of user.songsPlayed){
+            if(song.songId == songId){
+                check = true;
+            }
+        }
+    }
+
+    if (!check) {
+        await userCollection.updateOne({ userName: uname }, {
+            $push: {
+                songsPlayed: {
+                    songId: songId,
+                    lastPlayed: Math.floor(Date.now() / 1000),
+                    playCount: 1
+                }
+            }
+        })
+        console.log("Created");
+    }
+    else {
+        await userCollection.updateOne({ userName: uname }, {
+            $inc: {
+                "songsPlayed.$[outer].playCount": 1
+            }
+        },
+            { arrayFilters: [{ "outer.songId": songId }] });
+        console.log("incremented playcount");
+    }
+
+
+
+    for (const song of user.recentSongs) {
+        if (song.songId == songId) {
+            return res.status(200).json({ message: "Song is already recent" });
+        }
+    }
+    let popper = {
+        songId: "",
+        timeAdded: Infinity
+    }
+    let pusher = {
+        songId: songId,
+        timeAdded: Math.floor(Date.now() / 1000)
+    }
+    if (user.recentSongs.length == 5) {
+        for (const song of user.recentSongs) {
+            if (song.timeAdded < popper.timeAdded) {
+                popper = song;
+            }
+        }
+        const res1 = await userCollection.updateOne({ userName: uname }, { $pullAll: { recentSongs: [popper] } });
+        pusher.timeAdded = Math.floor(Date.now() / 1000);
+        const res2 = await userCollection.updateOne({ userName: uname }, { $push: { recentSongs: pusher } });
     }
     else {
         const newrecent = {
             songId: songId,
             timeAdded: Math.floor(Date.now() / 1000)
         }
-        await userCollection.updateOne({ userName: user }, { $push: { recentSongs:  newrecent}});
-        return res.status(200).json({message: "Successfully added recent song"});
+        await userCollection.updateOne({ userName: uname }, { $push: { recentSongs: newrecent } });
     }
+    return res.status(200).json({ message: "successfull played song" });
 
 }
