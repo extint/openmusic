@@ -5,7 +5,7 @@ const os = require("os");
 const songCollection = require('../models/songModel');
 const artistCollection = require("../models/artistModel");
 const userCollection = require('../models/userModel');
-const { shuffleArray, saveTracks } = require("./utils");
+const { shuffleArray, saveTracks, saveArtists } = require("./utils");
 
 function setEnvValue(key, value) {
     // read file from ssd & split if from a linebreak to a array
@@ -244,4 +244,32 @@ module.exports.getRecommendedSongs = async (uname) => {
     })
     // console.log(res.data.tracks);
     return await saveTracks(res.data.tracks);
+}
+
+module.exports.search = async (query) =>{
+    require('dotenv').config({override: true});
+    const q = query;
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
+        await this.refreshToken();
+    }
+
+    let res = await axios.get("https://api.spotify.com/v1/search",
+    {
+        params:{
+            q: q,
+            type: "track,artist",
+            limit:5
+        },
+        headers:{
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
+            'Content-Type': "application/json"
+        }
+    })
+    console.log(res);
+    const songs = await saveTracks(res.data.tracks.items);
+    const artists = await saveArtists(res.data.artists.items);
+    console.log(songs);
+    console.log(artists);
+    return {tracks: songs, artists: artists};
 }

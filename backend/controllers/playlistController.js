@@ -143,4 +143,3 @@ module.exports.createBlend = async (req, res) => {
         .catch((err) => { console.log(err) });
 
 }
-    ;

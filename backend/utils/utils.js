@@ -42,3 +42,29 @@ module.exports.saveTracks = async (tracks) => {
     }
     return _out;
 }
+
+module.exports.saveArtists = async (artists) => {
+    let out = [];
+    for (const artist of artists) {
+        // console.log(track);
+        // console.log("Artists",track.artists);
+        const info = {
+            name: artist.name,
+            artistId: artist.id,
+            followerCount: artist.followers.total,
+            genres: artist.genres,
+            images: artist.images
+        }
+        try {
+            const res = await artistCollection.create(info);
+            console.log(res, "success");
+            out.push(res);
+        }
+        catch (err) {
+            console.log(err);
+            return;
+        }
+    
+    }
+    return out;
+}
