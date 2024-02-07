@@ -101,8 +101,8 @@ export const Desktop1 = () => {
             <div className="lightbox-2"></div>
             <form type='submit' onSubmit={handleSubmit}>
               {/* <input className="name" name='name' value={name} onChange={handleName }></input> */}
-              <input type="text" className="name" name="userName" value={formData.userName} onChange={handleInputChange} placeholder="Email"></input>
-              <input type="password" className="name" name="password" value={formData.password} onChange={handleInputChange} placeholder="Password"></input>
+              <input type="text" className="Name" name="userName" value={formData.userName} onChange={handleInputChange} placeholder="Email"></input>
+              <input type="password" className="Name" name="password" value={formData.password} onChange={handleInputChange} placeholder="Password"></input>
               {/* <input type="password" className="name"></input> */}
 
               <div style={{

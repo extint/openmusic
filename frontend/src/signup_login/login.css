@@ -150,7 +150,7 @@
     background-color: #e79f0e
 }
 
-.desktop .name {
+.desktop .Name {
     background-color: #fce7b1e4;
     box-shadow: 2px 4px 4px #f5b53940;
     display: block;
@@ -161,7 +161,7 @@
     border-radius: 10px;
     font-size: 20px;
     /* text-align: center; */
-    padding-left: 10px;
+    padding-left: -100px;
     color:#30302c
 }
 

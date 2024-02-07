@@ -82,7 +82,7 @@ export const Homepage = () => {
         {/* <MLInt/> */}
         <Recent{...data} />
         <MainHome{...data} />
-        {/* <Player /> */}
+        <Player />
         {/* <Navbar /> */}
         <Sidebar{...data} />
       </div>

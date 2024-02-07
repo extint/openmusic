@@ -9,36 +9,26 @@ import { Artist } from './Other/Artist/Artist';
 import { Song } from './Other/Song/Song';
 // import Playlist from './Other/Playlist/Playlist';
 import { Playlistdisplay } from './Other/Playlist/Playlistdisplay/Plalistdisplay';
-import { Player } from './HomePage/Player/player';
-import { Sidebar } from './HomePage/Sidebar/Sidebar';
 function App() {
   return (
-    <>
-      <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/login" element={<Desktop1 />} />
-            <Route path="/signup" element={<Desktop />} />
-          </Routes>
-          <>
-            <Sidebar />
-            <Routes>
-              <Route path="/home/:userName" element={
-                <div className="Main">
-                  <Homepage />
-                </div>
-              } />
-              <Route path='/song/:songName' element={<Song />}></Route>
-              <Route path='/user/:userName' element={<User />}></Route>
-              <Route path='/playlist' element={<Playlistdisplay />}></Route>
-              <Route path='/artist/:artistName' element={<Artist />}></Route>
-              </Routes>
-              <Player />
-            <Navbar />
-          </>
-        </div>
-      </Router >
-    </>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/login" element={<Desktop1 />} />
+          <Route path="/signup" element={<Desktop />} />
+          <Route path="/home/:userName" element={
+            <div className="Main">
+              <Homepage />
+              <Navbar />
+            </div>
+            }/>
+          <Route path='/song/:songName' element={<Song/>}></Route> 
+          <Route path='/user/:userName' element={<User/>}></Route> 
+          <Route path='/playlist/:playlistName' element={<Playlistdisplay/>}></Route> 
+          <Route path='/artist/:artistName' element={<Artist/>}></Route> 
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

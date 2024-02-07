@@ -2,13 +2,13 @@ import React from "react";
 import "./Playlistdisplay.css"
 import { Navbar } from "../../../HomePage/Navbar/Navbar";
 import { Sidebar } from "../../../HomePage/Sidebar/Sidebar";
-// import { Player } from "../../../HomePage/Player/player";
+import { Player } from "../../../HomePage/Player/player";
 export const Playlistdisplay = () => {
     
     return (
         <>
-        {/* <Navbar/> */}
-        {/* <Sidebar/> */}
+        <Navbar/>
+        <Sidebar/>
                     <div id='playlisttitle'>
                 <h1 class="name">Playlist</h1>
                 <p class="desc">By: Name </p>
@@ -60,7 +60,7 @@ export const Playlistdisplay = () => {
                     </div>
                 </div>
             </div>
-            {/* <Player/> */}
+            <Player/>
         </>
     );
 };
