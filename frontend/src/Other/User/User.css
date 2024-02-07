@@ -1,6 +1,302 @@
-.userPage{
-    background-color: bisque;
-    height:100vh;
-    width:100vw;
-    font-size: larger;
+.AuserPage {
+    background-color: #0e100a;
+    width: 100%;
+    height: calc(100%-396px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 396px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
+
+/* .userPage .user-home {
+    background-color: #0e100a;
+    height: 100%;
+    position: relative;
+    left: 69px;
+    width: calc(100% - 69px); 
+    top: 0px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+} */
+.AuserPage::-webkit-scrollbar {
+    display: none;
+}
+
+
+.Atop-artists-this-month
+ {
+    color: #effde0;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 5%;
+    letter-spacing: 0;
+    line-height: normal;
+    vertical-align: top;
+    top: 1%;
+    margin-top: 0%;
+    white-space: nowrap;
+    width: auto;
+    position: absolute  ;
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+    text-shadow: 0 0 2px rgba(177, 248, 161, 0.4);
+    
+}
+.Atop-songs-this-month {
+    color: #effde0;;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 5%;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    position: absolute;
+    text-align: left;
+    text-shadow: 0 0 2px rgba(177, 248, 161, 0.4);
+    top: 50%;
+    width: auto;
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column */
+    align-items: flex-start;
+    justify-content: left; /* Align items to the start of the flex container */
+}
+
+.Atop-songs-heading {
+    margin-bottom: 0px;
+    justify-content: left; /* Add margin to separate heading and songs */
+}
+
+.Atop-songs-container {
+    display: flex;
+    left: -1%;
+    position: relative;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    justify-content: space-evenly;
+    
+}
+
+.Aplaylists {
+    color: #effde0;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 5%;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    position: absolute;
+    text-align: left;
+    text-shadow: 0 0 2px rgba(177, 248, 161, 0.4);
+    top: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column */
+    align-items: flex-start;
+    justify-content: left; /* Align items to the start of the flex container */
+}
+
+.Aplaylist-boards-heading {
+    margin-bottom: 0px;
+    justify-content: center ; /* Add margin to separate heading and songs */
+}
+
+.Aplaylist-boards {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    justify-content: space-evenly;
+    left: -2%;
+    position: relative;
+    top:2%
+}
+/* Add your other styles as needed */
+
+
+
+.Atop-artists{
+    color: #d9d9d9;
+    font-family: "Lalezar-Regular", Helvetica;
+    top:1%;
+    left:0%;
+    position: relative;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Atop-artists::-webkit-scrollbar{
+    width:0;
+}
+.Atop-songs{
+    color: #d9d9d9;
+    font-family: "Lalezar-Regular", Helvetica;
+    top:1%;
+    left:0%;
+    position: relative;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Atop-songs::-webkit-scrollbar{
+    width:0;
+}
+.Asuggested-boards{
+    /* background-color:#88a9ad ; */
+    top:6%;
+    left:2%;
+    position: relative;
+    width: 95%;
+    display: flex;
+    /* overflow-y: auto; */
+    overflow-x: scroll;
+    justify-content: space-evenly;
+}
+.Asuggested-boards::-webkit-scrollbar{
+    width:0;
+}
+.Aartist-board{
+    background-color: rgba(188, 224, 184, 0.05);
+    border-radius: 5px;
+    height: 193px;
+    /* margin: 40px; */
+    width: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    transition: transform 0.2s ease-in-out;
+    margin-left:80px;
+    justify-content: center;
+    position: relative;
+    
+}
+.Aartist {
+    font-size: larger;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 27px;
+    color: #d9d9d9;
+    position: absolute;
+    top: 72%;
+} 
+.Aartist-photo {
+    height: 120px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 120px;
+    transition: filter 0.3s ease-in-out;
+    border-radius: 100%;
+}
+.Asong-board{
+    background-color: rgba(229, 224, 224, 0.33);
+    border-radius: 5px;
+    height: 193px;
+    /* margin: 40px; */
+    width: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    transition: transform 0.2s ease-in-out;
+    margin-left:20px;
+    /* position: relative; */
+    animation: scrolling 10s 
+}
+@keyframes scrolling{
+    0%{left:10%}
+    50%{translate: 100px;}
+    100%{left: 10%;}
+}
+.Asong-board:hover {
+    transform: scale(1.05);
+}
+.Aplaylist-boards::-webkit-scrollbar {
+    display: none;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+
+.Aplaylist-board {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    height: 193px;
+    margin: 40px;
+    width: 194px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+}
+.Aplaylist-board:hover {
+    transform: scale(1.05);
+}
+
+.Amodel {
+    height: 110px;
+    object-fit: cover;
+    position: absolute;
+    top: 16px;
+    width: 125px;
+    transition: filter 0.3s ease-in-out;
+}
+.Amodel:hover {
+    filter: brightness(1.2);
+}
+
+/* .song,
+.song-2 {
+    height: 90px;
+    width: 160px;
+    position: absolute;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background: rgb(0,36,30);
+    background: linear-gradient(0deg, #112b2b 5%, #d9d9d9 100%, rgb(53, 55, 58) 5%);
+    background-color: #88a9ad;
+} */
+
+.Asong {
+    font-size: larger;
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 15px;
+    color: #d9d9d9;
+    position: absolute;
+    top: 87%;
+} 
+
+.Asong-2 {
+    /* background-color: #6e898d00; */
+    top: 80%;
+    position: absolute;
+}
+.Acloud-effect {
+    background: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+    transition: clip-path 100ms;
+}
+.Ablur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 550px;
+    border-radius: 100%;
+    background-image: linear-gradient(rgb(22, 42, 9)0%, #142011);
+    filter: blur(150px);
+    transition: all 450ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-50% + 15px), -50%);
+    /* z-index: -1; */
+  }
