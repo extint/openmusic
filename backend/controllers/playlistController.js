@@ -94,7 +94,7 @@ module.exports.getPlaylist = async (req, res) => {
 
 module.exports.createBlend = async (req, res) => {
 try {
-    // duplicates
+   
     // artist similarity and song similarity in a combined
     const userName = req.body.userName;
     const playlistName = req.body.playlistName; // new playlist name
@@ -122,7 +122,7 @@ try {
             if (!playlist2) {
                 return res.status(400).json({ message: "Playlist does not exist" });
             } else {
-                let songarray = [...playlist1.songIds, ...playlist2.songIds];
+                let songarray = new Set([...playlist1.songIds, ...playlist2.songIds]);
                 shuffleArray(songarray);
                 newBPlaylist = await playlistCollection.create({
                         userName: userName,
