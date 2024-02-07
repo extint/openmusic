@@ -12,4 +12,6 @@ router.route('/get').get(playlistController.getPlaylists);
 
 router.route('/').get(playlistController.getPlaylist);
 
+router.route('/blend').get(playlistController.createBlend);
+
 module.exports = router;

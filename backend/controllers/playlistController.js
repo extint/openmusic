@@ -1,6 +1,7 @@
 const playlistCollection = require('../models/playlistModel');
 const userCollection = require('../models/userModel');
 const { getTracks } = require('../utils/spotifyapi');
+const { shuffleArray } = require('../utils/utils');
 
 module.exports.createPlaylist = async (req, res) => {
     const playlistName = req.body.playlistName;
@@ -29,7 +30,7 @@ module.exports.createPlaylist = async (req, res) => {
         });
 
         // Update the user document with the new playlist _id
-        userCollection.updateOne({ userName: userName }, { $push: { playlists: newPlaylist._id } })
+        userCollection.updateOne({ userName: userName }, { $push: { playlists: newPlaylist.playlistName } })
 
         .then(()=> { return res.status(200).json({ message: "Successfully added playlist." })})
         .catch((err) => { console.log(err) });
@@ -93,8 +94,10 @@ module.exports.getPlaylist = async (req, res) => {
 
 module.exports.createBlend = async (req, res) => {
 try {
+    // duplicates
+    // artist similarity and song similarity in a combined
     const userName = req.body.userName;
-    const playlistName = req.body.playlistname; // new playlist name
+    const playlistName = req.body.playlistName; // new playlist name
     const playlistName1 = req.body.playlistName1;
     const playlistName2 = req.body.playlistName2;
     const userName2 = req.body.userName2;
@@ -109,7 +112,7 @@ try {
     const playlist = await playlistCollection.findOne({ userName: userName, playlistName: playlistName });
     const playlist1 = await playlistCollection.findOne({ userName: userName, playlistName: playlistName1 });
     const playlist2 = await playlistCollection.findOne({ userName: userName2, playlistName: playlistName2 });
-
+    let newBPlaylist;
     if (playlist) {
         return res.status(400).json({ message: "Playlist already exists" });
     } else {
@@ -119,29 +122,30 @@ try {
             if (!playlist2) {
                 return res.status(400).json({ message: "Playlist does not exist" });
             } else {
-                // Create blend
-                const newBPlaylist = await playlistCollection.create({
-                    userName,
-                    userId: user._id,
-                    playlistName,
-                        songIds: [...playlist1.songIds, ...playlist2.songIds]
+                let songarray = [...playlist1.songIds, ...playlist2.songIds];
+                shuffleArray(songarray);
+                newBPlaylist = await playlistCollection.create({
+                        userName: userName,
+                        userId: user._id,
+                        playlistName: playlistName,
+                        songIds: songarray
                     });
 
                     // Update the user document with the new playlist _id
-                    await userCollection.updateOne({ userName }, { $push: { playlists: newBPlaylist._id } });
+                    await userCollection.updateOne({ userName }, { $push: { playlists: newBPlaylist.playlistName } });
 
+                    const commonSongIds = playlist1.songIds.filter(songId => playlist2.songIds.includes(songId)).length;
+                
+                    const totalUniqueSongIds = new Set([...playlist1.songIds, ...playlist2.songIds]).size;
+                
+                    const similarityPercentage = (commonSongIds / totalUniqueSongIds) * 100;
+                
+                    console.log(`${similarityPercentage}`);
                     
 
-                        const commonSongIds = playlist1.songIds.filter(songId => playlist2.songIds.includes(songId)).length;
-                
-                        const totalUniqueSongIds = new Set([...playlist1.songIds, ...playlist2.songIds]).size;
-                
-                        const similarityPercentage = (commonSongIds / totalUniqueSongIds) * 100;
-                
-                        console.log('  ${similarityPercentage}');
-                    
-
-                        return res.status(200).json({ message: `Successfully added playlist. similarity : ${similarityPercentage}` });
+                    return res.status(200).json({ message: `Successfully added playlist. similarity : ${similarityPercentage}`,
+                    playlist: newBPlaylist
+                });
 
                     
             }
