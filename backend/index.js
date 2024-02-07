@@ -36,6 +36,7 @@ app.listen(8000, (err) => {
     setInterval(()=>{
         refreshToken();
     }, 3500000);
+    refreshToken();
     console.log("Server listening on port 8000");
     // search("John");
 });
