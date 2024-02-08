@@ -9,7 +9,8 @@ export const MainHome = (props) => {
   const name = useParams().userName;
   const modelsRef = useRef([]);
   const [selectedSongId, setSelectedSongId] = useState(null);
-
+  const [selectedPlaylistName, setSelectedPlaylistName] = useState(null);
+  console.log("EEE", props);
   useEffect(() => {
     modelsRef.current.forEach((model) => {
       model.addEventListener('click', handleClick);
@@ -58,17 +59,16 @@ export const MainHome = (props) => {
         ))}
       </div>
       <div className="playlist-boards">
-        {props.recommendedSongs.map((item, index) => (
-          <div className={`playlist-board ${selectedSongId === item.songId ? 'selected' : ''}`} key={index}>
-            <button className="songPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
+         {props.playlists && props.playlists.map((item, index) => (
+          <div className="playlist-board" key={index}>
             <Link to="/playlist">
               <img className="model" alt="Model" src={item.images[0].url} />
             </Link>
-            <div className="song">{item.name}</div>
-            <div className="song-2">{item.artists[0].name}</div>
+            hi
+            <div className="song">{item.playlistName}</div>
           </div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 };

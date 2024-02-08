@@ -3,7 +3,7 @@ import "./Playlistdisplay.css"
 import { Navbar } from "../../../HomePage/Navbar/Navbar";
 import { Sidebar } from "../../../HomePage/Sidebar/Sidebar";
 import Player  from "../../../HomePage/Player/player";
-export const Playlistdisplay = () => {
+export const Playlistdisplay = (props) => {
     
     return (
         <>
