@@ -9,7 +9,7 @@ export const Navbar = (props) => {
       <div className="navbox">
         <div className="text-wrapper">MYUSIK</div>
         {/* <Link to="/user"> */}
-          <div className="acc-img"  onClick={()=>{navigate(`/profile/${params.userName}` ,{replace:true,state:props})}}/>
+          <div className="acc-img"  onClick={()=>{navigate(`/user/${params.userName}` ,{replace:true,state:props})}}/>
         {/* </Link> */}
       </div>
     );

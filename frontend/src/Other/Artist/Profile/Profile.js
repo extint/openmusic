@@ -5,8 +5,7 @@ import { useEffect,useState } from "react";
 export const Profile = () => {
 
   return (
-    <div className="Profile">
-        
+    <div className="Profile">     
           <div className="photo-bg">
             <img className="photo" alt="Photo" src="model1.png" />
           </div>

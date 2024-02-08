@@ -30,18 +30,18 @@ export const Artist = () => {
         };
       }, []);
 
-    return (
+      return (
         <div className="AuserPage">
-        <div className="Ablur"/>   
-        <Navbar />
-        <Profile />
-        <Sidebar />
+          <Navbar/>
         <Player />
+          <Profile {...state}/>
+          <Sidebar {...state}/>
+        <div className="Ablur"/>   
         
         <div className="Atop-songs-artist">
         <div className="Atop-songs-heading">Top songs:</div>
         <div className="Atop-songs-container">
-          {/* {state.topSongs.map((item, index) => (
+          {/* {state.artistsFollowed.map((item, index) => (
             <Link to='/topsongs' key={index}>
               <div className="Aartist-board"
                 key={index}>
@@ -57,7 +57,7 @@ export const Artist = () => {
         <div className="Aplaylists-artist">
         <div className="Aplaylist-boards-heading">Recent Albums:</div>
         <div className="Aplaylist-boards">
-        {state.recommendedSongs.map((item, index) => (
+        {/* {state.recommendedSongs.map((item, index) => (
             <Link to="/playlists">
             <div
             className="Aartist-board"
@@ -67,7 +67,7 @@ export const Artist = () => {
             <div className="Aartist">{item.artists[0].name}</div>
             </div>
             </Link>
-      ))}
+      ))} */}
     </div></div>
         </div>
             
