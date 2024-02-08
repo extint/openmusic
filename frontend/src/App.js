@@ -19,7 +19,7 @@ function App() {
           <Route path="/home/:userName" element={
             <div className="Main">
               <Homepage />
-              <Navbar />
+              {/* <Navbar /> */}
             </div>
             }/>
           <Route path='/song/:songName' element={<Song/>}></Route> 

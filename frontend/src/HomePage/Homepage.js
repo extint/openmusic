@@ -82,7 +82,7 @@ export const Homepage = () => {
         <Recent{...data} />
         <MainHome{...data} />
         <Player />
-        {/* <Navbar /> */}
+        <Navbar {...data}/>
         <Sidebar{...data} />
       </div>
     </>

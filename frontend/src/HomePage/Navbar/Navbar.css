@@ -32,12 +32,17 @@
     width: 1920px;
 } */
 .acc-img {
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    background: url("user.png");   
+    background-repeat: no-repeat;
+    background-size:contain;
     top: 3px; 
-    left: 3000%; 
-    width: 27px; 
-    height: 27px; 
-    background-color: rgba(0, 255, 255, 0.241);
+    margin-left: 85%; 
+    width: 30px; 
+    height: 30px; 
+    background-color: rgba(0, 255, 255, 0);
     border-radius: 50%;
   }
   
