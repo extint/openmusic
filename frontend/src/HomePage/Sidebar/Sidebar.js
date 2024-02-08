@@ -1,15 +1,19 @@
 import React from "react";
 import "./Sidebar.css";
+import { Link,useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const Sidebar = (props) => {
+    const navigate=useNavigate()
+    const params = useParams();
     return (
         <>
             <div className="sidebar">
                 <div className="overlap-group">
                     <div className="side-artist-box">
-                        {props.artistsFollowed.map((item, index) => (
+                        {props.artistsFollowed&&props.artistsFollowed.map((item, index) => (
                             <div className="graybox">
-                            <img className="Rmodel" src={item.images[0].url}></img>
-                            <div className="sideinfo">item.name</div>
+                            <img className="Rmodel" src={item.images[0].url} onClick={()=>{navigate(`/artist/${item.name}` ,{replace:true,state:props})}}/>
+                            <div className="sideinfo">{item.name}</div>
                         </div>
                         ))}
                         {/* <div className="graybox1">

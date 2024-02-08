@@ -99,3 +99,29 @@
     top: 5px;
     width: 40px;
 }
+.displayCam{
+    position: relative;
+    margin-left: "auto";
+    margin-right: "auto";
+    left: 197px;
+    right: 0;
+    text-align: "center";
+    /* z-index: -9; */
+    width: 400;
+    height: 400;
+}
+.dontDisplayCam{
+    /* position: relative;
+    position: "absolute";
+    margin-left: "auto";
+    margin-right: "auto";
+    left: 1000px;
+    right: 0;
+    text-align: "center";
+    z-index: -9;
+    width: 400;
+    height: 400; */
+    opacity: 0;
+    display:"none";
+    /* background-color: aqua; */
+}

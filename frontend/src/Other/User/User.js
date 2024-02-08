@@ -8,7 +8,7 @@ import { Navbar } from "../../HomePage/Navbar/Navbar";
 import  Player  from "../../HomePage/Player/player";
 // import { Profile } from "./Profile/Profile";
 import { useEffect,useState } from "react";
-import text from "../../HomePage/text.json"
+// import text from "../../HomePage/text.json"
 export const User = (props) => {
     useEffect(() => {
         const handleMouseMove = (e) => {

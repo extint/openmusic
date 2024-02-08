@@ -1,14 +1,16 @@
 import React from "react";
 import "./Navbar.css";
-import {Link} from "react-router-dom";
+import {Link,useNavigate ,useParams} from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const params=useParams()
+  const navigate=useNavigate()
     return (
       <div className="navbox">
         <div className="text-wrapper">MYUSIK</div>
-        <Link to="/user">
-          <img className="acc-img" src="./user.png" alt="Account" />
-        </Link>
+        {/* <Link to="/user"> */}
+          <div className="acc-img"  onClick={()=>{navigate(`/user/${params.userName}` ,{replace:true,state:props})}}/>
+        {/* </Link> */}
       </div>
     );
   };

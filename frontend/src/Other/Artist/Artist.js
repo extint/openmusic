@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import "./Artist.css";
 import { Recent } from "../../HomePage/Recent/Recent";
 import { MainHome } from "../../HomePage/MainHome/mainplaylists";
 import { Sidebar } from "../../HomePage/Sidebar/Sidebar";
 import { Navbar } from "../../HomePage/Navbar/Navbar";
-// import { Profile } from "./Profile/Profile";
 import Player from "../../HomePage/Player/player";
+import { Profile } from "./Profile/Profile";
 import { useEffect,useState } from "react";
 import text from "../../HomePage/text.json"
-export const Artist = (props) => {
+export const Artist = () => {
+  const location = useLocation();
+  const state = location.state; // Access the state object directly
+  console.log(state, "hehe");
     useEffect(() => {
         const handleMouseMove = (e) => {
           const cursor = document.querySelector('.blur');
@@ -27,18 +30,18 @@ export const Artist = (props) => {
         };
       }, []);
 
-    return (
+      return (
         <div className="AuserPage">
-        <div className="Ablur"/>   
-        <Navbar />
-        {/* <Profile /> */}
-        <Sidebar />
+          <Navbar/>
         <Player />
+          <Profile {...state}/>
+          <Sidebar {...state}/>
+        <div className="Ablur"/>   
         
         <div className="Atop-songs-artist">
         <div className="Atop-songs-heading">Top songs:</div>
         <div className="Atop-songs-container">
-          {props.topSongs.map((item, index) => (
+          {/* {state.artistsFollowed.map((item, index) => (
             <Link to='/topsongs' key={index}>
               <div className="Aartist-board"
                 key={index}>
@@ -47,24 +50,24 @@ export const Artist = (props) => {
                 <div className="Asong">{item.artists[0].name}</div>
               </div>
             </Link>
-          ))}
+          ))} */}
         </div>
       </div>
         
         <div className="Aplaylists-artist">
         <div className="Aplaylist-boards-heading">Recent Albums:</div>
         <div className="Aplaylist-boards">
-        {props.suggestedSongs.map((item, index) => (
+        {/* {state.recommendedSongs.map((item, index) => (
             <Link to="/playlists">
             <div
             className="Aartist-board"
             key={index} >
-            <img className="Amodel" alt="Model" src="model.png" />
-            <div className="Asong">{item.artistName}</div>
-            <div className="Aartist">{item.songName}</div>
+            <img className="Amodel" alt="Model" src={item.images[0].url} />
+            <div className="Asong">{item.name}</div>
+            <div className="Aartist">{item.artists[0].name}</div>
             </div>
             </Link>
-      ))}
+      ))} */}
     </div></div>
         </div>
             
