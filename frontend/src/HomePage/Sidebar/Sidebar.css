@@ -9,14 +9,6 @@
 .overlap-group::-webkit-scrollbar {
     display: none;
 }
-/* .overlap-group {
-    overflow-y: auto;
-    height: 100vh;
-    position: relative;
-    width:68px;
-    box-shadow: 0px 5px 7px rgb(106, 107, 107);
-    justify-content: center;
-} */
 .overlap-group {
     height: 100vh;
     top: 180px;
@@ -39,17 +31,6 @@
     align-items: center;
     position: fixed;
 }
-/* .libraryandsearch:hover{
-    background-color: rgba(84, 102, 100, 0.698);
-    height:149px;
-    width:100px;
-    border-radius: 20px;
-    overflow: hidden;   
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .side-artist-box {
     height: 730px;
     /* left: -100px; */
@@ -84,39 +65,7 @@
     position: relative;
     margin-bottom: 7px;
 }
-/* .graybox1:hover{
-    justify-content: center;
-    align-items: center;
-    position: absolute; 
-    top:10px;
-    left:80px;
-    width:100px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(26, 18, 18, 0.796);
-    border-radius: 10px;
-} */
-/* .sideinfo{
-    position: fixed; 
-    top:200px;
-    left: 10px;
-    width:90px;
-    height: 90px;
-    background-color: rgba(6, 249, 249, 0.764);
-    display:none;
-    opacity: 0%;
-}
-.sideinfo:hover{
-    position: fixed; 
-    opacity:100%;
-    top:200px;
-    left: 70px;
-    width:100px;
-    height: 70px;
-    background-color: rgba(122, 255, 255, 0.764);
-} */
+
 .Rmodel {
     left: -20px;
     top: 0px;
@@ -159,16 +108,18 @@
     transition: ease-in 0.1s;
 }
 .searchBox {
+    z-index:5;
     position: absolute;
     /* width: 478px; */
     left: 0px;
     margin-top: 60px;
     /* height: 50px; */
-    background-color: rgba(43, 214, 226, 0.329);
+    background-color: rgba(53, 190, 199, 0.783);
     padding: 5px 10px;
     border-radius: 40px;
     font-size: larger;
-    display: flex;
+    /* display: flex; */
+    flex-wrap: wrap;
     align-items: center;
 }
 .search{
@@ -180,12 +131,26 @@
     /* top: 75px; */
     width: 44px;
     cursor: pointer;
-    transition: ease-in 0.3s;
+    /* transition: ease-in 0.3s; */
   }
 .searchBox:hover > .search-text {
-    width:240px;
+    width:85%;
     padding:10px 15px;
-
+    position: relative;
+    border:2px solid rgb(233, 233, 233);
+    border-radius:40px ;
+    align-self: center;
+    /* transition: all ease-in 0.5s; */
+}
+.searchBox:hover > .search {
+    display: none;
+    /* transition: ease-in 1s; */
+}
+.searchBox:hover {
+    position: fixed;
+    margin-top: 90px;
+    /* overflow: scroll; */
+    /* padding-left: px; */
 }
 .search-text {
     border: none;
@@ -199,50 +164,43 @@
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
+    position: relative;
   }
+  .SearchResults {
+    width: 400px;
+    max-height: 200px; /* Set maximum height */
+    /* overflow-y: scroll; Add vertical scrollbar */
+    background-color: #ffffff00;
+    margin-top: 20px;
+    position: relative;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    /* overflow: scroll; */
+}
+
+.searchOutput {
+    background-color: rgba(255, 0, 0, 0.105)(250, 145, 145);
+    width: 100%;
+    height: 90px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+}
+.sModel {
+    object-fit: cover;
+    width: 53px;
+    height: auto;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
 .preSearchResults{
-    width:200px;
-    height:600px;
-    background-color: #fff;
-    display: block;
-    /* position: absolute */
+    display: none;
 }
-/* .model2{
-    left:5px;
-    top:5px;
-}
-.model3{
-    left:5px;
-    top:5px;
-}
-.model4{
-    left:5px;
-    top:5px;
-}
-.model5{
-    left:5px;
-    top:5px;
-}
-.model6{
-    left:5px;
-    top:5px;
-}
-.model7{
-    left:5px;
-    top:5px;
-}
-.model8{
-    left:5px;
-    top:5px;
-}
-.model9{
-    left:5px;
-    top:5px;
-}
-.model10{
-    left:5px;
-    top:5px;
-} */
+
 .playlist {
     height: 44px;
     /* left: 8px; */
@@ -261,126 +219,4 @@
     width: 48px;
     display: block;
     
-}
-
-.graybox2{
-    position: absolute;
-    top:90px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(106, 130, 130, 0);
-}
-.graybox3{
-    position: absolute;
-    top:175px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox4{
-    position: absolute;
-    top:260px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox5{
-    position: absolute;
-    top:345px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox6{
-    position: absolute;
-    top:430px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox7{
-    position: absolute;
-    
-    top:515px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox8{
-    position: absolute;
-    top:600px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox9{
-    position: absolute;
-    top:685px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox10{
-    position: absolute;
-    top:770px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox11{
-    position: absolute;
-    top:770px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox12{
-    position: absolute;
-    top:770px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
-}
-.graybox13{
-    position: absolute;
-    top:770px;
-    width:70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: rgb(106, 130, 130); */
 }
