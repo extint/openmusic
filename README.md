@@ -130,4 +130,5 @@ $ npm run start
 - [Manav Shah](https://github.com/manav2580): manavshah.2003.ms@gmail.com
 
 ## 📱Screenshots
-![ScreenShot1]()
+![ScreenShot1](https://github.com/extint/openmusic/blob/main/assets/ScreenShot1.jpg "Page1")
+![ScreenShot2](https://github.com/extint/openmusic/blob/main/assets/ScreenShot2.jpg "Page2")
