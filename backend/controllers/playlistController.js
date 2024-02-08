@@ -122,7 +122,7 @@ try {
             if (!playlist2) {
                 return res.status(400).json({ message: "Playlist does not exist" });
             } else {
-                let songarray = new Set([...playlist1.songIds, ...playlist2.songIds]);
+                let songarray = playlist1.songIds.concat(playlist2.songIds);
                 shuffleArray(songarray);
                 newBPlaylist = await playlistCollection.create({
                         userName: userName,
@@ -146,8 +146,6 @@ try {
                     return res.status(200).json({ message: `Successfully added playlist. similarity : ${similarityPercentage}`,
                     playlist: newBPlaylist
                 });
-
-                    
             }
         }
     }
