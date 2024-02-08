@@ -62,7 +62,6 @@ export const Homepage = () => {
           'Content-Type': "application/json"
         }
       });
-
       setData(homedata.data);
       console.log(homedata.data, "This is my home data smiley face :)");
     } catch (err) {

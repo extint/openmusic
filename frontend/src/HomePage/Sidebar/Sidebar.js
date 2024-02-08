@@ -1,67 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
-import { Link,useParams } from "react-router-dom";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 export const Sidebar = (props) => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const params = useParams();
+    const [searchQ,setSearchQ]=useState("")
+    const [searchR,setSearchR]=useState("")
+    const searchQuery= async (e)=>{
+        // console.log(e.target.value);
+        setSearchQ(e.target.value)
+        if(searchQ){
+        try{
+        const searchData = await axios.get("http://localhost:8000/search", {
+            params: {
+              q: searchQ
+            },
+            headers:{
+              'Content-Type': "application/json"
+            }
+          });
+          setSearchR(searchData.data);
+          console.log(searchData.data, "This is my search data smiley face :)");
+        } catch (err) {
+          console.log(err);
+        }
+    }
+
+    };
     return (
         <>
             <div className="sidebar">
                 <div className="overlap-group">
                     <div className="side-artist-box">
-                        {props.artistsFollowed&&props.artistsFollowed.map((item, index) => (
+                        {/* liked songs here */}
+                        <div className="graybox">
+                            <img className="likedSongs" src="/love-always-wins.png" onClick={() => { navigate(`/likedsongs`, { replace: true, state: props }) }} />
+                            <div className="sideinfo">Liked Songs</div>
+                        </div>
+                        {/* artists */}
+                        {props.artistsFollowed && props.artistsFollowed.map((item, index) => (
                             <div className="graybox">
-                            <img className="Rmodel" src={item.images[0].url} onClick={()=>{navigate(`/artist/${item.name}` ,{replace:true,state:props})}}/>
-                            <div className="sideinfo">{item.name}</div>
-                        </div>
+                                <img className="Rmodel" src={item.images[0].url} onClick={() => { navigate(`/artist/${item.name}`, { replace: true, state: props }) }} />
+                                <div className="sideinfo">{item.name}</div>
+                            </div>
                         ))}
-                        {/* <div className="graybox1">
-                            <img className="model1" src="model.png"></img>
-                            <div className="sideinfo">BARF KA GOLA </div>
-                        </div>
-                        <div className="graybox2">
-                            <img className="model2" src="model.png"></img>
-                        </div>
-                        <div className="graybox3">
-                            <img className="model3" src="model.png"></img>
-                        </div>
-                        <div className="graybox4">
-                            <img className="model4" src="model.png"></img>
-                        </div>
-                        <div className="graybox5">
-                            <img className="model5" src="model.png"></img>
-                        </div>
-                        <div className="graybox6">
-                            <img className="model6" src="model.png"></img>
-                        </div>
-                        <div className="graybox7">
-                            <img className="model7" src="model.png"></img>
-                        </div>
-                        <div className="graybox8">
-                            <img className="model8" src="model.png"></img>
-                        </div>
-                        <div className="graybox9">
-                            <img className="model9" src="model.png"></img>
-                        </div>
-                        <div className="graybox10">
-                            <img className="model10" src="model.png"></img>
-                        </div>
-                        <div className="graybox11">
-                            <img className="model11" src="model.png"></img>
-                        </div>
-                        <div className="graybox12">
-                            <img className="model12" src="model.png"></img>
-                        </div>
-                        <div className="graybox13">
-                            <img className="model13" src="model.png"></img>
-                        </div> */}
-
                     </div>
                 </div>
                 <div className="libraryandsearch">
-                    <img className="search" alt="Search" src="search.png" />
-                    <img className="playlist" alt="Playlist" src="playlists.png" />
+                    <div className="searchBox">
+                    {/* <div className="tempDiv" style={{display:"flex"}}> */}
+                        <img className="search" alt="Search" src="/search.png" />
+                        <input type="text" className="search-text" placeholder = "Search Anything" onChange={searchQuery}></input>
+                    {/* </div> */}
+                        {/* <div className="preSearchResults"></div> */}
+                        </div>
+
+                    <img className="playlist" alt="Playlist" src="/playlists.png" />
                 </div>
             </div>
         </>

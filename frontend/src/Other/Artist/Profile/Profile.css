@@ -1,157 +1,161 @@
-.Profile {
-    /* background-color: #10160b; */
 
-    height: 356px;
-    position: fixed;    
-    width: 100vw;
-    top:40px;
-    text-align: center;
-    background: linear-gradient(to right, #000402, #070e00, #070e00, #000402);
-    background-size: 200% 100%; /* Adjust the size as needed */
-    animation: gradientAnimation 30s infinite; 
-    opacity: 0.98; 
-}
+  .PProfile {
+      /* background-color: #10160b; */
 
-  
-  .Profile .photo-bg {
-    background-color: #647354;
-    border-radius: 50%;
-    height: 250px;
-    left: 35%;
-    position: relative;
-    top: 14%;
-    line-height: 250px;
-    width: 250px;
-    box-shadow: 0px 0px 20px 0.1px #c9f0a8;
-  }
+      height: 356px;
+      position: fixed;    
+      width: 100vw;}
+  .PProfile {
+      /* background-color: #10160b; */
+      height: 356px;
+      position: fixed;    
+      width: 100vw;
+      top:40px;
+      text-align: center;
+      background: linear-gradient(to right, #000402, #070e00, #070e00, #000402);
+      background-size: 200% 100%; /* Adjust the size as needed */
+      animation: gradientAnimation 30s infinite; 
+      opacity: 0.98; 
+  } 
+    .PProfile .Pphoto-bg {
+      background-color: #647354;
+      border-radius: 50%;
+      height: 250px;
+      left: 35%;
+      position: relative;
+      top: 14%;
+      line-height: 250px;
+      width: 250px;
+      box-shadow: 0px 0px 20px 0.1px #c9f0a8;
+    }
 
-  .Profile .photo-bg .photo {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    left: 36px;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .Profile .text-content {
-   
-    height: 62px;
-    left: 52%;
-    top:7%;
-    position: fixed;
-    text-align: left;
+    .PProfile .Pphoto-bg .Pphoto {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      left: 36px;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     
+    .PProfile .Ptext-content {
+    
+      height: 62px;
+      left: 52%;
+      top:7%;
+      position: fixed;
+      text-align: left;
+      
 
-  }
-  
-  .Profile .text-content .user {
-    color: #afc599;
-    text-shadow: 0 0 3px rgba(177, 248, 161, 0.4);
-    font-family: "Lalezar-Regular", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 30px;
-    width: 681px;
-    background: linear-gradient(to right, #afc599, #000402);
-    background-size: 200% 100%;
-    color: transparent;
-    background-clip: text;
-    /* animation: gradientAnimation 15s infinite; */
-  }
-  
-  .Profile .text-content .username {
-    color: #afc599;
-    text-shadow: 0 0 3px rgba(229, 252, 253, 0.6);
-    font-family: "Lalezar-Regular", Helvetica;
-    font-size: 100px;
-    font-weight: 400;
-    left: 0%;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 30px;
-    white-space: nowrap;
-    width: 681px;
-    background: linear-gradient(to right, #afc599, #000402);
-    background-size: 200% 100%;
-    color: transparent;
-    background-clip: text;
-    /* animation: gradientAnimation 10s infinite; */
-  }
-  
-  .Profile .text-content .profile-playlists {
-    color: #afc599;
-    font-family: "Lalezar-Regular", Helvetica;
-    font-size: 27px;
-    font-weight: 400;
-    left: 0px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 150px;
-    white-space: nowrap;
-    width: 324px;
-    background: linear-gradient(to right, #afc599, #000402);
-    background-size: 200% 100%;
-    color: transparent;
-    background-clip: text;
-    animation: gradientAnimation 15s infinite;
-  }
-  
-  .Profile .text-content .followers {
-    color: #afc599;
-    font-family: "Lalezar-Regular", Helvetica;
-    font-size: 27px;
-    font-weight: 400;
-    left: 0px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 190px;
-    white-space: nowrap;
-    width: 218px;
-    background: linear-gradient(to right, #afc599, #000402);
-    background-size: 200% 100%;
-    color: transparent;
-    background-clip: text;
-    animation: gradientAnimation 15s infinite;
-  }
-  
-  .Profile .text-content .following {
-    color: #afc599;
-    font-family: "Lalezar-Regular", Helvetica;
-    font-size: 27px;
-    font-weight: 400;
-    left: 0px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 230px;
-    white-space: nowrap;
-    width: 218px;
-    background: linear-gradient(to right, #afc599, #000402);
-    background-size: 200% 100%;
-    color: transparent;
-    background-clip: text;
-    animation: gradientAnimation 15s infinite;
-  }
-  
-  @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%; /* Start from the left */
     }
-    50% {
-        background-position: 100% 50%; /* Move to the right */
+    
+    .PProfile .Ptext-content .Puser {
+      color: #afc599;
+      text-shadow: 0 0 3px rgba(177, 248, 161, 0.4);
+      font-family: "Lalezar-Regular", Helvetica;
+      font-size: 20px;
+      font-weight: 400;
+      left: 0;
+      letter-spacing: 0;
+      line-height: normal;
+      position: absolute;
+      top: 30px;
+      width: 681px;
+      background: linear-gradient(to right, #afc599, #000402);
+      background-size: 200% 100%;
+      color: transparent;
+      background-clip: text;
+      /* animation: gradientAnimation 15s infinite; */
     }
-    100% {
-        background-position: 0% 50%; /* Back to the left */
+    
+    .PProfile .Ptext-content .Pusername {
+      color: #afc599;
+      text-shadow: 0 0 3px rgba(229, 252, 253, 0.6);
+      font-family: "Lalezar-Regular", Helvetica;
+      font-size: 100px;
+      font-weight: 400;
+      left: 0%;
+      letter-spacing: 0;
+      line-height: normal;
+      position: absolute;
+      top: 30px;
+      white-space: nowrap;
+      width: 681px;
+      background: linear-gradient(to right, #afc599, #000402);
+      background-size: 200% 100%;
+      color: transparent;
+      background-clip: text;
+      /* animation: gradientAnimation 10s infinite; */
     }
-}
+    
+    .PProfile .Ptext-content .Pprofile-playlists {
+      color: #afc599;
+      font-family: "Lalezar-Regular", Helvetica;
+      font-size: 27px;
+      font-weight: 400;
+      left: 0px;
+      letter-spacing: 0;
+      line-height: normal;
+      position: absolute;
+      top: 150px;
+      white-space: nowrap;
+      width: 324px;
+      background: linear-gradient(to right, #afc599, #000402);
+      background-size: 200% 100%;
+      color: transparent;
+      background-clip: text;
+      animation: gradientAnimation 15s infinite;
+    }
+    
+    .PProfile .Ptext-content .Pfollowers {
+      color: #afc599;
+      font-family: "Lalezar-Regular", Helvetica;
+      font-size: 27px;
+      font-weight: 400;
+      left: 0px;
+      letter-spacing: 0;
+      line-height: normal;
+      position: absolute;
+      top: 190px;
+      white-space: nowrap;
+      width: 218px;
+      background: linear-gradient(to right, #afc599, #000402);
+      background-size: 200% 100%;
+      color: transparent;
+      background-clip: text;
+      animation: gradientAnimation 15s infinite;
+    }
+    
+    .PProfile .Ptext-content .Pfollowing {
+      color: #afc599;
+      font-family: "Lalezar-Regular", Helvetica;
+      font-size: 27px;
+      font-weight: 400;
+      left: 0px;
+      letter-spacing: 0;
+      line-height: normal;
+      position: absolute;
+      top: 230px;
+      white-space: nowrap;
+      width: 218px;
+      background: linear-gradient(to right, #afc599, #000402);
+      background-size: 200% 100%;
+      color: transparent;
+      background-clip: text;
+      animation: gradientAnimation 15s infinite;
+    }
+    
+    @keyframes gradientAnimation {
+      0% {
+          background-position: 0% 50%; /* Start from the left */
+      }
+      50% {
+          background-position: 100% 50%; /* Move to the right */
+      }
+      100% {
+          background-position: 0% 50%; /* Back to the left */
+      }
+  }

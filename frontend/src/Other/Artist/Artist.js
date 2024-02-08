@@ -1,5 +1,5 @@
-import React from "react";
-import { Link,useLocation } from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { Link,useLocation,useParams } from "react-router-dom";
 import "./Artist.css";
 import { Recent } from "../../HomePage/Recent/Recent";
 import { MainHome } from "../../HomePage/MainHome/mainplaylists";
@@ -7,15 +7,56 @@ import { Sidebar } from "../../HomePage/Sidebar/Sidebar";
 import { Navbar } from "../../HomePage/Navbar/Navbar";
 import Player from "../../HomePage/Player/player";
 import { Profile } from "./Profile/Profile";
-import { useEffect,useState } from "react";
-import text from "../../HomePage/text.json"
-export const Artist = () => {
+import text from "../../HomePage/text.json";
+import axios from "axios";
+import { accessToken } from "../../accessToken";
+
+export const Artist = (props) => {
   const location = useLocation();
   const state = location.state; // Access the state object directly
   console.log(state, "hehe");
+  const myToken = accessToken
+  const name = useParams().userName;
+  const modelsRef = useRef([]);
+  const [selectedSongId, setSelectedSongId] = useState(null);
+
+  useEffect(() => {
+    modelsRef.current.forEach((model) => {
+      model.addEventListener('click', handleClick);
+    });
+    return () => {
+      modelsRef.current.forEach((model) => {
+        model.removeEventListener('click', handleClick);
+      });
+    };
+  }, []);
+
+  async function handleClick(e) {
+  
+    try {
+      console.log(e,"here")
+      const songId = e 
+      setSelectedSongId(songId === selectedSongId ? null : songId); // Toggle the selected songId
+      // setPlay(songId); // Set the currently playing item
+      await axios.post(`https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A${songId}`, {}, {
+        headers: {
+          'Content-Type': "application/json",
+          Authorization: `Bearer ${myToken} `
+        }
+      });
+      await axios.post("https://api.spotify.com/v1/me/player/next", {}, {
+        headers: {
+          Authorization: `Bearer ${myToken}`
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
     useEffect(() => {
         const handleMouseMove = (e) => {
-          const cursor = document.querySelector('.blur');
+          const cursor = document.querySelector('.Ablur');
           if (cursor) {
             const x = e.clientX;
             const y = e.clientY;
@@ -32,42 +73,39 @@ export const Artist = () => {
 
       return (
         <div className="AuserPage">
+        <div className="Ablur"/>   
           <Navbar/>
-        <Player />
+          <Player />
           <Profile {...state}/>
           <Sidebar {...state}/>
-        <div className="Ablur"/>   
         
         <div className="Atop-songs-artist">
         <div className="Atop-songs-heading">Top songs:</div>
         <div className="Atop-songs-container">
-          {/* {state.artistsFollowed.map((item, index) => (
-            <Link to='/topsongs' key={index}>
-              <div className="Aartist-board"
-                key={index}>
-                <img className="Amodel" alt="Model" src={item.images[0].url} />
-                <div className="Aartist">{item.name}</div>
-                <div className="Asong">{item.artists[0].name}</div>
-              </div>
-            </Link>
-          ))} */}
+          {/* {props.likedSongs.map((item, index) => (
+          <div className={` ${selectedSongId === item.songId ? 'selected' : 'Asong-board'}`} key={index}>
+            <button className="songPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
+            <img className="model" alt="Model" data-song-id={item.songId} src={item.images[0].url} />
+            <div className="Asong">{item.name}</div>
+            <div className="Asong-2">{item.artists[0].name}</div>
+          </div>
+        ))} */}
         </div>
       </div>
         
         <div className="Aplaylists-artist">
         <div className="Aplaylist-boards-heading">Recent Albums:</div>
         <div className="Aplaylist-boards">
-        {/* {state.recommendedSongs.map((item, index) => (
-            <Link to="/playlists">
-            <div
-            className="Aartist-board"
-            key={index} >
-            <img className="Amodel" alt="Model" src={item.images[0].url} />
-            <div className="Asong">{item.name}</div>
-            <div className="Aartist">{item.artists[0].name}</div>
-            </div>
+        {/* {props.recommendedSongs.map((item, index) => (
+          <div className={`Aplaylist-board ${selectedSongId === item.songId ? 'selected' : ''}`} key={index}>
+            <button className="AsongPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
+            <Link to="/playlist">
+              <img className="Amodel" alt="Model" src={item.images[0].url} />
             </Link>
-      ))} */}
+            <div className="Asong">{item.name}</div>
+            <div className="Asong-2">{item.artists[0].name}</div>
+          </div>
+        ))} */}
     </div></div>
         </div>
             

@@ -76,7 +76,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(29, 255, 9, 0.972);
+    background-color: rgba(29, 255, 9, 0);
     padding-bottom: 10px;
     overflow: hidden;
     border-radius: 50%;
@@ -125,6 +125,14 @@
     height: auto;
     width: 105px;
 }
+.likedSongs {
+    left: 0px;
+    top: 2px;
+    position: relative;
+    object-fit: fill;
+    height: auto;
+    width: 70px;
+}
 .sideinfo{
     position: fixed; 
     opacity:100%;
@@ -144,6 +152,60 @@
 .Rmodel:hover+.sideinfo{
     opacity:1;
     transition: ease-in 0.4s;
+}
+.likedSongs:hover+.sideinfo{
+    margin-top: -80px;
+    opacity:1;
+    transition: ease-in 0.1s;
+}
+.searchBox {
+    position: absolute;
+    /* width: 478px; */
+    left: 0px;
+    margin-top: 60px;
+    /* height: 50px; */
+    background-color: rgba(43, 214, 226, 0.329);
+    padding: 5px 10px;
+    border-radius: 40px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+}
+.search{
+    height: 44px;
+    /* left: -55px; */
+    /* display: block; */
+    object-fit: cover;
+    position: relative;
+    /* top: 75px; */
+    width: 44px;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+  }
+.searchBox:hover > .search-text {
+    width:240px;
+    padding:10px 15px;
+
+}
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+  }
+.preSearchResults{
+    width:200px;
+    height:600px;
+    background-color: #fff;
+    display: block;
+    /* position: absolute */
 }
 /* .model2{
     left:5px;
@@ -200,24 +262,7 @@
     display: block;
     
 }
-.search {
-    height: 44px;
-    /* left: 10px; */
-    display: block;
-    object-fit: cover;
-    position: absolute;
-    top: 89px;
-    width: 44px;
-}
-.search:hover {
-    height: 48px;
-    /* left: 10px; */
-    display: block;
-    object-fit: cover;
-    position: absolute;
-    top: 89px;
-    width: 48px;
-}
+
 .graybox2{
     position: absolute;
     top:90px;
