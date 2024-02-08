@@ -79,7 +79,7 @@ module.exports.getPlaylists = async (req, res) => {
 }
 
 module.exports.getPlaylist = async (req, res) => {
-    const pname = req.body.playlistName;
+    const pname = req.query.playlistName;
     const check = await playlistCollection.findOne({playlistName : pname});
     if(!check){
         return res.status(404).json({message: "no such playlist"});
