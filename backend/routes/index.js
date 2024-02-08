@@ -6,7 +6,7 @@ const userRoutes = require('./user');
 const homeRoutes = require('./home');
 const playlistRoutes = require('./playlist');
 const searchRoutes = require('./search');
-
+const artistRoutes = require('./artist');
 /* Posts route */
 router.use('/login', loginRoutes);
 /* Comments route */
@@ -19,5 +19,7 @@ router.use('/home', homeRoutes);
 router.use('/playlist', playlistRoutes);
 
 router.use('/search', searchRoutes);
+
+router.use('/artist', artistRoutes);
 
 module.exports = router;

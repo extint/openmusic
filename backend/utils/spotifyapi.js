@@ -1,4 +1,4 @@
-require("dotenv").config({ override: true});
+require("dotenv").config({ override: true });
 const axios = require('axios');
 const fs = require("fs");
 const os = require("os");
@@ -36,7 +36,7 @@ function setEnvValue(key, value) {
 }
 
 module.exports.refreshToken = async () => {
-    require("dotenv").config({override: true});
+    require("dotenv").config({ override: true });
     let currTime = Math.floor(Date.now() / 1000);
     if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) < 3600) {
         return;
@@ -63,12 +63,12 @@ module.exports.refreshToken = async () => {
         console.log(err);
 
     })
-    require("dotenv").config({ override: true});
+    require("dotenv").config({ override: true });
 }
 
 module.exports.getTracks = async (ids) => {
-    if(!Array.isArray(ids) || !ids.length) return [];
-    require("dotenv").config({override: true});
+    if (!Array.isArray(ids) || !ids.length) return [];
+    require("dotenv").config({ override: true });
     // let currTime = Math.floor(Date.now() / 1000);
     // if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
     //     await this.refreshToken();
@@ -87,14 +87,14 @@ module.exports.getTracks = async (ids) => {
                 songId: check.songId,
                 duration_ms: check.duration_ms,
                 images: check.images,
-                artists:check.artists,
+                artists: check.artists,
                 album: check.album
             }
             // console.log(song);
             out.push(song);
         }
     }
-    if(!Array.isArray(nonexistent_ids) || !nonexistent_ids.length){
+    if (!Array.isArray(nonexistent_ids) || !nonexistent_ids.length) {
         return out;
     }
     commaseparatedids = nonexistent_ids.join(',');
@@ -144,15 +144,15 @@ module.exports.getTracks = async (ids) => {
             console.log(err);
             return;
         }
-        
+
     }
     return out;
 
 }
 
 module.exports.getArtists = async (ids) => {
-    if(!Array.isArray(ids) || !ids.length) return [];
-    require("dotenv").config({ override: true});
+    if (!Array.isArray(ids) || !ids.length) return [];
+    require("dotenv").config({ override: true });
     // let currTime = Math.floor(Date.now() / 1000);
     // if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
     //     await this.refreshToken();
@@ -171,13 +171,13 @@ module.exports.getArtists = async (ids) => {
                 artistId: check.artistId,
                 followerCount: check.followerCount,
                 images: check.images,
-                genres:check.genres,
+                genres: check.genres,
             }
             console.log(artist);
             out.push(artist);
         }
     }
-    if(!Array.isArray(nonexistent_ids) || !nonexistent_ids.length){
+    if (!Array.isArray(nonexistent_ids) || !nonexistent_ids.length) {
         return out;
     }
     commaseparatedids = nonexistent_ids.join(',');
@@ -212,32 +212,32 @@ module.exports.getArtists = async (ids) => {
             console.log(err);
             return;
         }
-        
+
     }
 }
 
 module.exports.getRecommendedSongs = async (uname) => {
-    const user = await userCollection.findOne({userName: uname});
-    require("dotenv").config({ override: true});
+    const user = await userCollection.findOne({ userName: uname });
+    require("dotenv").config({ override: true });
     let currTime = Math.floor(Date.now() / 1000);
     if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
         await this.refreshToken();
     }
-    if(!user){
+    if (!user) {
         console.log("No such user");
         return []
     }
     // let bestSongs = user.likedSongs.concat(user.recentSongs);
     let seed = user.likedSongs.concat(user.artistsFollowed);
     shuffleArray(seed);
-    seed = seed.slice(0,4).join(',');
+    seed = seed.slice(0, 4).join(',');
 
     res = await axios.get("https://api.spotify.com/v1/recommendations", {
         params: {
             limit: 7,
             seed_tracks: seed
         },
-        headers:{
+        headers: {
             Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
             'Content-Type': "application/json"
         }
@@ -246,8 +246,8 @@ module.exports.getRecommendedSongs = async (uname) => {
     return await saveTracks(res.data.tracks);
 }
 
-module.exports.search = async (query) =>{
-    require('dotenv').config({override: true});
+module.exports.search = async (query) => {
+    require('dotenv').config({ override: true });
     const q = query;
     let currTime = Math.floor(Date.now() / 1000);
     if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
@@ -255,21 +255,57 @@ module.exports.search = async (query) =>{
     }
 
     let res = await axios.get("https://api.spotify.com/v1/search",
-    {
-        params:{
-            q: q,
-            type: "track,artist",
-            limit:5
-        },
-        headers:{
-            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
-            'Content-Type': "application/json"
-        }
-    })
+        {
+            params: {
+                q: q,
+                type: "track,artist",
+                limit: 5
+            },
+            headers: {
+                Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
+                'Content-Type': "application/json"
+            }
+        })
     // console.log(res);
     const songs = await saveTracks(res.data.tracks.items);
     const artists = await saveArtists(res.data.artists.items);
     // console.log(songs);
     // console.log(artists);
-    return {tracks: songs, artists: artists};
+    return { tracks: songs, artists: artists };
+}
+
+module.exports.getArtistTopTracks = async (aid) => {
+    require("dotenv").config({ override: true });
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
+        await this.refreshToken();
+    }
+    let res = await axios.get(`https://api.spotify.com/v1/artists/${aid}/top-tracks`, {
+        params: {
+            market: "US"
+        },
+        headers: {
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
+            "Content-Type": "application/json"
+        }
+    });
+    // console.log(res.data.tracks);
+    const songs = await saveTracks(res.data.tracks);
+    return songs.length > 8 ? songs.slice(0, 8) : songs;
+}
+
+module.exports.getArtistRelations = async (aid) => {
+    require("dotenv").config({ override: true });
+    let currTime = Math.floor(Date.now() / 1000);
+    if ((currTime - parseInt(process.env.SPOTIFY_TOKEN_TIME)) >= 3600) {
+        await this.refreshToken();
+    }
+    let res = await axios.get(`https://api.spotify.com/v1/artists/${aid}/related-artists`, {
+        headers: {
+            Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`,
+            "Content-Type": "application/json"
+        }
+    });
+    const artists = await saveArtists(res.data.artists);
+    return artists.length > 8 ? artists.slice(0, 8) : artists;
 }
