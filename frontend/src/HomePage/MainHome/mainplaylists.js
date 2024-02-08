@@ -46,8 +46,8 @@ export const MainHome = (props) => {
   }
   return (
     <div className="main-home">
-      <div className="text-wrapper">WELCOME {name} !</div>
-      <div className="text-wrapper-2">recently played:</div>
+      <div className="text-wrapper">Welcome {name} !</div>
+      <div className="text-wrapper-2">Recently Played Playlists:</div>
       <div className="suggested-boards">
         {props.likedSongs.map((item, index) => (
           <div className={` ${selectedSongId === item.songId ? 'selected' : 'song-board'}`} key={index}>
@@ -64,8 +64,7 @@ export const MainHome = (props) => {
             <Link to="/playlist">
               <img className="model" alt="Model" src={item.images[0].url} />
             </Link>
-            hi
-            <div className="song">{item.playlistName}</div>
+            <div className="song-3">{item.playlistName}</div>
           </div>
         ))}
       </div> 
