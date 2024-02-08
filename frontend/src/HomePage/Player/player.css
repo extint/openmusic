@@ -1,6 +1,8 @@
 .box {
-    height: 80px;
+    height: 100vh;
+    margin-top: 40px;
     width: 1934px;
+    background-color: #052b225d;
 }
 
 .box .player-bar {

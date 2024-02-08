@@ -11,9 +11,8 @@
 a{
     text-decoration: none;
 }
-.text-wrapper,
-.text-wrapper-2 {
-    color: #ffffff;
+.text-wrapper{
+    color: rgba(186, 255, 247, 0.897);
     font-family: "Lalezar-Regular", Helvetica;
     font-size: 40px;
     font-weight: 400;
@@ -77,14 +76,14 @@ a{
   }
   
 .text-wrapper-2 {
-    color: #d9d9d9;
+    color: rgba(186, 255, 247, 0.897);
     font-family: "Lalezar-Regular", Helvetica;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 400;
     left: 50px;
     letter-spacing: 0;
     line-height: normal;
-    top: 50%;
+    top: 38%;
     white-space: nowrap;
     width: auto;
     position: absolute;
@@ -111,7 +110,7 @@ a{
     position: relative; /* Ensure the play button is positioned relative to this container */
     /* display: inline-block; */
    div.song-board {
-        background-color: rgb(195 157 211);
+        background-color: rgba(95, 213, 199, 0.381);
         border-radius: 5px;
         height: 243px;
         /* margin: 40px; */
@@ -173,7 +172,7 @@ a{
 .suggested-boards{
     /* background-color:#88a9ad ; */
     top:6%;
-    left:2%;
+    left:0px;
     position: relative;
     width: 95%;
     height:292px;
@@ -181,6 +180,7 @@ a{
     overflow-y: hidden;
     overflow-x: scroll;
     justify-content: space-evenly;
+    text-align: center;
 }
 .suggested-boards::-webkit-scrollbar{
     width:0;
@@ -188,18 +188,21 @@ a{
 .song-board{
     background-color: rgba(229, 224, 224, 0.33);
     border-radius: 5px;
-    height: 193px;
+    /* height: 193px; */
     /* margin: 40px; */
     width: 194px;
-    display: flex;
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
-    align-items: space-evenly;
+    align-items: center;
     transition: transform 0.2s ease-in-out;
-    margin-left:20px;
-    top:10%;
+    left:0px;
+    /* top:10%; */
     position: relative;
     animation: scrolling 10s infinite;
+    text-align: center;
 }
+
 @keyframes scrolling{
     0%{translate:-10%}
     50%{translate: 10%;}
@@ -217,7 +220,7 @@ a{
 }
 
 .playlist-board {
-    background-color: rgba(58, 106, 88, 0.632);
+    background-color:rgba(95, 213, 199, 0.381);
     border-radius: 5px;
     height: 193px;
     margin: 40px;
@@ -258,20 +261,35 @@ a{
 } */
 
 .song {
-    /* background-color: #139eae; */
-    font-size: larger;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-family: "Lalezar-Regular", Helvetica;
     position: relative;
-    top: 65%;
+    top: 15%;
+    color:  rgba(186, 255, 247, 0.897);
+    /* margin-top: -50%; */
     text-decoration: #c6cfcd;
-    /* width:90%; */
+    /* left: 35px; */
+    width:90%;
 } 
 
 .song-2 {
-    /* background-color: #6e898d00; */
-    top: 80%;
+    font-family: "Lalezar-Regular", Helvetica;
+    color:  rgba(186, 255, 247, 0.897);
+    top: 20%;
     position: relative;
+    /* margin-top: -70%; */
 }
+.song-3 {
+    font-size: 25px;
+    font-family: "Lalezar-Regular", Helvetica;
+    position: relative;
+    top: 65%;
+    color:  rgba(186, 255, 247, 0.897);
+    text-decoration: #c6cfcd;
+    /* left: 35px; */
+    width:90%;
+}
+
 .cloud-effect {
     background: black;
     color: white;
