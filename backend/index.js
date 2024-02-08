@@ -8,9 +8,9 @@ const dbURI = `mongodb+srv://opium:${password}@nodet.qugbjpj.mongodb.net/nodet?r
 const cors = require('cors');
 const fs = require('fs');
 const path = './.env';
-const { getArtists, getRecommendedSongs, refreshToken, search } = require('./utils/spotifyapi');
+const { refreshToken } = require('./utils/spotifyapi');
 require("dotenv").config({ override: true });
-const { getTracks } = require("./utils/spotifyapi");
+// const { getTracks } = require("./utils/spotifyapi");
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 

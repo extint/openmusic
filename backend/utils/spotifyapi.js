@@ -74,7 +74,7 @@ module.exports.getTracks = async (ids) => {
     //     await this.refreshToken();
     // }
     let nonexistent_ids = [];
-    console.log("ids are ", ids);
+    // console.log("ids are ", ids);
     let out = [];
     for (const id of ids) {
         const check = await songCollection.findOne({ songId: id });
@@ -108,7 +108,7 @@ module.exports.getTracks = async (ids) => {
         }
     }
     )
-    console.log(res);
+    // console.log(res);
     // console.log(res.data.tracks);
     const data = res.data.tracks;
     for (const track of data) {
@@ -137,7 +137,7 @@ module.exports.getTracks = async (ids) => {
         }
         try {
             const res = await songCollection.create(info);
-            console.log(res, "success");
+            // console.log(res, "success");
             out.push(res);
         }
         catch (err) {
@@ -158,7 +158,7 @@ module.exports.getArtists = async (ids) => {
     //     await this.refreshToken();
     // }
     let nonexistent_ids = [];
-    console.log("ids are ", ids);
+    // console.log("ids are ", ids);
     let out = [];
     for (const id of ids) {
         const check = await artistCollection.findOne({ artistId: id });
@@ -191,7 +191,7 @@ module.exports.getArtists = async (ids) => {
         }
     }
     )
-    console.log(res);
+    // console.log(res);
     const data = res.data.artists;
     for (const artist of data) {
         // console.log(track);
@@ -205,7 +205,7 @@ module.exports.getArtists = async (ids) => {
         }
         try {
             const res = await artistCollection.create(info);
-            console.log(res, "success");
+            // console.log(res, "success");
             out.push(res);
         }
         catch (err) {
@@ -266,10 +266,10 @@ module.exports.search = async (query) =>{
             'Content-Type': "application/json"
         }
     })
-    console.log(res);
+    // console.log(res);
     const songs = await saveTracks(res.data.tracks.items);
     const artists = await saveArtists(res.data.artists.items);
-    console.log(songs);
-    console.log(artists);
+    // console.log(songs);
+    // console.log(artists);
     return {tracks: songs, artists: artists};
 }
