@@ -280,11 +280,13 @@ function Player() {
         />
         <button style={
           {
-            opacity:"0.5",
-            position: "absolute",
-            left: "87%",
-            padding: "10px",
-            margin: '8px',
+            
+  opacity: "0.5",
+  left: "40%",
+  padding: "8px",
+  position: "relative",
+  top: "-36px",
+
 
           }
         }

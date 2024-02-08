@@ -26,14 +26,15 @@ a{
     transition: transform 0.3s ease-in-out;
 }
 .selected{
-    background-color: rgb(195 157 211);
+    background-color: rgb(44, 66, 51);
     border-radius: 5px;
     height: 243px;
     /* margin: 40px; */
     width: 390px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: space-evenly;
+    align-items: center;
     transition: transform 0.2s ease-in-out;
     margin-left: 16px;
     top: 10%;
@@ -52,15 +53,15 @@ a{
         filter: blur(5px);
         background: linear-gradient(
             to left,
-            rgb(135, 3, 118),
-            rgb(151, 11, 186),
-            #c42da8,
-            #9e16c3,
-            #6501de,
-            #9e16c3,
-            #c42da8,
-            #4245e4,
-            rgb(147, 15, 230)
+            rgb(3, 135, 3),
+            rgb(11, 186, 34),
+            #2dc471,
+            #16c333,
+            #01de77,
+            #16c381,
+            #2dc4b8,
+            #42e4c1,
+            rgb(119, 230, 15)
         );
         background-size: 200% 200%;
         animation: animateGlow 2.25s linear infinite;
@@ -197,6 +198,7 @@ a{
     align-items: center;
     transition: transform 0.2s ease-in-out;
     left:0px;
+    margin-left: -150px;
     /* top:10%; */
     position: relative;
     animation: scrolling 10s infinite;
@@ -204,9 +206,9 @@ a{
 }
 
 @keyframes scrolling{
-    0%{translate:-10%}
-    50%{translate: 10%;}
-    100%{translate: -10%;}
+    0%{translate:-60%}
+    50%{translate: 0%;}
+    100%{translate: -60%;}
 }
 .song-board:hover {
     transform: scale(1.05);
