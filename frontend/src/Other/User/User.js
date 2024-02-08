@@ -91,7 +91,7 @@ export const User = (props) => {
             className="Aartist-board"
             key={index} >
             <Link to="/playlists">
-            <img className="Amodel" alt="Model" src="model.png" />
+            <img className="Amodel" alt="Model" src={item.images[0].url} />
             </Link>
             <div className="Asong">{item.artistName}</div>
             <div className="Aartist">{item.songName}</div>
