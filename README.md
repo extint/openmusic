@@ -45,9 +45,6 @@ Music streaming web application for smooth endless playback featuring gesture co
 - [GitHub Repository](https://github.com/extint/openmusic)
 - [Demo Video]()
 - [Drive Link to Screenshots of your project]()
-- [Hosted Website Link]()
-- [App APK Link]()
-- [Hosted Backend Link]()
 
 ## 🤖Tech-Stack
 
@@ -133,3 +130,4 @@ $ npm run start
 - [Manav Shah](https://github.com/manav2580): manavshah.2003.ms@gmail.com
 
 ## 📱Screenshots
+![ScreenShot1]()
