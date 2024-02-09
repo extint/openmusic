@@ -54,24 +54,24 @@ module.exports.getcontent = async (req, res) => {
         }
     }
 
-    const playlistNames = user.playlists;
-    for (const pname of playlistNames) {
-        const check = await playlistCollection.findOne({ playlistName: pname });
-        if (!check) {
-            return res.status(404).json({ message: "no such playlist" });
-        }
-        else if (!check.songIds.length) {
-            console.log("Empty playlist");
-        }
-        else {
-            let playlist = await getTracks(check.songIds);
-            let out = {
-                playlistName: pname,
-                images: playlist[0].images
-            }
-            playlists.push(out);
-        }
-    }
+    // const playlistNames = user.playlists;
+    // for (const pname of playlistNames) {
+    //     const check = await playlistCollection.findOne({ playlistName: pname });
+    //     if (!check) {
+    //         return res.status(404).json({ message: "no such playlist" });
+    //     }
+    //     else if (!check.songIds.length) {
+    //         console.log("Empty playlist");
+    //     }
+    //     else {
+    //         let playlist = await getTracks(check.songIds);
+    //         let out = {
+    //             playlistName: pname,
+    //             images: playlist[0].images
+    //         }
+    //         playlists.push(out);
+    //     }
+    // }
 
     let topSongArray = user.songsPlayed.sort((a, b) => { return a.playCount - b.playCount});
     if(topSongArray.length <= 5){
@@ -81,14 +81,14 @@ module.exports.getcontent = async (req, res) => {
         topSongs = topSongArray.slice(0,5);
     }
 
-    topSongs = await getTracks(topSongs.map(a => a.songId));
+    // topSongs = await getTracks(topSongs.map(a => a.songId));
     // console.log("HERRRRRRRRRRR", recommendedSongs);
     return res.status(200).json({
         likedSongs: likedSongs,
         recentSongs: recentSongs,
         artistsFollowed: artistsFollowed,
         recommendedSongs: recommendedSongs,
-        playlists: playlists,
+        // playlists: playlists,
         topSongs: topSongs
     })
 }
