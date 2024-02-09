@@ -123,7 +123,7 @@ a{
         margin-left: 16px;
         top: 10%;
         position: relative;
-        animation: scrolling 10s infinite;
+        animation: scrolling 6s infinite;
     }
 /* } */
 
@@ -170,13 +170,13 @@ a{
 }
 
 
-.suggested-boards{
-    /* background-color:#88a9ad ; */
-    top:6%;
-    left:0px;
+.suggested-boards {
+    /* background-color: #88a9ad; */
+    top: 6%;
+    left: -155px;
     position: relative;
-    width: 95%;
-    height:292px;
+    width: 105%;
+    height: 292px;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;

@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Playlistdisplay.css"
 import { Navbar } from "../../../HomePage/Navbar/Navbar";
 import { Sidebar } from "../../../HomePage/Sidebar/Sidebar";
 import Player from "../../../HomePage/Player/player";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 export const Playlistdisplay = (props) => {
     const params = useParams();
+    const location = useLocation();
+    const state = location.state; // Access the state object directly
+    console.log(state, "playlistttttttttttttttttt");
     const [data, setData] = useState()
     const fetchPlaylist = async () => {
         try {
@@ -40,11 +43,13 @@ export const Playlistdisplay = (props) => {
             console.log(err);
         }
     };
-
+    useEffect({
+        fetchPlaylist
+    },[])
     return (
         <>
             <Navbar />
-            <Sidebar />
+            <Sidebar {...state}/>
             <div id='playlisttitle'>
                 <h1 class="name">Playlist</h1>
                 <p class="desc">By: Name </p>

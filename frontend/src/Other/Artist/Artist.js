@@ -14,13 +14,36 @@ import { accessToken } from "../../accessToken";
 export const Artist = (props) => {
   const location = useLocation();
   const state = location.state; // Access the state object directly
-  console.log(state, "hehe");
+  console.log(state.artistId, "hehe");
   const myToken = accessToken
   const name = useParams().userName;
   const modelsRef = useRef([]);
-  const [selectedSongId, setSelectedSongId] = useState(null);
+  // const [selectedSongId, setSelectedSongId] = useState(null);
+  const [artistInfo,setArtistInfo]=useState({
+    topTracks:[],
+    relatedArtists:[]
+  }
+  )
+  const getArtist=async()=>{
+    try{
+      const fetchA = await axios.get("http://localhost:8000/artist", {
+                    params: {
+                        artistId: state.artistId
+                    },
+                    headers: {
+                        'Content-Type': "application/json"
+                    }
+                });
+                setArtistInfo(fetchA.data)
+                console.log(fetchA.data,"its ok warren, its her not u");
+
+    }catch(err){
+      console.log(err);
+    }
+  }
 
   useEffect(() => {
+    getArtist()
     modelsRef.current.forEach((model) => {
       model.addEventListener('click', handleClick);
     });
@@ -36,7 +59,7 @@ export const Artist = (props) => {
     try {
       console.log(e,"here")
       const songId = e 
-      setSelectedSongId(songId === selectedSongId ? null : songId); // Toggle the selected songId
+      // setSelectedSongId(songId === selectedSongId ? null : songId); // Toggle the selected songId
       // setPlay(songId); // Set the currently playing item
       await axios.post(`https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A${songId}`, {}, {
         headers: {
@@ -82,30 +105,30 @@ export const Artist = (props) => {
         <div className="Atop-songs-artist">
         <div className="Atop-songs-heading">Top songs:</div>
         <div className="Atop-songs-container">
-          {/* {props.likedSongs.map((item, index) => (
-          <div className={` ${selectedSongId === item.songId ? 'selected' : 'Asong-board'}`} key={index}>
+          {artistInfo.topTracks.map((item, index) => (
+          <div className="Asong-board" key={index}>
             <button className="songPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
             <img className="model" alt="Model" data-song-id={item.songId} src={item.images[0].url} />
             <div className="Asong">{item.name}</div>
             <div className="Asong-2">{item.artists[0].name}</div>
           </div>
-        ))} */}
+        ))}
         </div>
       </div>
         
         <div className="Aplaylists-artist">
         <div className="Aplaylist-boards-heading">Recent Albums:</div>
         <div className="Aplaylist-boards">
-        {/* {props.recommendedSongs.map((item, index) => (
-          <div className={`Aplaylist-board ${selectedSongId === item.songId ? 'selected' : ''}`} key={index}>
-            <button className="AsongPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
+        {artistInfo.relatedArtists.map((item, index) => (
+          <div className="Aplaylist-board " key={index}>
+            {/* <button className="AsongPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} /> */}
             <Link to="/playlist">
               <img className="Amodel" alt="Model" src={item.images[0].url} />
             </Link>
             <div className="Asong">{item.name}</div>
-            <div className="Asong-2">{item.artists[0].name}</div>
+            {/* <div className="Asong-2">{item.artists[0].name}</div> */}
           </div>
-        ))} */}
+        ))}
     </div></div>
         </div>
             

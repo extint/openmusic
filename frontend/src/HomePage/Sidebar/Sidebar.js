@@ -60,7 +60,7 @@ export const Sidebar = (props) => {
                         {/* artists */}
                         {props.artistsFollowed && props.artistsFollowed.map((item, index) => (
                             <div className="graybox">
-                                <img className="Rmodel" src={item.images[0].url} onClick={() => { navigate(`/artist/${item.name}`, { replace: true, state: props }) }} />
+                                <img className="Rmodel" src={item.images[0].url} onClick={() => { navigate(`/artist/${item.name}`, { replace: true, state: item }) }} />
                                 <div className="sideinfo">{item.name}</div>
                             </div>
                         ))}

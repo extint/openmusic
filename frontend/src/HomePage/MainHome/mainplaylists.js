@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./mainplaylists.css";
 import axios from "axios";
 import { accessToken } from "../../accessToken";
@@ -44,6 +44,7 @@ export const MainHome = (props) => {
       console.log(err);
     }
   }
+  const navigate =useNavigate()
   return (
     <div className="main-home">
       <div className="text-wrapper">Welcome {name} !</div>
@@ -61,9 +62,9 @@ export const MainHome = (props) => {
       <div className="playlist-boards">
          {props.playlists && props.playlists.map((item, index) => (
           <div className="playlist-board" key={index}>
-            <Link to="/playlist">
-              <img className="model" alt="Model" src={item.images[0].url} />
-            </Link>
+            {/* <Link to="/playlist/:"> */}
+              <img className="model" alt="Model" src={item.images[0].url} onClick={() => { navigate(`/playlist/${item.playlistName}`, { replace: true, state: props })}} />
+            {/* </Link> */}
             <div className="song-3">{item.playlistName}</div>
           </div>
         ))}
