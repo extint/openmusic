@@ -77,9 +77,8 @@
     left: -1%;
     position: relative;
     flex-wrap: wrap;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     justify-content: space-evenly;
-    
 }
 
 .Aplaylists {
