@@ -10,7 +10,7 @@ export const MainHome = (props) => {
   const modelsRef = useRef([]);
   const [selectedSongId, setSelectedSongId] = useState(null);
   const [selectedPlaylistName, setSelectedPlaylistName] = useState(null);
-  console.log("EEE", props);
+  console.log("EEEeeeeeeeeeeeeeee", props);
   useEffect(() => {
     modelsRef.current.forEach((model) => {
       model.addEventListener('click', handleClick);
@@ -66,6 +66,20 @@ export const MainHome = (props) => {
               <img className="model" alt="Model" src={item.images[0].url} onClick={() => { navigate(`/playlist/${item.playlistName}`, { replace: true, state: props })}} />
             {/* </Link> */}
             <div className="song-3">{item.playlistName}</div>
+          </div>
+        ))}
+      </div> 
+      <div className="text-wrapper-3">Suggestions: </div>
+      <div className="recom-boards">
+         {props.recommendedSongs && props.recommendedSongs.map((item, index) => (
+          // <div className="playlist-board" key={index}>
+          <div className={` ${selectedSongId === item.songId ? 'Sselected' : 'recom-board'}`} key={index}>
+            <button className="songPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
+            {/* <Link to="/playlist/:"> */}
+              <img className="model" alt="Model" src={item.images[0].url} onClick={() => { navigate(`/playlist/${item.playlistName}`, { replace: true, state: props })}} />
+            {/* </Link> */}
+            <div className="song">{item.name}</div>
+            <div className="song-2">{item.artists[0].name}</div>
           </div>
         ))}
       </div> 

@@ -67,6 +67,48 @@ a{
         animation: animateGlow 2.25s linear infinite;
     }
 }
+.Sselected{
+    background-color: rgb(44, 66, 51);
+    border-radius: 5px;
+    height: 243px;
+    /* margin: 40px; */
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 16px;
+    top: 10%;
+    position: relative;
+    /* animation: scrolling 10s infinite; */
+    &::after {
+        position: absolute;
+        content: "";
+        top: 90%;
+        left: 0;
+        right: 0;
+        z-index: -10;
+        height: 5%;
+        width: 100%;
+        transform: scale(0.9) translateZ(0);
+        filter: blur(5px);
+        background: linear-gradient(
+            to left,
+            rgb(3, 135, 3),
+            rgb(11, 186, 34),
+            #2dc471,
+            #16c333,
+            #01de77,
+            #16c381,
+            #2dc4b8,
+            #42e4c1,
+            rgb(119, 230, 15)
+        );
+        background-size: 200% 200%;
+        animation: animateGlow 2.25s linear infinite;
+    }
+}
 @keyframes animateGlow {
     0% {
       background-position: 0% 50%;
@@ -90,7 +132,21 @@ a{
     position: absolute;
     transition: transform 0.3s ease-in-out;
 }
-
+.text-wrapper-3 {
+    /* background-color: #01de77; */
+    color: rgba(186, 255, 247, 0.897);
+    font-family: "Lalezar-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+    top:70%;
+    white-space: nowrap;
+    width: auto;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+}
 /* 
 .text-wrapper:hover,
 .text-wrapper-2:hover {
@@ -107,9 +163,17 @@ a{
     display: flex;
     flex-wrap: wrap;
 }
-/* .song-board {
-    position: relative; /* Ensure the play button is positioned relative to this container */
-    /* display: inline-block; */
+.recom-boards {
+    /* background-color: #000000; */
+    height: 481px;
+    left: 40px;
+    position: relative;
+    top: -90px;
+    width: 1700px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
    div.song-board {
         background-color: rgba(95, 213, 199, 0.381);
         border-radius: 5px;
@@ -123,11 +187,17 @@ a{
         margin-left: 16px;
         top: 10%;
         position: relative;
-        animation: scrolling 6s infinite;
+        animation: scrolling 10s infinite;
     }
 /* } */
 
 .song-board:hover .songPlay {
+    opacity: 1; /* Make the play button visible when hovering over the song-board */
+    position: absolute;
+    left:90%;
+    transition: 500ms;
+}
+.recom-board:hover .songPlay {
     opacity: 1; /* Make the play button visible when hovering over the song-board */
     position: absolute;
     left:90%;
@@ -183,6 +253,7 @@ a{
     justify-content: space-evenly;
     text-align: center;
 }
+
 .suggested-boards::-webkit-scrollbar{
     width:0;
 }
@@ -204,6 +275,24 @@ a{
     animation: scrolling 10s infinite;
     text-align: center;
 }
+.recom-board{
+    background-color: rgba(95, 213, 199, 0.381);
+    border-radius: 5px;
+    height: 243px;
+    /* margin: 40px; */
+    width: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 16px;
+    top: 10%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* animation: scrolling 10s infinite; */
+}
 
 @keyframes scrolling{
     0%{translate:-60%}
@@ -213,7 +302,13 @@ a{
 .song-board:hover {
     transform: scale(1.05);
 }
+.recom-board:hover {
+    transform: scale(1.05);
+}
 .selected:hover {
+    transform: scale(1.05);
+}
+.Sselected:hover {
     transform: scale(1.05);
 }
 .playlist-boards::-webkit-scrollbar {
