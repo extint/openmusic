@@ -81,8 +81,7 @@ module.exports.getcontent = async (req, res) => {
         topSongs = topSongArray.slice(0,5);
     }
 
-    // topSongs = await getTracks(topSongs.map(a => a.songId));
-    // console.log("HERRRRRRRRRRR", recommendedSongs);
+    topSongs = await getTracks(topSongs.map(a => a.songId));
     return res.status(200).json({
         likedSongs: likedSongs,
         recentSongs: recentSongs,
