@@ -172,6 +172,7 @@ a{
     width: 1700px;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
    div.song-board {

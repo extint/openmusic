@@ -81,6 +81,10 @@
     justify-content: space-evenly;
 }
 
+.Atop-songs-container::-webkit-scrollbar{
+    width:0;
+}
+
 .Aplaylists {
     color: #effde0;
     font-family: "Lalezar-Regular", Helvetica;
