@@ -73,15 +73,19 @@ export const Sidebar = (props) => {
                         <input type="text" className="search-text" placeholder="Search Anything" onChange={searchQuery}></input>
                         {/* </div> */}
                         <div className={searchBlock ? ("SearchResults") : ("preSearchResults")}>
-                            {searchR && searchR.artists.map((item, index) => (
+                            {searchR.artists && searchR.artists.map((item, index) => (
                                 <div className="searchOutput" key={index}>
-                                    <img className="sModel" alt="Model" src={item.images[0].url && item.images[0].url} />
+                                    {/* <img className="sModel" alt="Model" src={item.images[0].url && item.images[0].url} /> */}
+                                    <Link to="artist/Anuv%20Jain">
+                                    {item.images[0] && item.images[0].url && <img className="sModel" alt="Model" src={item.images[0].url} />}
+                                    </Link>
                                     <div className="sSong">{item.name}</div>
                                 </div>
                             ))}
-                            {searchR && searchR.tracks.map((item, index) => (
+                            {searchR.tracks && searchR.tracks.map((item, index) => (
                                 <div className="searchOutput" key={index}>
-                                    <img className="sModel" alt="Model" src={item.images[0].url && item.images[0].url} />
+                                    {/* <img className="sModel" alt="Model" src={item.images[0].url && item.images[0].url} /> */}
+                                    {item.images[0] && item.images[0].url && <img className="sModel" alt="Model" src={item.images[0].url} />}
                                     <div className="sSong">{item.name}</div>
                                     <br/>
                                     <div className="sArtist">{item.artists[0].name}</div>
