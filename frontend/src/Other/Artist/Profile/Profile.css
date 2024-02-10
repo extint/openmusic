@@ -22,8 +22,8 @@
       border-radius: 50%;
       height: 250px;
       left: 35%;
-      position: relative;
-      top: 14%;
+      position: fixed;
+      top: 10%;
       line-height: 250px;
       width: 250px;
       box-shadow: 0px 0px 20px 0.1px #c9f0a8;
