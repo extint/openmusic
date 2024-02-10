@@ -109,7 +109,7 @@ export const Artist = (props) => {
           <div className="Asong-board" key={index}>
             <button className="songPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} />
             <img className="model" alt="Model" data-song-id={item.songId} src={item.images[0].url} />
-            <div className="Asong">{item.name}</div>
+            <div className="Asong-4">{item.name}</div>
             <div className="Asong-2">{item.artists[0].name}</div>
           </div>
         ))}
@@ -117,15 +117,15 @@ export const Artist = (props) => {
       </div>
         
         <div className="Aplaylists-artist">
-        <div className="Aplaylist-boards-heading">Recent Albums:</div>
+        <div className="Aplaylist-boards-heading">Similar Artists:</div>
         <div className="Aplaylist-boards">
         {artistInfo.relatedArtists.map((item, index) => (
-          <div className="Aplaylist-board " key={index}>
+          <div className="Asong-board " key={index}>
             {/* <button className="AsongPlay" onClick={() => handleClick(item.songId)} data-song-id={item.songId} /> */}
             <Link to="/playlist">
-              <img className="Amodel" alt="Model" src={item.images[0].url} />
+              <img className="model" alt="Model" src={item.images[0].url} />
             </Link>
-            <div className="Asong">{item.name}</div>
+            <div className="Asong-4">{item.name}</div>
             {/* <div className="Asong-2">{item.artists[0].name}</div> */}
           </div>
         ))}

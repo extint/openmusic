@@ -186,7 +186,7 @@
     transition: transform 0.2s ease-in-out;
     margin-left:20px;
     /* position: relative; */
-    animation: scrolling 10s 
+    animation: scrolling 10s infinite;
 }
 @keyframes scrolling{
     0%{left:10%}
@@ -250,9 +250,17 @@
     top: 87%;
 } 
 
-.Asong-2 {
+.Asong-4 {
     /* background-color: #6e898d00; */
     top: 80%;
+    font-size: 20px;
+    position: absolute;
+}
+
+.Asong-2 {
+    /* background-color: #6e898d00; */
+    top: 60%;
+    font-size: 35px;
     position: absolute;
 }
 .Acloud-effect {
